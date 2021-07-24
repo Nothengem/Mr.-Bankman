@@ -1,0 +1,328 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Resources/GFX/MainSceneCharacterBackGround2.png" type="Texture" id=1]
+[ext_resource path="res://Resources/GFX/StatusBars/NoItem.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Pendulum.gd" type="Script" id=3]
+[ext_resource path="res://Resources/GFX/Pendulum/PendulumGood.png" type="Texture" id=4]
+[ext_resource path="res://Resources/GFX/Pendulum/PendulumBack.png" type="Texture" id=5]
+[ext_resource path="res://Resources/GFX/Pendulum/PendulumDangerZone.png" type="Texture" id=6]
+[ext_resource path="res://Resources/GFX/CharacterCardBG.png" type="Texture" id=7]
+[ext_resource path="res://Resources/GFX/Pendulum/PendulumBad.png" type="Texture" id=8]
+[ext_resource path="res://Resources/GFX/Pendulum/PendulumNeutral.png" type="Texture" id=9]
+[ext_resource path="res://Resources/GFX/glowing_circle.png" type="Texture" id=10]
+[ext_resource path="res://Resources/GFX/Pendulum/PendulumGood2.png" type="Texture" id=11]
+[ext_resource path="res://Resources/GFX/Pendulum/PendulumNeutral2.png" type="Texture" id=12]
+
+[sub_resource type="Environment" id=1]
+background_mode = 4
+glow_enabled = true
+glow_strength = 0.84
+glow_blend_mode = 0
+glow_hdr_threshold = 4.0
+glow_hdr_luminance_cap = 1.0
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0.640777, 1 )
+colors = PoolColorArray( 1, 1, 1, 0.927184, 0.952941, 0.952941, 0.952941, 0 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 250.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 3 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "Appearance"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[node name="Pendulum" type="Control" groups=[
+"Ivent",
+]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 0.00012207
+rect_pivot_offset = Vector2( 540, 960 )
+mouse_filter = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardBack" type="Sprite" parent="."]
+position = Vector2( 540, 960 )
+scale = Vector2( 1.5, 1 )
+texture = ExtResource( 7 )
+
+[node name="Back" type="Sprite" parent="."]
+position = Vector2( 540.15, 844.296 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 5 )
+
+[node name="DangerZone" type="Sprite" parent="."]
+position = Vector2( 538.551, 1008.75 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 540, 555.921 )
+texture = ExtResource( 2 )
+
+[node name="Line2D" type="Line2D" parent="Sprite"]
+self_modulate = Color( 1, 1, 2.32, 1 )
+rotation = 1.1781
+points = PoolVector2Array( 0, 0, 0, 705 )
+width = 14.026
+default_color = Color( 0, 100, 1, 1 )
+joint_mode = 2
+end_cap_mode = 2
+
+[node name="RayCast2D" type="RayCast2D" parent="Sprite/Line2D"]
+enabled = true
+cast_to = Vector2( 0, 700 )
+collide_with_areas = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Sprite/Line2D/RayCast2D"]
+environment = SubResource( 1 )
+
+[node name="CastingParticleCollision" type="Particles2D" parent="Sprite/Line2D"]
+rotation = -1.67028
+lifetime = 0.3
+process_material = SubResource( 6 )
+texture = ExtResource( 10 )
+
+[node name="Timer_amplitude" type="Timer" parent="Sprite"]
+wait_time = 2.0
+
+[node name="Tween" type="Tween" parent="Sprite"]
+
+[node name="FloorZero" type="Sprite" parent="Sprite"]
+rotation = -2.24275
+
+[node name="TimerZero" type="Timer" parent="Sprite/FloorZero"]
+wait_time = 2.5
+
+[node name="GoodDifficulty1" type="Area2D" parent="Sprite/FloorZero"]
+position = Vector2( -524.937, 260.854 )
+
+[node name="Sprite" type="Sprite" parent="Sprite/FloorZero/GoodDifficulty1"]
+rotation = 1.09956
+scale = Vector2( 0.3, 0.2 )
+texture = ExtResource( 11 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/FloorZero/GoodDifficulty1"]
+rotation = 0.959931
+scale = Vector2( 0.2, 0.2 )
+polygon = PoolVector2Array( -363.633, -130.558, -454.749, -10.6743, 444.46, 114.792, 384.139, -23.334, 186.253, -36.9102, 17.3506, -56.0586, -66.595, -66.8511, -181.714, -89.1172 )
+
+[node name="GoodDifficulty2" type="Area2D" parent="Sprite/FloorZero"]
+position = Vector2( -524.937, 260.854 )
+rotation = 0.10472
+
+[node name="Sprite" type="Sprite" parent="Sprite/FloorZero/GoodDifficulty2"]
+rotation = 0.959931
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 4 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/FloorZero/GoodDifficulty2"]
+rotation = 0.959931
+scale = Vector2( 0.2, 0.2 )
+polygon = PoolVector2Array( -167.114, -80.1548, -199.647, 52.4766, 200.692, 51.1851, 166.88, -79.5669, 94.7434, -64.3135, 17.6753, -58.3369, -45.4775, -59.7573, -102.016, -65.396 )
+
+[node name="FloorOne" type="Sprite" parent="Sprite"]
+rotation = -0.00872665
+
+[node name="TimerOne" type="Timer" parent="Sprite/FloorOne"]
+wait_time = 4.0
+
+[node name="NeutralDifficulty1" type="Area2D" parent="Sprite/FloorOne"]
+position = Vector2( -464.846, 235.27 )
+rotation = 0.122173
+
+[node name="Sprite" type="Sprite" parent="Sprite/FloorOne/NeutralDifficulty1"]
+rotation = 0.959931
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 12 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/FloorOne/NeutralDifficulty1"]
+polygon = PoolVector2Array( -25.0084, -62.8067, -54.0523, -58.3652, 37.033, 71.0212, 50.9304, 44.777, 32.9086, 23.6345, 16.7537, 2.85931, 2.96234, -16.1744, -8.53406, -34.6268 )
+
+[node name="NeutralDifficulty3" type="Area2D" parent="Sprite/FloorOne"]
+position = Vector2( -464.846, 235.27 )
+rotation = 0.10472
+
+[node name="Sprite" type="Sprite" parent="Sprite/FloorOne/NeutralDifficulty3"]
+rotation = 0.959931
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 9 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/FloorOne/NeutralDifficulty3"]
+polygon = PoolVector2Array( -6.28369, -36.6531, -31.5631, -26.8105, 14.7399, 38.8007, 32.0848, 18.0613, 21.6924, 8.49524, 12.1089, -3.09821, 6.22705, -12.0237, -1.76868, -26.3203 )
+
+[node name="FloorTwo" type="Sprite" parent="Sprite"]
+rotation = -2.20784
+
+[node name="BadDifficulty2" type="Area2D" parent="Sprite/FloorTwo"]
+position = Vector2( -404.063, 210.304 )
+rotation = 0.139626
+
+[node name="Sprite" type="Sprite" parent="Sprite/FloorTwo/BadDifficulty2"]
+rotation = 0.959931
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/FloorTwo/BadDifficulty2"]
+polygon = PoolVector2Array( -6.46254, -36.5564, -31.9238, -26.4141, 14.491, 38.8867, 32.2864, 18.2088, 17.9462, 4.19312, 7.46077, -10.238, -1.34393, -25.2841 )
+
+[node name="Difficulty3" type="Node" parent="Sprite/FloorTwo"]
+
+[node name="Bad1" type="Area2D" parent="Sprite/FloorTwo/Difficulty3"]
+position = Vector2( 135.937, 766.225 )
+rotation = 0.139626
+scale = Vector2( 0.7, 0.7 )
+
+[node name="Sprite" type="Sprite" parent="Sprite/FloorTwo/Difficulty3/Bad1"]
+rotation = 0.959931
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Sprite/FloorTwo/Difficulty3/Bad1"]
+polygon = PoolVector2Array( -6.46254, -36.5564, -31.9238, -26.4141, 14.491, 38.8867, 32.2864, 18.2088, 17.9462, 4.19312, 7.46077, -10.238, -1.34393, -25.2841 )
+
+[node name="Bad2" type="Area2D" parent="Sprite/FloorTwo/Difficulty3"]
+position = Vector2( 231.764, 887.691 )
+rotation = -0.174533
+scale = Vector2( 0.7, 0.7 )
+
+[node name="Sprite" type="Sprite" parent="Sprite/FloorTwo/Difficulty3/Bad2"]
+rotation = 0.959931
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/FloorTwo/Difficulty3/Bad2"]
+polygon = PoolVector2Array( -6.13686, -36.786, -31.6609, -26.9681, 14.7892, 38.8994, 32.3352, 18.3254, 20.8147, 7.0152, 10.1185, -6.30127, 3.18575, -16.9371, -1.85974, -26.8367 )
+
+[node name="Bad3" type="Area2D" parent="Sprite/FloorTwo/Difficulty3"]
+position = Vector2( 372.572, 973.697 )
+rotation = -0.558505
+scale = Vector2( 0.7, 0.7 )
+
+[node name="Sprite" type="Sprite" parent="Sprite/FloorTwo/Difficulty3/Bad3"]
+rotation = 0.959931
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/FloorTwo/Difficulty3/Bad3"]
+polygon = PoolVector2Array( -5.98819, -36.7199, -31.5529, -27.0737, 15.0732, 38.9127, 32.2763, 18.3092, 17.7831, 3.87158, 7.24405, -9.96704, -0.444733, -23.3118 )
+
+[node name="Bad4" type="Area2D" parent="Sprite/FloorTwo/Difficulty3"]
+position = Vector2( 542.549, 1004.07 )
+rotation = -0.959931
+scale = Vector2( 0.7, 0.7 )
+
+[node name="Sprite" type="Sprite" parent="Sprite/FloorTwo/Difficulty3/Bad4"]
+rotation = 0.959931
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/FloorTwo/Difficulty3/Bad4"]
+polygon = PoolVector2Array( -5.97229, -36.7019, -31.1498, -27.028, 14.8513, 38.6682, 32.2861, 18.1199, 19.7637, 6.10046, 11.5645, -4.32642, 3.32196, -16.6478, -2.32849, -27.8328 )
+
+[node name="Bad5" type="Area2D" parent="Sprite/FloorTwo/Difficulty3"]
+position = Vector2( 718.657, 966.637 )
+rotation = -1.39626
+scale = Vector2( 0.7, 0.7 )
+
+[node name="Sprite" type="Sprite" parent="Sprite/FloorTwo/Difficulty3/Bad5"]
+rotation = 0.959931
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/FloorTwo/Difficulty3/Bad5"]
+polygon = PoolVector2Array( -6.01318, -36.6808, -31.3862, -26.8496, 14.8547, 39.0394, 32.5245, 18.1727, 22.796, 9.25348, 15.5578, 0.854492, 8.52979, -8.62085, 4.07849, -15.2722, -0.718994, -24.3413 )
+
+[node name="Bad6" type="Area2D" parent="Sprite/FloorTwo/Difficulty3"]
+position = Vector2( 848.856, 879.811 )
+rotation = -1.74533
+scale = Vector2( 0.7, 0.7 )
+
+[node name="Sprite" type="Sprite" parent="Sprite/FloorTwo/Difficulty3/Bad6"]
+rotation = 0.959931
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/FloorTwo/Difficulty3/Bad6"]
+polygon = PoolVector2Array( -6.02063, -36.4124, -31.3701, -26.7775, 15.0001, 39.1003, 32.3826, 18.0875, 20.9047, 7.23022, 13.2633, -1.95313, 5.61353, -12.7052, -1.5976, -25.9443 )
+
+[node name="Bad7" type="Area2D" parent="Sprite/FloorTwo/Difficulty3"]
+position = Vector2( 943.245, 754.584 )
+rotation = -2.0944
+scale = Vector2( 0.7, 0.7 )
+
+[node name="Sprite" type="Sprite" parent="Sprite/FloorTwo/Difficulty3/Bad7"]
+rotation = 0.959931
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/FloorTwo/Difficulty3/Bad7"]
+polygon = PoolVector2Array( -5.86084, -36.5869, -31.7756, -26.9286, 14.714, 38.7544, 32.2009, 18.2665, 20.0013, 6.02365, 12.8433, -2.23792, 4.2749, -14.6781, -1.91577, -26.2042 )
+
+[node name="TimerTwo" type="Timer" parent="Sprite/FloorTwo"]
+wait_time = 3.0
+
+[node name="StopButton" type="TouchScreenButton" parent="."]
+visible = false
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -346.909, -274.914 )
+scale = Vector2( 7, 10 )
+normal = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Appearance = SubResource( 7 )
+
+[node name="Timer_free" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Sprite/Timer_amplitude" to="." method="_on_Timer_amplitude_timeout"]
+[connection signal="timeout" from="Sprite/FloorZero/TimerZero" to="." method="_on_TimerZero_timeout"]
+[connection signal="timeout" from="Sprite/FloorOne/TimerOne" to="." method="_on_TimerOne_timeout"]
+[connection signal="timeout" from="Sprite/FloorTwo/TimerTwo" to="." method="_on_TimerTwo_timeout"]
+[connection signal="released" from="StopButton" to="." method="_on_StopButton_released"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="Timer_free" to="." method="_on_Timer_free_timeout"]

@@ -1,0 +1,421 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://Resources/GFX/MainScreen/Background.png" type="Texture" id=1]
+[ext_resource path="res://Resources/GFX/Galstuk.svg" type="Texture" id=2]
+[ext_resource path="res://Resources/GFX/Customer.svg" type="Texture" id=3]
+[ext_resource path="res://Resources/GFX/CoinsWhite.svg" type="Texture" id=4]
+[ext_resource path="res://Resources/GFX/EagleWhite.svg" type="Texture" id=5]
+[ext_resource path="res://Resources/GFX/GalstukWhite.svg" type="Texture" id=6]
+[ext_resource path="res://Resources/GFX/Coins.svg" type="Texture" id=7]
+[ext_resource path="res://Resources/GFX/Eagle.svg" type="Texture" id=8]
+[ext_resource path="res://Resources/GFX/CustomerWhite.svg" type="Texture" id=9]
+[ext_resource path="res://Scenes/IventStatusBox.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Balance.gd" type="Script" id=11]
+[ext_resource path="res://Resources/GFX/Interface/Font/JetBrainsMono-VariableFont_wght.ttf" type="DynamicFontData" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 12 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "ColorControl"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control2/NinePatchRect/IndicatorBox/HBoxContainer/HealthProgress:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.03, 0.4, 0.5, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 0.968627, 1, 0, 1 ), Color( 0.14902, 1, 0, 1 ), Color( 0.968627, 1, 0, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control2/NinePatchRect/IndicatorBox/HBoxContainer/HealthProgress:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.35, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control2/NinePatchRect/IndicatorBox/HBoxContainer/HealthProgress:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.35, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 1, 0.203922, 1 ), Color( 0, 1, 0.203922, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control2/NinePatchRect/IndicatorBox/HBoxContainer/HealthProgress:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0.772549, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "ColorControl"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control2/NinePatchRect/IndicatorBox/HBoxContainer/LawProgress:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 0.968627, 1, 0, 1 ), Color( 0.14902, 1, 0, 1 ), Color( 0.968627, 1, 0, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control2/NinePatchRect/IndicatorBox/HBoxContainer/LawProgress:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.35, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control2/NinePatchRect/IndicatorBox/HBoxContainer/LawProgress:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.35, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 1, 0.203922, 1 ), Color( 0, 1, 0.203922, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control2/NinePatchRect/IndicatorBox/HBoxContainer/BanditismProgress:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.35, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control2/NinePatchRect/IndicatorBox/HBoxContainer/BanditismProgress:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.35, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 1, 0.203922, 1 ), Color( 0, 1, 0.203922, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "ColorControl"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control2/NinePatchRect/IndicatorBox/HBoxContainer/BanditismProgress:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 0.968627, 1, 0, 1 ), Color( 0.14902, 1, 0, 1 ), Color( 0.968627, 1, 0, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "ColorControl"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control2/NinePatchRect/IndicatorBox/HBoxContainer/LuckProgress:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 0.968627, 1, 0, 1 ), Color( 0.14902, 1, 0, 1 ), Color( 0.968627, 1, 0, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control2/NinePatchRect/IndicatorBox/HBoxContainer/LuckProgress:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.35, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control2/NinePatchRect/IndicatorBox/HBoxContainer/LuckProgress:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.35, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 1, 0.203922, 1 ), Color( 0, 1, 0.203922, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="BalanceGUI" type="Control" groups=[
+"BalanceGUI",
+]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control2" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control2"]
+self_modulate = Color( 0.780392, 0.623529, 0.894118, 1 )
+anchor_left = -0.012037
+anchor_top = -0.0114583
+anchor_right = 1.0213
+anchor_bottom = 1.02188
+margin_left = 403.0
+margin_top = 682.0
+margin_right = -403.0
+margin_bottom = -682.0
+rect_scale = Vector2( 3.6, 3.2 )
+rect_pivot_offset = Vector2( 155, 310 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="IndicatorBox" type="CenterContainer" parent="Control2/NinePatchRect"]
+anchor_left = 0.096773
+anchor_top = 0.0322576
+anchor_right = 0.92773
+anchor_bottom = 0.131046
+margin_left = 25.0
+margin_top = -2.28882e-05
+margin_right = 587.4
+margin_bottom = 113.75
+rect_scale = Vector2( 0.25, 0.25 )
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control2/NinePatchRect/IndicatorBox"]
+margin_right = 820.0
+margin_bottom = 175.0
+rect_pivot_offset = Vector2( 368, 88 )
+mouse_filter = 2
+custom_constants/separation = 40
+alignment = 1
+
+[node name="HealthProgress" type="TextureProgress" parent="Control2/NinePatchRect/IndicatorBox/HBoxContainer"]
+modulate = Color( 0.14902, 1, 0, 1 )
+self_modulate = Color( 1, 0.772549, 0, 1 )
+margin_right = 175.0
+margin_bottom = 175.0
+rect_min_size = Vector2( 62, 62 )
+rect_pivot_offset = Vector2( 88, 88 )
+mouse_filter = 2
+value = 50.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 6 )
+fill_mode = 3
+
+[node name="HealthTimer" type="Timer" parent="Control2/NinePatchRect/IndicatorBox/HBoxContainer/HealthProgress"]
+one_shot = true
+
+[node name="LawProgress" type="TextureProgress" parent="Control2/NinePatchRect/IndicatorBox/HBoxContainer"]
+modulate = Color( 0.14902, 1, 0, 1 )
+margin_left = 215.0
+margin_right = 390.0
+margin_bottom = 175.0
+rect_min_size = Vector2( 62, 62 )
+rect_pivot_offset = Vector2( 88, 88 )
+mouse_filter = 2
+value = 50.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 9 )
+fill_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LawTimer" type="Timer" parent="Control2/NinePatchRect/IndicatorBox/HBoxContainer/LawProgress"]
+one_shot = true
+
+[node name="BanditismProgress" type="TextureProgress" parent="Control2/NinePatchRect/IndicatorBox/HBoxContainer"]
+modulate = Color( 0.14902, 1, 0, 1 )
+margin_left = 430.0
+margin_right = 605.0
+margin_bottom = 175.0
+rect_min_size = Vector2( 62, 62 )
+rect_pivot_offset = Vector2( 88, 88 )
+mouse_filter = 2
+value = 50.0
+texture_under = ExtResource( 8 )
+texture_progress = ExtResource( 5 )
+fill_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BanditismTimer" type="Timer" parent="Control2/NinePatchRect/IndicatorBox/HBoxContainer/BanditismProgress"]
+one_shot = true
+
+[node name="LuckProgress" type="TextureProgress" parent="Control2/NinePatchRect/IndicatorBox/HBoxContainer"]
+modulate = Color( 0.14902, 1, 0, 1 )
+margin_left = 645.0
+margin_right = 820.0
+margin_bottom = 175.0
+rect_min_size = Vector2( 62, 62 )
+rect_pivot_offset = Vector2( 88, 88 )
+mouse_filter = 2
+value = 50.0
+texture_under = ExtResource( 7 )
+texture_progress = ExtResource( 4 )
+fill_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LuckTimer" type="Timer" parent="Control2/NinePatchRect/IndicatorBox/HBoxContainer/LuckProgress"]
+one_shot = true
+
+[node name="IventStatusBox" parent="Control2/NinePatchRect" instance=ExtResource( 10 )]
+anchor_left = 0.964523
+anchor_top = 0.895108
+anchor_right = 0.964523
+anchor_bottom = 0.998442
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="HBoxContainer" parent="Control2/NinePatchRect/IventStatusBox" index="0"]
+margin_top = 1.0
+margin_bottom = 63.0
+
+[node name="Victory_count" type="Label" parent="Control2/NinePatchRect"]
+visible = false
+anchor_left = 0.0689655
+anchor_top = 0.868333
+anchor_right = 0.931035
+anchor_bottom = 0.966667
+custom_fonts/font = SubResource( 1 )
+text = "Количество клиентов:
+10/20"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="AnimPlayerHealth" type="AnimationPlayer" parent="."]
+anims/ColorControl = SubResource( 2 )
+anims/HealthMinus = SubResource( 3 )
+anims/HealthPlus = SubResource( 4 )
+anims/Hold = SubResource( 5 )
+
+[node name="AnimPlayerLaw" type="AnimationPlayer" parent="."]
+anims/ColorControl = SubResource( 6 )
+anims/LawMinus = SubResource( 7 )
+anims/LawPlus = SubResource( 8 )
+
+[node name="AnimPlayerBanditism" type="AnimationPlayer" parent="."]
+anims/BanditismMinus = SubResource( 9 )
+anims/BanditismPlus = SubResource( 10 )
+anims/ColorControl = SubResource( 11 )
+
+[node name="AnimPlayerLuck" type="AnimationPlayer" parent="."]
+anims/ColorControl = SubResource( 12 )
+anims/LuckMinus = SubResource( 13 )
+anims/LuckPlus = SubResource( 14 )
+
+[connection signal="timeout" from="Control2/NinePatchRect/IndicatorBox/HBoxContainer/HealthProgress/HealthTimer" to="." method="_on_HealthTimer_timeout"]
+[connection signal="timeout" from="Control2/NinePatchRect/IndicatorBox/HBoxContainer/LawProgress/LawTimer" to="." method="_on_LawTimer_timeout"]
+[connection signal="timeout" from="Control2/NinePatchRect/IndicatorBox/HBoxContainer/BanditismProgress/BanditismTimer" to="." method="_on_BanditismTimer_timeout"]
+[connection signal="timeout" from="Control2/NinePatchRect/IndicatorBox/HBoxContainer/LuckProgress/LuckTimer" to="." method="_on_LuckTimer_timeout"]
+[connection signal="timeout" from="Control2/NinePatchRect/IventStatusBox/HBoxContainer/IventStatus1/EverySecChanger1" to="." method="_on_EverySecChanger1_timeout"]
+[connection signal="timeout" from="Control2/NinePatchRect/IventStatusBox/HBoxContainer/IventStatus2/EverySecChanger2" to="." method="_on_EverySecChanger2_timeout"]
+[connection signal="timeout" from="Control2/NinePatchRect/IventStatusBox/HBoxContainer/IventStatus3/EverySecChanger3" to="." method="_on_EverySecChanger3_timeout"]
+[connection signal="timeout" from="Control2/NinePatchRect/IventStatusBox/HBoxContainer/IventStatus4/EverySecChanger4" to="." method="_on_EverySecChanger4_timeout"]
+
+[editable path="Control2/NinePatchRect/IventStatusBox"]
+[editable path="Control2/NinePatchRect/IventStatusBox/HBoxContainer/IventStatus1"]
+[editable path="Control2/NinePatchRect/IventStatusBox/HBoxContainer/IventStatus2"]

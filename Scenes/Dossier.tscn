@@ -1,0 +1,363 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Resources/GFX/PassportBack.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/CharacterPortraitStandAlone.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Resources/GFX/Interface/Font/JetBrainsMono-VariableFont_wght.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Scenes/Dossier.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Photo.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 3 )
+
+[node name="Dossier" type="Control" groups=[
+"Dossier",
+]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Passport" type="TextureRect" parent="."]
+anchor_left = 0.026
+anchor_right = 0.974
+anchor_bottom = 0.267
+margin_left = 1.92
+margin_top = 30.0
+margin_right = 2.08008
+margin_bottom = 217.36
+mouse_filter = 2
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRectBack" type="TextureRect" parent="Passport"]
+modulate = Color( 0.890196, 0.8, 0.8, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+mouse_filter = 2
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Name" type="TextureRect" parent="Passport"]
+anchor_left = 0.026
+anchor_right = 0.974
+anchor_bottom = 0.267
+margin_left = 333.376
+margin_top = 50.0
+margin_right = -37.376
+margin_bottom = -86.9
+mouse_filter = 2
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="Passport/Name"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -26.5
+margin_right = 144.0
+margin_bottom = 26.5
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "NAME: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Parameter" type="Label" parent="Passport/Name"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 123.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Alexey Kochanov"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Sex" type="TextureRect" parent="Passport"]
+anchor_left = 0.026
+anchor_right = 0.974
+anchor_bottom = 0.267
+margin_left = 333.376
+margin_top = 120.0
+margin_right = -37.376
+margin_bottom = -16.9
+mouse_filter = 2
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="Passport/Sex"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -26.5
+margin_right = 144.0
+margin_bottom = 26.5
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "SEX:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Parameter" type="Label" parent="Passport/Sex"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 123.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Male"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Age" type="TextureRect" parent="Passport"]
+anchor_left = 0.026
+anchor_right = 0.974
+anchor_bottom = 0.267
+margin_left = 333.376
+margin_top = 190.0
+margin_right = -37.376
+margin_bottom = 53.1
+mouse_filter = 2
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="Passport/Age"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -26.5
+margin_right = 144.0
+margin_bottom = 26.5
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "AGE:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Parameter" type="Label" parent="Passport/Age"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 123.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "30"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Country" type="TextureRect" parent="Passport"]
+anchor_left = 0.026
+anchor_right = 0.974
+anchor_bottom = 0.267
+margin_left = 333.376
+margin_top = 260.0
+margin_right = -37.376
+margin_bottom = 123.1
+mouse_filter = 2
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="Passport/Country"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -26.5
+margin_right = 144.0
+margin_bottom = 26.5
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "COUNTRY:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Parameter" type="Label" parent="Passport/Country"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 194.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Italia"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="CreditHistory" type="TextureRect" parent="Passport"]
+anchor_left = 0.026
+anchor_right = 0.974
+anchor_bottom = 0.267
+margin_left = 27.376
+margin_top = 385.427
+margin_right = -43.376
+margin_bottom = 248.527
+mouse_filter = 2
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="Passport/CreditHistory"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -25.0
+margin_right = 360.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Credit History:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Parameter" type="Label" parent="Passport/CreditHistory"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 364.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Clean"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="BlackList" type="TextureRect" parent="Passport"]
+anchor_left = 0.026
+anchor_right = 0.974
+anchor_bottom = 0.267
+margin_left = 27.376
+margin_top = 485.427
+margin_right = -43.376
+margin_bottom = 348.527
+mouse_filter = 2
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="Passport/BlackList"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -25.0
+margin_right = 269.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Black List    :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Parameter" type="Label" parent="Passport/BlackList"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 364.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Clean"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="LoanRating" type="TextureRect" parent="Passport"]
+anchor_left = 0.026
+anchor_right = 0.974
+anchor_bottom = 0.267
+margin_left = 27.376
+margin_top = 585.427
+margin_right = -43.376
+margin_bottom = 448.527
+mouse_filter = 2
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="Passport/LoanRating"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -25.0
+margin_right = 269.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Loan Rating   :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Parameter" type="Label" parent="Passport/LoanRating"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 364.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Good"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Photo" type="TextureRect" parent="Passport" groups=[
+"DossierPhoto",
+]]
+anchor_left = 0.026
+anchor_right = 0.974
+anchor_bottom = 0.267
+margin_left = 23.376
+margin_top = 50.0
+margin_right = -692.376
+margin_bottom = 118.1
+mouse_filter = 2
+texture = ExtResource( 1 )
+expand = true
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Character" parent="Passport/Photo" instance=ExtResource( 2 )]
+position = Vector2( 127.253, 127.771 )
+scale = Vector2( 0.3, 0.3 )

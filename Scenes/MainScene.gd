@@ -1,0 +1,116 @@
+extends Node
+
+var previous_mouse_position = Vector2()
+var is_dragging = false
+
+
+func _ready():
+	Scriptwriter.FirstCard = true
+	$Control/AnimationPlayer2.play("Appearance")
+	
+	if str(Scriptwriter.CurrentLevel) == "LVL1" or str(Scriptwriter.CurrentLevel) == "LVL2":
+		$Control/Dossier.visible = true
+		$Control/DossierButton.visible = true
+		$Control/DayRules.visible = true
+		$Control/DayRulesButton.visible = true
+		$Control/DayRules.text_generations()
+	elif str(Scriptwriter.CurrentLevel) == "LVL3":
+		$Control/Dossier.visible = false
+	elif str(Scriptwriter.CurrentLevel) != "LVL1" or str(Scriptwriter.CurrentLevel) != "LVL2" or str(Scriptwriter.CurrentLevel) != "LVL3":
+		$Control/DayRules.text_generations()
+		$Control/DayRules/Passport/LoanRating/Description2.text = "none"
+	
+
+
+
+func spawn():
+	var scene = load("res://Scenes/CharacterControl.tscn")
+	var card = scene.instance()
+	add_child_below_node($Control, card, true)
+
+func spawn_dice():
+	var scene = load("res://Scenes/Dice.tscn")
+	var card = scene.instance()
+	add_child_below_node($Control, card, true)
+
+func spawn_cardmix():
+	var scene = load("res://Scenes/thimbles.tscn")
+	var card = scene.instance()
+	add_child_below_node($Control, card, true)
+
+func spawn_roulette():
+	var scene = load("res://Scenes/Roulette.tscn")
+	var card = scene.instance()
+	add_child_below_node($Control, card, true)
+
+func spawn_pendulum():
+	var scene = load("res://Scenes/Pendulum.tscn")
+	var card = scene.instance()
+	add_child_below_node($Control, card, true)
+
+func spawn_card_delivery():
+	var scene = load("res://Scenes/CardDelivery.tscn")
+	var card = scene.instance()
+	add_child_below_node($Control/BalanceGUI, card, true)
+
+func background_fade():
+	$AnimationPlayer.play("FadeBackGround")
+
+
+func restart_game():
+	Scriptwriter.FirstCard = true
+	Scriptwriter.level_massive_generator()
+	if get_tree().change_scene("res://Scenes/StartMenu.tscn") != OK:
+		print ("An unexpected error occured when trying to switch to the Readme scene (StartMenu)")
+
+
+func win_the_game():
+	if get_tree().change_scene("res://Scenes/WinScene.tscn") != OK:
+		print ("An unexpected error occured when trying to switch to the Readme scene (WinScene)")
+
+func win_the_level():
+	get_tree().call_group("CharacterControl", "queue_free")
+	$Control/AnimationPlayer.play("LevelComplete")
+	if Scriptwriter.level_was_choosen >= Scriptwriter.levels_complete:
+		Scriptwriter.levels_complete = Scriptwriter.levels_complete +1
+	
+
+func _on_CharacterControl_input_event(_viewport, event, _shape_idx):
+	if event.is_action_pressed("ui_touch"):
+		get_tree().set_input_as_handled()
+		previous_mouse_position = event.position
+		is_dragging = true
+
+
+
+func _on_AnimationPlayer_animation_finished(_LevelComplete):
+	$Control/AnimationPlayer.play("TapTextPulse")
+
+
+func _on_LevelCompleteTap_released():
+	if get_tree().change_scene("res://Scenes/LevelChooseScreen.tscn") != OK:
+		print ("An unexpected error occured when trying to switch to the Readme scene (LevelChooseScreen)")
+
+
+func _on_AnimationPlayer_animation_started(_LevelComplete):
+	get_tree().call_group("Ivent", "queue_free")
+
+
+func _on_AnimationPlayer2_animation_finished(_Appearance):
+	spawn()
+
+
+func _on_TouchScreenButton_pressed():
+	$Control/DossierButton/AnimationPlayer.play("MekaPassportBig")
+
+
+func _on_TouchScreenButton_released():
+	$Control/DossierButton/AnimationPlayer.play("MekaPassportSmall")
+
+
+func _on_DayRulesButton_pressed():
+	$Control/DayRulesButton/AnimationPlayer.play("MakeDayRullesBig")
+
+
+func _on_DayRulesButton_released():
+	$Control/DayRulesButton/AnimationPlayer.play("MakeDayRullesSmall")

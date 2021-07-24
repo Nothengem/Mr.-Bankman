@@ -1,0 +1,336 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Scenes/Dice.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Dice2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Resources/GFX/CharacterCardBG.png" type="Texture" id=3]
+[ext_resource path="res://Resources/GFX/Interface/Font/Card.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Resources/GFX/Interface/Font/JetBrainsMono-VariableFont_wght.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Resources/GFX/Dice/Dice.tres" type="Texture" id=6]
+[ext_resource path="res://Resources/GFX/Dice/Dice1.png" type="Texture" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="Theme" id=2]
+ItemList/colors/font_color = Color( 0.63, 0.63, 0.63, 1 )
+ItemList/colors/font_color_selected = Color( 1, 1, 1, 1 )
+ItemList/colors/guide_color = Color( 0, 0, 0, 0.1 )
+ItemList/constants/hseparation = 4
+ItemList/constants/icon_margin = 4
+ItemList/constants/line_separation = 2
+ItemList/constants/vseparation = 2
+ItemList/fonts/font = null
+ItemList/styles/bg = SubResource( 1 )
+ItemList/styles/bg_focus = null
+ItemList/styles/cursor = null
+ItemList/styles/cursor_unfocused = null
+ItemList/styles/selected = null
+ItemList/styles/selected_focus = null
+
+[sub_resource type="DynamicFont" id=3]
+size = 70
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 5 )
+
+[sub_resource type="Animation" id=4]
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Button:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("NinePatchRect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ false ],
+"method": "set_process_input"
+}, {
+"args": [ true ],
+"method": "set_process_input"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:rect_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Lose"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("NinePatchRect/CenterContainer/Label:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Win"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("NinePatchRect/CenterContainer/Label:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 1, 0.345098, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 1, 0.345098, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 1, 0.345098, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 1, 0.345098, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 1, 0.345098, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("NinePatchRect/CenterContainer/VBoxContainer/HBoxContainer/Dice:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ), ExtResource( 6 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("NinePatchRect/CenterContainer/VBoxContainer/HBoxContainer/Dice2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ), ExtResource( 6 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("NinePatchRect/CenterContainer/VBoxContainer/HBoxContainer2/Dice3:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ), ExtResource( 6 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("NinePatchRect/CenterContainer/VBoxContainer/HBoxContainer2/Dice4:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ), ExtResource( 6 ) ]
+}
+
+[node name="DiceScene" type="Control" groups=[
+"Dice",
+"Ivent",
+]]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 828, 828 )
+rect_scale = Vector2( 1.2, 1.2 )
+rect_pivot_offset = Vector2( 540, 960 )
+mouse_filter = 2
+theme = SubResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -402.0
+margin_top = -402.0
+margin_right = 402.0
+margin_bottom = 402.0
+rect_pivot_offset = Vector2( 402, 402 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect"]
+anchor_left = 0.0365672
+anchor_top = 0.0365673
+anchor_right = 0.963433
+anchor_bottom = 0.963433
+margin_left = -41.4
+margin_top = -41.4
+margin_right = 41.4
+margin_bottom = 41.4
+rect_min_size = Vector2( 828, 828 )
+rect_scale = Vector2( 0.9, 0.9 )
+rect_pivot_offset = Vector2( 414, 414 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/CenterContainer"]
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 816.0
+margin_bottom = 816.0
+rect_min_size = Vector2( 804, 804 )
+rect_pivot_offset = Vector2( 402, 402 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/CenterContainer/VBoxContainer"]
+margin_right = 804.0
+margin_bottom = 400.0
+rect_pivot_offset = Vector2( 402, 200 )
+
+[node name="Dice" parent="NinePatchRect/CenterContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 400.0
+margin_bottom = 400.0
+rect_pivot_offset = Vector2( -1398.13, 1706.79 )
+
+[node name="Dice2" parent="NinePatchRect/CenterContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 404.0
+margin_right = 804.0
+margin_bottom = 400.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="NinePatchRect/CenterContainer/VBoxContainer"]
+margin_top = 404.0
+margin_right = 804.0
+margin_bottom = 804.0
+rect_pivot_offset = Vector2( 402, 200 )
+
+[node name="Dice3" parent="NinePatchRect/CenterContainer/VBoxContainer/HBoxContainer2" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 400.0
+margin_bottom = 400.0
+
+[node name="Dice4" parent="NinePatchRect/CenterContainer/VBoxContainer/HBoxContainer2" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 404.0
+margin_right = 804.0
+margin_bottom = 400.0
+
+[node name="Label" type="Label" parent="NinePatchRect/CenterContainer"]
+visible = false
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 393.0
+margin_top = 367.0
+margin_right = 435.0
+margin_bottom = 460.0
+custom_fonts/font = SubResource( 3 )
+text = "4"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+visible = false
+anchor_left = 0.314815
+anchor_top = 0.722917
+anchor_right = 0.685185
+anchor_bottom = 0.775
+custom_fonts/font = ExtResource( 4 )
+text = "Мне повезет"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Apperiance" type="AnimationPlayer" parent="."]
+anims/Appearance = SubResource( 4 )
+
+[node name="Lose" type="AnimationPlayer" parent="."]
+anims/Lose = SubResource( 5 )
+
+[node name="Win" type="AnimationPlayer" parent="."]
+anims/Win = SubResource( 6 )
+
+[node name="RollDice" type="AnimationPlayer" parent="."]
+anims/RollDice = SubResource( 7 )
+
+[node name="RollDice2" type="AnimationPlayer" parent="."]
+anims/RollDice = SubResource( 8 )
+
+[node name="RollDice3" type="AnimationPlayer" parent="."]
+anims/RollDice = SubResource( 9 )
+
+[node name="RollDice4" type="AnimationPlayer" parent="."]
+anims/RollDice = SubResource( 10 )
+
+[connection signal="texture_changed" from="NinePatchRect/CenterContainer/VBoxContainer/HBoxContainer/Dice" to="." method="_on_Dice_texture_changed"]
+[connection signal="texture_changed" from="NinePatchRect/CenterContainer/VBoxContainer/HBoxContainer/Dice2" to="." method="_on_Dice2_texture_changed"]
+[connection signal="texture_changed" from="NinePatchRect/CenterContainer/VBoxContainer/HBoxContainer2/Dice3" to="." method="_on_Dice3_texture_changed"]
+[connection signal="texture_changed" from="NinePatchRect/CenterContainer/VBoxContainer/HBoxContainer2/Dice4" to="." method="_on_Dice4_texture_changed"]
+[connection signal="button_up" from="Button" to="." method="_on_Button_button_up"]
+[connection signal="animation_finished" from="Lose" to="." method="_on_Lose_animation_finished"]
+[connection signal="animation_finished" from="Win" to="." method="_on_Win_animation_finished"]
+[connection signal="animation_finished" from="RollDice" to="." method="_on_RollDice_animation_finished"]
+[connection signal="animation_finished" from="RollDice2" to="." method="_on_RollDice2_animation_finished"]
+[connection signal="animation_finished" from="RollDice3" to="." method="_on_RollDice3_animation_finished"]
+[connection signal="animation_finished" from="RollDice4" to="." method="_on_RollDice4_animation_finished"]
