@@ -13,7 +13,7 @@ enum {
 
 const DATA = {
 	
-	"MrBankman": [ "Head1", "Neck1", "Shirt1", "Eyebrows1", "Eyes1", "Forehead0", "Ears1", "Jowls0", "Glasses0", "Mouth1", "Hair0", "Nose3"],
+	"MrBankman": [ "Head1", "Neck1", "Shirt1", "Eyebrows1", "Eyes1", "Forehead0", "Ears1", "Jowls1", "Glasses0", "Mouth1", "Hair1", "Nose3"],
 	
 	"Dictor": [ "Head1", "Neck1", "Shirt1", "Eyebrows1", "Eyes1", "Forehead0", "Ears1", "Jowls0", "Glasses0", "Mouth1", "Hair0", "Nose3"],
 	

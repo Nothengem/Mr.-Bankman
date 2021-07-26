@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/body_0010_Слой-6.png-124a3ccd473de593c647fbdb1b8b777d.stex"
+path="res://.import/Eyes1 — копия.png-2a074b88d9477ac61a5d456849e8a81b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/GFX/CharacterCotaint/Shirt/body_0010_Слой-6.png"
-dest_files=[ "res://.import/body_0010_Слой-6.png-124a3ccd473de593c647fbdb1b8b777d.stex" ]
+source_file="res://Resources/GFX/CharacterCotaint/Eyes/Eyes1 — копия.png"
+dest_files=[ "res://.import/Eyes1 — копия.png-2a074b88d9477ac61a5d456849e8a81b.stex" ]
 
 [params]
 

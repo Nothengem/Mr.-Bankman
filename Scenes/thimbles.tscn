@@ -74,15 +74,15 @@ position = Vector2( 890, 875 )
 [node name="MiniCards" type="Node" parent="."]
 
 [node name="MiniCard1" parent="MiniCards" instance=ExtResource( 1 )]
-position = Vector2( -200, 875 )
+position = Vector2( 185, 875 )
 z_index = 1
 
 [node name="MiniCard2" parent="MiniCards" instance=ExtResource( 1 )]
-position = Vector2( 537, -340 )
+position = Vector2( 537, 875 )
 texture = ExtResource( 3 )
 
 [node name="MiniCard3" parent="MiniCards" instance=ExtResource( 1 )]
-position = Vector2( 1300, 875 )
+position = Vector2( 890, 875 )
 texture = ExtResource( 4 )
 
 [node name="Tween" type="Tween" parent="MiniCards"]
