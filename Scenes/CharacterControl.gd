@@ -55,7 +55,7 @@ var middle_position = false
 func _ready():
 	get_tree().call_group("Dossier", "dossier_update")
 	Animator.play("Apperiance")
-	start_position = screensize/2
+	start_position = (screensize/2)*2.5
 	print(start_position)
 	leftxposition = Vector2(-start_position.x, 0)
 	rightxposition = Vector2(start_position.x, 0)
@@ -93,7 +93,6 @@ func funcional_blocking():
 
 
 func ready_NextCardLose_helper():
-	print("исполняется")
 	if Scriptwriter.Heath_var <= 0:
 		Scriptwriter.NextCardInfo = Scriptwriter.CardDataBase.DATA.get("LooseTopHealth")
 	elif Scriptwriter.Law_var <= 0:
@@ -246,7 +245,6 @@ func choosedone_next_card_left():
 	
 	if Scriptwriter.NextCardLeft == "Random" and Scriptwriter.CardType != "Tutorial":
 		Scriptwriter.victory_count = int(Scriptwriter.victory_count) + 1
-		print(Scriptwriter.victory_count)
 	
 	if Scriptwriter.victory_count < Scriptwriter.count_to_victory:
 		if Scriptwriter.NextCardLeft != "Ivent":
@@ -261,7 +259,6 @@ func choosedone_next_card_left():
 func choosedone_next_card_right():
 	if Scriptwriter.NextCardRight == "Random" and Scriptwriter.CardType != "Tutorial":
 		Scriptwriter.victory_count = int(Scriptwriter.victory_count) + 1
-		print(Scriptwriter.victory_count)
 	
 	if Scriptwriter.victory_count < Scriptwriter.count_to_victory:
 			
@@ -299,8 +296,8 @@ func choosedone_loose():
 
 func _input(event):
 	if InputEventScreenTouch:
-		var a = start_position.x + 100
-		var b = start_position.x - 100
+		var a = start_position.x + (start_position.x/2)
+		var b = start_position.x - (start_position.x/2)
 		if position.x > a:
 			right_position = true
 			left_position = false
@@ -433,7 +430,7 @@ func character_card_released():
 		
 	if position.x < start_position.x +200 and position.x > start_position.x -200:
 		$Tween.interpolate_property(thisnode, "position", thisnode.position, 
-		(start_position + Vector2(0, 162)), 1.2, Tween.TRANS_ELASTIC, Tween.EASE_OUT)
+		Vector2(540, 1100), 1.2, Tween.TRANS_ELASTIC, Tween.EASE_OUT)
 		$Tween.start()
 		$Tween.interpolate_property(thisnode, "rotation_degrees", thisnode.rotation_degrees, 
 		0, 1.2, Tween.TRANS_ELASTIC, Tween.EASE_OUT)

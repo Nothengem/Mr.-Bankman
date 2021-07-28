@@ -111,6 +111,7 @@ texture = ExtResource( 3 )
 script = ExtResource( 19 )
 
 [node name="Character" parent="." instance=ExtResource( 5 )]
+position = Vector2( -6, -15 )
 
 [node name="IventPortrait" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -131,14 +132,15 @@ __meta__ = {
 }
 
 [node name="LeftChooseRect" type="NinePatchRect" parent="Control"]
-anchor_left = 1.22672e-05
-anchor_top = 9.8149e-06
-anchor_right = 0.714298
-anchor_bottom = 0.714295
+anchor_left = -0.0343792
+anchor_top = 0.0053008
+anchor_right = 0.679906
+anchor_bottom = 0.719586
 margin_left = -0.0103044
 margin_top = -0.00824452
 margin_right = 199.99
 margin_bottom = -100.008
+rect_scale = Vector2( 0.75, 0.75 )
 rect_pivot_offset = Vector2( 600, 0 )
 texture = ExtResource( 2 )
 __meta__ = {
@@ -163,13 +165,14 @@ __meta__ = {
 [node name="Tween" type="Tween" parent="Control/LeftChooseRect"]
 
 [node name="RightChooseRect" type="NinePatchRect" parent="Control"]
-anchor_left = 0.285715
-anchor_right = 0.285715
+anchor_left = 0.14318
+anchor_right = 0.14318
 anchor_bottom = 0.714286
 margin_left = 599.999
 margin_right = 1100.0
 margin_bottom = 200.0
 rect_rotation = 90.0
+rect_scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": true
