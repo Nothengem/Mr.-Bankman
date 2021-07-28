@@ -56,6 +56,7 @@ func _ready():
 	get_tree().call_group("Dossier", "dossier_update")
 	Animator.play("Apperiance")
 	start_position = screensize/2
+	print(start_position)
 	leftxposition = Vector2(-start_position.x, 0)
 	rightxposition = Vector2(start_position.x, 0)
 	

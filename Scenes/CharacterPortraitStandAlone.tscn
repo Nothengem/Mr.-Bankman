@@ -18,7 +18,7 @@
 [node name="Character" type="Sprite" groups=[
 "CharacterControl",
 ]]
-scale = Vector2( 0.993, 0.993 )
+scale = Vector2( 0.35, 0.35 )
 script = ExtResource( 14 )
 
 [node name="Neck" type="Sprite" parent="."]

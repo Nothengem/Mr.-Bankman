@@ -147,6 +147,10 @@ script = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="CharacterCard" parent="." instance=ExtResource( 1 )]
+scale = Vector2( 1, 1 )
+
+[node name="Character" parent="CharacterCard" index="0"]
+position = Vector2( 0, -20 )
 
 [node name="LeftChooseRect" parent="CharacterCard/Control" index="0"]
 modulate = Color( 1, 1, 1, 0 )
@@ -171,6 +175,7 @@ anims/RChooseText = SubResource( 4 )
 wait_time = 0.01
 
 [node name="MainCardsBack" parent="." instance=ExtResource( 3 )]
+visible = false
 margin_left = -419.967
 margin_top = -422.51
 margin_right = 420.033
