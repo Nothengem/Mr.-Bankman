@@ -5,6 +5,8 @@ var is_dragging = false
 
 
 func _ready():
+	Scriptwriter.MainCardsBack = Vector2($Control.rect_pivot_offset.x, $Control.rect_pivot_offset.y*1.15)
+	
 	Scriptwriter.FirstCard = true
 	$Control/AnimationPlayer2.play("Appearance")
 	

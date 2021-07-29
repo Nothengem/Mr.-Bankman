@@ -125,14 +125,17 @@ onready var dossierCreditRatingDiction = ["Высокий", "Средний", "�
 
 #переменные для правил уровня
 onready var RulesDataBase = preload("res://DataBase/RulesDataBase.gd")
-var ruleAgeMin
-var ruleAgeMax
-var ruleSex
-var ruleNational
-var ruleCreditHistory
-var ruleBlackList
-var ruleLoanRating
-var ruleOfLevel
+onready var ruleAgeMin
+onready var ruleAgeMax
+onready var ruleSex
+onready var ruleNational
+onready var ruleCreditHistory
+onready var ruleBlackList
+onready var ruleLoanRating
+onready var ruleOfLevel
+
+#переменная в которой буду хранить позицию центра карточки
+onready var MainCardsBack
 
 
 #переменные активации правил

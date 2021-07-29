@@ -55,7 +55,8 @@ var middle_position = false
 func _ready():
 	get_tree().call_group("Dossier", "dossier_update")
 	Animator.play("Apperiance")
-	start_position = (screensize/2)*2.5
+	start_position = Scriptwriter.MainCardsBack
+#	(screensize/2)*2.5
 	print(start_position)
 	leftxposition = Vector2(-start_position.x, 0)
 	rightxposition = Vector2(start_position.x, 0)
@@ -430,7 +431,7 @@ func character_card_released():
 		
 	if position.x < start_position.x +200 and position.x > start_position.x -200:
 		$Tween.interpolate_property(thisnode, "position", thisnode.position, 
-		Vector2(540, 1100), 1.2, Tween.TRANS_ELASTIC, Tween.EASE_OUT)
+		Scriptwriter.MainCardsBack, 1.2, Tween.TRANS_ELASTIC, Tween.EASE_OUT)
 		$Tween.start()
 		$Tween.interpolate_property(thisnode, "rotation_degrees", thisnode.rotation_degrees, 
 		0, 1.2, Tween.TRANS_ELASTIC, Tween.EASE_OUT)
@@ -438,6 +439,7 @@ func character_card_released():
 	get_tree().call_group("BalanceGUI", "progress_pre_choose_animation_return")
 
 
+#Vector2(540, 1100) если что удалить. это переменная куда возвращаться карточке при отпускании
 
 func to_see_losecard():
 	$CharacterCard/CharacterPortrait.visible = true
