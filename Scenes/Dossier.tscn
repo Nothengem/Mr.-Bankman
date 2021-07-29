@@ -360,4 +360,4 @@ __meta__ = {
 
 [node name="Character" parent="Passport/Photo" instance=ExtResource( 2 )]
 position = Vector2( 127.253, 127.771 )
-scale = Vector2( 0.3, 0.3 )
+scale = Vector2( 0.1, 0.1 )

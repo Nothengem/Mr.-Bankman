@@ -68,6 +68,7 @@ func change_proportions_left():
 	
 
 
+
 func change_proportions_ivent_loose_dice():
 	Scriptwriter.Heath_var = int(Scriptwriter.Heath_var + Scriptwriter.IventInfo[3])
 	animate_value_health(HealthProgress.value, Scriptwriter.Heath_var)
@@ -209,23 +210,23 @@ func yellow_indicatos_color_right():
 	if !Scriptwriter.HealthRightChoose == 0:
 		$Tween.interpolate_property(HealthProgress, "rect_scale", HealthProgress.rect_scale, scale_max, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 		$Tween.start()
-		$Tween.interpolate_property(HealthProgress, "self_modulate", HealthProgress.self_modulate, Color("ffd700"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
-		$Tween.start()
+#		$Tween.interpolate_property(HealthProgress, "tint_progress", HealthProgress.tint_progress, Color("ffd700"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+#		$Tween.start()
 	if !Scriptwriter.LawRightChoose == 0:
 		$Tween.interpolate_property(LawProgress, "rect_scale", LawProgress.rect_scale, scale_max, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 		$Tween.start()
-		$Tween.interpolate_property(LawProgress, "self_modulate", LawProgress.self_modulate, Color("ffd700"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
-		$Tween.start()
+#		$Tween.interpolate_property(LawProgress, "tint_progress", LawProgress.tint_progress, Color("ffd700"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+#		$Tween.start()
 	if !Scriptwriter.BanditismRightChoose == 0:
 		$Tween.interpolate_property(BanditismProgress, "rect_scale", BanditismProgress.rect_scale, scale_max, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 		$Tween.start()
-		$Tween.interpolate_property(BanditismProgress, "self_modulate", BanditismProgress.self_modulate, Color("ffd700"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
-		$Tween.start()
+#		$Tween.interpolate_property(BanditismProgress, "tint_progress", BanditismProgress.tint_progress, Color("ffd700"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+#		$Tween.start()
 	if !Scriptwriter.LuckRightChoose == 0:
 		$Tween.interpolate_property(LuckProgress, "rect_scale", LuckProgress.rect_scale, scale_max, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 		$Tween.start()
-		$Tween.interpolate_property(LuckProgress, "self_modulate", LuckProgress.self_modulate, Color("ffd700"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
-		$Tween.start()
+#		$Tween.interpolate_property(LuckProgress, "tint_progress", LuckProgress.tint_progress, Color("ffd700"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+#		$Tween.start()
 
 
 
@@ -238,23 +239,23 @@ func yellow_indicatos_color_left():
 	if !Scriptwriter.HealthLeftChoose == 0:
 		$Tween.interpolate_property(HealthProgress, "rect_scale", HealthProgress.rect_scale, scale_max, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 		$Tween.start()
-		$Tween.interpolate_property(HealthProgress, "self_modulate", HealthProgress.self_modulate, Color("ffd700"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
-		$Tween.start()
+#		$Tween.interpolate_property(HealthProgress, "tint_progress", HealthProgress.tint_progress, Color("ffd700"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+#		$Tween.start()
 	if !Scriptwriter.LawLeftChoose == 0:
 		$Tween.interpolate_property(LawProgress, "rect_scale", LawProgress.rect_scale, scale_max, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 		$Tween.start()
-		$Tween.interpolate_property(LawProgress, "self_modulate", LawProgress.self_modulate, Color("ffd700"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
-		$Tween.start()
+#		$Tween.interpolate_property(LawProgress, "tint_progress", LawProgress.tint_progress, Color("ffd700"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+#		$Tween.start()
 	if !Scriptwriter.BanditismLeftChoose == 0:
 		$Tween.interpolate_property(BanditismProgress, "rect_scale", BanditismProgress.rect_scale, scale_max, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 		$Tween.start()
-		$Tween.interpolate_property(BanditismProgress, "self_modulate", BanditismProgress.self_modulate, Color("ffd700"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
-		$Tween.start()
+#		$Tween.interpolate_property(BanditismProgress, "tint_progress", BanditismProgress.tint_progress, Color("ffd700"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+#		$Tween.start()
 	if !Scriptwriter.LuckLeftChoose == 0:
 		$Tween.interpolate_property(LuckProgress, "rect_scale", LuckProgress.rect_scale, scale_max, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 		$Tween.start()
-		$Tween.interpolate_property(LuckProgress, "self_modulate", LuckProgress.self_modulate, Color("ffd700"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
-		$Tween.start()
+#		$Tween.interpolate_property(LuckProgress, "tint_progress", LuckProgress.tint_progress, Color("ffd700"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+#		$Tween.start()
 
 
 

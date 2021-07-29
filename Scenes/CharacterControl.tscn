@@ -11,6 +11,7 @@ extents = Vector2( 835.374, 1150.14 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Apperiance"
+step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
@@ -18,7 +19,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 0.9 ),
+"times": PoolRealArray( 0, 0.4, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 540, 1122 ), Vector2( 540, 1000 ), Vector2( 540, 1122 ) ]
@@ -30,7 +31,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.4, 0.5, 0.8 ),
+"times": PoolRealArray( 0.5, 0.6, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, -25.0, 0.0 ]
@@ -42,7 +43,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.5, 0.6, 0.7 ),
+"times": PoolRealArray( 0.6, 0.7, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1e-05, 1 ), Vector2( 1, 1 ) ]
@@ -75,6 +76,18 @@ tracks/4/keys = {
 "args": [ true ],
 "method": "set_process_input"
 } ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CharacterCard/CardShadow:rect_scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.7, 0.7 ), Vector2( 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -139,17 +152,27 @@ tracks/1/keys = {
 "CharacterControl",
 ]]
 position = Vector2( 540, 1122 )
+scale = Vector2( 1, 1 )
 script = ExtResource( 2 )
 
 [node name="NeedTo" parent="." instance=ExtResource( 4 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -1200.0
+margin_top = -840.0
+margin_right = 1200.0
+margin_bottom = 840.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="CharacterCard" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 0 )
 scale = Vector2( 1, 1 )
 
-[node name="Character" parent="CharacterCard" index="0"]
+[node name="Character" parent="CharacterCard" index="2"]
 position = Vector2( 0, -20 )
 
 [node name="LeftChooseRect" parent="CharacterCard/Control" index="0"]
@@ -175,11 +198,16 @@ anims/RChooseText = SubResource( 4 )
 wait_time = 0.01
 
 [node name="MainCardsBack" parent="." instance=ExtResource( 3 )]
-visible = false
-margin_left = -419.967
-margin_top = -422.51
-margin_right = 420.033
-margin_bottom = 427.49
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -335.0
+margin_top = -465.0
+margin_right = 335.0
+margin_bottom = 465.0
+rect_min_size = Vector2( 670, 930 )
+rect_pivot_offset = Vector2( 335, 465 )
 texture = ExtResource( 5 )
 
 [connection signal="input_event" from="." to="." method="_on_CharacterControl_input_event"]
