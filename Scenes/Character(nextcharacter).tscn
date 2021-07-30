@@ -113,8 +113,7 @@ offset = Vector2( 1173.53, 189.139 )
 script = ExtResource( 19 )
 
 [node name="CardShadow" type="NinePatchRect" parent="."]
-modulate = Color( 1, 1, 1, 0.490196 )
-self_modulate = Color( 0.0470588, 0.0470588, 0.0470588, 1 )
+modulate = Color( 1, 1, 1, 0.32549 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

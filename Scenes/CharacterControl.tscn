@@ -152,7 +152,6 @@ tracks/1/keys = {
 "CharacterControl",
 ]]
 position = Vector2( 540, 1122 )
-scale = Vector2( 1, 1 )
 script = ExtResource( 2 )
 
 [node name="NeedTo" parent="." instance=ExtResource( 4 )]
