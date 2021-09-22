@@ -14,7 +14,7 @@
 [ext_resource path="res://Resources/GFX/Interface/Font/JetBrainsMono-VariableFont_wght.ttf" type="DynamicFontData" id=12]
 [ext_resource path="res://Shaders/BackGroundShader.tres" type="Texture" id=13]
 
-[sub_resource type="Shader" id=17]
+[sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
 render_mode unshaded;
 uniform float mix_amount = 1.0;
@@ -31,18 +31,18 @@ void fragment ()
 	COLOR.a = input_color.a;
 }"
 
-[sub_resource type="ShaderMaterial" id=18]
-shader = SubResource( 17 )
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
 shader_param/mix_amount = 1.0
 shader_param/gradient = ExtResource( 13 )
 
-[sub_resource type="DynamicFont" id=19]
+[sub_resource type="DynamicFont" id=3]
 size = 20
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 12 )
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=4]
 step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("Control2/NinePatchRect/IndicatorBox/HBoxContainer/HealthProgress:tint_progress")
@@ -57,7 +57,7 @@ tracks/0/keys = {
 "values": [ Color( 0.796078, 0.243137, 0.501961, 1 ), Color( 0.333333, 0.176471, 0.854902, 1 ), Color( 0.796078, 0.243137, 0.501961, 1 ) ]
 }
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=5]
 length = 0.4
 step = 0.01
 tracks/0/type = "value"
@@ -73,7 +73,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="Animation" id=6]
 length = 0.4
 step = 0.01
 tracks/0/type = "value"
@@ -89,7 +89,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 1, 0.203922, 1 ), Color( 0, 1, 0.203922, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=7]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Control2/NinePatchRect/IndicatorBox/HBoxContainer/HealthProgress:self_modulate")
@@ -104,7 +104,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 0.772549, 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=24]
+[sub_resource type="Animation" id=8]
 step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("Control2/NinePatchRect/IndicatorBox/HBoxContainer/LawProgress:tint_progress")
@@ -119,7 +119,7 @@ tracks/0/keys = {
 "values": [ Color( 0.796078, 0.243137, 0.501961, 1 ), Color( 0.333333, 0.176471, 0.854902, 1 ), Color( 0.796078, 0.243137, 0.501961, 1 ) ]
 }
 
-[sub_resource type="Animation" id=25]
+[sub_resource type="Animation" id=9]
 length = 0.4
 step = 0.01
 tracks/0/type = "value"
@@ -135,7 +135,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=26]
+[sub_resource type="Animation" id=10]
 length = 0.4
 step = 0.01
 tracks/0/type = "value"
@@ -151,7 +151,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 1, 0.203922, 1 ), Color( 0, 1, 0.203922, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=27]
+[sub_resource type="Animation" id=11]
 length = 0.4
 step = 0.01
 tracks/0/type = "value"
@@ -167,7 +167,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=28]
+[sub_resource type="Animation" id=12]
 length = 0.4
 step = 0.01
 tracks/0/type = "value"
@@ -183,7 +183,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 1, 0.203922, 1 ), Color( 0, 1, 0.203922, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=29]
+[sub_resource type="Animation" id=13]
 step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("Control2/NinePatchRect/IndicatorBox/HBoxContainer/BanditismProgress:tint_progress")
@@ -198,7 +198,7 @@ tracks/0/keys = {
 "values": [ Color( 0.796078, 0.243137, 0.501961, 1 ), Color( 0.333333, 0.176471, 0.854902, 1 ), Color( 0.796078, 0.243137, 0.501961, 1 ) ]
 }
 
-[sub_resource type="Animation" id=30]
+[sub_resource type="Animation" id=14]
 step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("Control2/NinePatchRect/IndicatorBox/HBoxContainer/LuckProgress:tint_progress")
@@ -265,7 +265,7 @@ __meta__ = {
 }
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control2"]
-material = SubResource( 18 )
+material = SubResource( 2 )
 anchor_left = -0.012037
 anchor_top = -0.0114583
 anchor_right = 1.0213
@@ -286,9 +286,9 @@ anchor_left = 0.129031
 anchor_top = 0.0322576
 anchor_right = 5.78573
 anchor_bottom = 0.734263
-margin_left = 25.0
+margin_left = -10.0001
 margin_top = -2.28882e-05
-margin_right = 587.4
+margin_right = 1326.4
 margin_bottom = 113.75
 rect_scale = Vector2( 0.08, 0.08 )
 mouse_filter = 2
@@ -297,11 +297,11 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control2/NinePatchRect/IndicatorBox"]
-margin_right = 2316.0
+margin_right = 3090.0
 margin_bottom = 549.0
 rect_pivot_offset = Vector2( 1158, 275 )
 mouse_filter = 2
-custom_constants/separation = 40
+custom_constants/separation = 298
 alignment = 1
 
 [node name="HealthProgress" type="TextureProgress" parent="Control2/NinePatchRect/IndicatorBox/HBoxContainer"]
@@ -320,8 +320,8 @@ tint_progress = Color( 0.333333, 0.176471, 0.854902, 1 )
 one_shot = true
 
 [node name="LawProgress" type="TextureProgress" parent="Control2/NinePatchRect/IndicatorBox/HBoxContainer"]
-margin_left = 589.0
-margin_right = 1138.0
+margin_left = 847.0
+margin_right = 1396.0
 margin_bottom = 549.0
 rect_min_size = Vector2( 62, 62 )
 rect_pivot_offset = Vector2( 275, 275 )
@@ -339,8 +339,8 @@ __meta__ = {
 one_shot = true
 
 [node name="BanditismProgress" type="TextureProgress" parent="Control2/NinePatchRect/IndicatorBox/HBoxContainer"]
-margin_left = 1178.0
-margin_right = 1727.0
+margin_left = 1694.0
+margin_right = 2243.0
 margin_bottom = 549.0
 rect_min_size = Vector2( 62, 62 )
 rect_pivot_offset = Vector2( 275, 275 )
@@ -358,8 +358,8 @@ __meta__ = {
 one_shot = true
 
 [node name="LuckProgress" type="TextureProgress" parent="Control2/NinePatchRect/IndicatorBox/HBoxContainer"]
-margin_left = 1767.0
-margin_right = 2316.0
+margin_left = 2541.0
+margin_right = 3090.0
 margin_bottom = 549.0
 rect_min_size = Vector2( 62, 62 )
 rect_pivot_offset = Vector2( 275, 275 )
@@ -393,7 +393,7 @@ anchor_left = 0.0689655
 anchor_top = 0.868333
 anchor_right = 0.931035
 anchor_bottom = 0.966667
-custom_fonts/font = SubResource( 19 )
+custom_fonts/font = SubResource( 3 )
 text = "Количество клиентов:
 10/20"
 align = 1
@@ -405,23 +405,23 @@ __meta__ = {
 [node name="Tween" type="Tween" parent="."]
 
 [node name="AnimPlayerHealth" type="AnimationPlayer" parent="."]
-anims/ColorControl = SubResource( 20 )
-anims/HealthMinus = SubResource( 21 )
-anims/HealthPlus = SubResource( 22 )
-anims/Hold = SubResource( 23 )
+anims/ColorControl = SubResource( 4 )
+anims/HealthMinus = SubResource( 5 )
+anims/HealthPlus = SubResource( 6 )
+anims/Hold = SubResource( 7 )
 
 [node name="AnimPlayerLaw" type="AnimationPlayer" parent="."]
-anims/ColorControl = SubResource( 24 )
-anims/LawMinus = SubResource( 25 )
-anims/LawPlus = SubResource( 26 )
+anims/ColorControl = SubResource( 8 )
+anims/LawMinus = SubResource( 9 )
+anims/LawPlus = SubResource( 10 )
 
 [node name="AnimPlayerBanditism" type="AnimationPlayer" parent="."]
-anims/BanditismMinus = SubResource( 27 )
-anims/BanditismPlus = SubResource( 28 )
-anims/ColorControl = SubResource( 29 )
+anims/BanditismMinus = SubResource( 11 )
+anims/BanditismPlus = SubResource( 12 )
+anims/ColorControl = SubResource( 13 )
 
 [node name="AnimPlayerLuck" type="AnimationPlayer" parent="."]
-anims/ColorControl = SubResource( 30 )
+anims/ColorControl = SubResource( 14 )
 anims/LuckMinus = SubResource( 15 )
 anims/LuckPlus = SubResource( 16 )
 

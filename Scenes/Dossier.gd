@@ -39,13 +39,13 @@ func random_name_generation():
 	
 	
 func dossier_update():
-	$Passport/Name/Parameter.text = Scriptwriter.dossierName
-	$Passport/Sex/Parameter.text = Scriptwriter.dossierSex
-	$Passport/Age/Parameter.text = str(Scriptwriter.dossierAge)
-	$Passport/Country/Parameter.text = Scriptwriter.dossierNational
-	$Passport/CreditHistory/Parameter.text = Scriptwriter.dossierCreditHistory
-	$Passport/BlackList/Parameter.text = Scriptwriter.dossierBlackList
-	$Passport/LoanRating/Parameter.text= Scriptwriter.dossierCreditRaiting
+	$Passport/MainHBox/ParametresHBox/StrokeZero/Name.text = Scriptwriter.dossierName
+	$Passport/MainHBox/ParametresHBox/StrokeOne/Sex/Parameter.text = Scriptwriter.dossierSex
+	$Passport/MainHBox/ParametresHBox/StrokeOne/Age/Parameter.text = str(Scriptwriter.dossierAge)
+#	$Passport/MainHBox/ParametresHBox/NameAndFlagVBox/Flag.text = Scriptwriter.dossierNational
+	$Passport/MainHBox/ParametresHBox/StrokeThree/Parameter.text = Scriptwriter.dossierCreditHistory
+	$Passport/MainHBox/ParametresHBox/StrokeTwo/BlackList/Parameter.text = Scriptwriter.dossierBlackList
+	$Passport/MainHBox/ParametresHBox/StrokeFour/LoanRating/Parameter.text= Scriptwriter.dossierCreditRaiting
 	
 	
 	if Scriptwriter.PhotoRule == true:

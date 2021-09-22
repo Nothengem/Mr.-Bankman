@@ -377,7 +377,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 106.645, 1750.64 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 106.645, 1750.64 ), Vector2( 0, 200 ) ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -893,7 +893,7 @@ texture = ExtResource( 11 )
 visible = false
 margin_left = 85.12
 margin_top = 90.48
-margin_right = -0.879883
+margin_right = -0.879944
 margin_bottom = 264.0
 rect_min_size = Vector2( 670, 930 )
 rect_pivot_offset = Vector2( 335, 465 )
@@ -915,7 +915,7 @@ texture = ExtResource( 11 )
 visible = false
 margin_left = 85.12
 margin_top = 90.48
-margin_right = -0.880005
+margin_right = -0.879944
 margin_bottom = 264.0
 rect_min_size = Vector2( 670, 930 )
 rect_pivot_offset = Vector2( 335, 465 )
@@ -924,10 +924,9 @@ texture = ExtResource( 11 )
 
 [node name="MainCardsBack2" parent="Control" instance=ExtResource( 9 )]
 visible = false
-margin_left = 85.12
-margin_top = 90.48
-margin_right = -0.879883
-margin_bottom = 264.0
+margin_top = 0.480042
+margin_right = -85.8799
+margin_bottom = 174.0
 rect_min_size = Vector2( 670, 930 )
 rect_pivot_offset = Vector2( 335, 465 )
 mouse_filter = 2
@@ -938,10 +937,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -335.0
-margin_top = -330.0
-margin_right = 335.0
-margin_bottom = 600.0
+margin_left = -420.0
+margin_top = -420.0
+margin_right = 250.0
+margin_bottom = 510.0
 rect_min_size = Vector2( 670, 930 )
 rect_pivot_offset = Vector2( 335, 465 )
 mouse_filter = 2
