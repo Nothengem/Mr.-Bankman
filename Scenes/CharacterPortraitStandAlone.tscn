@@ -95,6 +95,7 @@ __meta__ = {
 }
 
 [node name="Nose" type="Sprite" parent="FullHead"]
+position = Vector2( 0, -100 )
 scale = Vector2( 1.05, 1.05 )
 texture = ExtResource( 11 )
 __meta__ = {

@@ -42,7 +42,7 @@ func dossier_update():
 	$Passport/MainHBox/ParametresHBox/StrokeZero/Name.text = Scriptwriter.dossierName
 	$Passport/MainHBox/ParametresHBox/StrokeOne/Sex/Parameter.text = Scriptwriter.dossierSex
 	$Passport/MainHBox/ParametresHBox/StrokeOne/Age/Parameter.text = str(Scriptwriter.dossierAge)
-#	$Passport/MainHBox/ParametresHBox/NameAndFlagVBox/Flag.text = Scriptwriter.dossierNational
+	$Passport/MainHBox/PortraitVBox/HBoxContainer/Flag.texture = load("res://Resources/GFX/Dossier/Flag/" + Scriptwriter.dossierNational + ".png") 
 	$Passport/MainHBox/ParametresHBox/StrokeThree/Parameter.text = Scriptwriter.dossierCreditHistory
 	$Passport/MainHBox/ParametresHBox/StrokeTwo/BlackList/Parameter.text = Scriptwriter.dossierBlackList
 	$Passport/MainHBox/ParametresHBox/StrokeFour/LoanRating/Parameter.text= Scriptwriter.dossierCreditRaiting

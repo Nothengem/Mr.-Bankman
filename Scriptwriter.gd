@@ -118,7 +118,7 @@ onready var dossierBlackList
 onready var dossierCreditRaiting
 # массивы для формирования досье
 onready var dossierSexDiction = ["Мужской", "Женский"]
-onready var dossierNationalDiction = ["Россия", "Франция", "Германия", "Великобритания", "Италия", "Испания", "США", "Китай", "Япония", "ОАЭ", "Африка"]
+onready var dossierNationalDiction = ["Russia", "France", "Germany", "England", "Italy", "Spain", "USA", "China", "Japan", "UAE", "Africa", "India"]
 onready var dossierCreditHistoryDiction = ["Хорошая", "Плохая"]
 onready var dossierBlackListDiction = ["Чист", "Террорист", "Черный список"]
 onready var dossierCreditRatingDiction = ["Высокий", "Средний", "Низкий"]

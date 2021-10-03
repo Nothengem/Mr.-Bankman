@@ -93,10 +93,16 @@ __meta__ = {
 position = Vector2( 127.453, 115.971 )
 scale = Vector2( 0.1, 0.1 )
 
-[node name="Flag" type="TextureRect" parent="Passport/MainHBox/PortraitVBox"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Passport/MainHBox/PortraitVBox"]
 margin_top = 254.0
 margin_right = 260.0
 margin_bottom = 339.0
+alignment = 1
+
+[node name="Flag" type="TextureRect" parent="Passport/MainHBox/PortraitVBox/HBoxContainer"]
+margin_left = 59.0
+margin_right = 200.0
+margin_bottom = 85.0
 texture = ExtResource( 6 )
 
 [node name="ParametresHBox" type="VBoxContainer" parent="Passport/MainHBox"]
