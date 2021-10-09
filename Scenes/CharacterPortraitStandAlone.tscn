@@ -1,18 +1,18 @@
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Resources/GFX/CharacterCotaint/Bage/Bage1.png" type="Texture" id=1]
-[ext_resource path="res://Resources/GFX/CharacterCotaint/Head/Head10.png" type="Texture" id=2]
-[ext_resource path="res://Resources/GFX/CharacterCotaint/Ears/Ears7.png" type="Texture" id=3]
-[ext_resource path="res://Resources/GFX/CharacterCotaint/Mouth/Mouth4.png" type="Texture" id=4]
-[ext_resource path="res://Resources/GFX/CharacterCotaint/Eyes/Eyes15.png" type="Texture" id=5]
-[ext_resource path="res://Resources/GFX/CharacterCotaint/Hair/Hair10.png" type="Texture" id=6]
-[ext_resource path="res://Resources/GFX/CharacterCotaint/Eyebrows/Eyebrows12.png" type="Texture" id=7]
+[ext_resource path="res://Resources/GFX/CharacterCotaint/Head/Head4.png" type="Texture" id=2]
+[ext_resource path="res://Resources/GFX/CharacterCotaint/Eyebrows/Eyebrows2.png" type="Texture" id=3]
+[ext_resource path="res://Resources/GFX/CharacterCotaint/Eyes/Eyes10.png" type="Texture" id=4]
+[ext_resource path="res://Resources/GFX/CharacterCotaint/Nose/Nose5.png" type="Texture" id=5]
+[ext_resource path="res://Resources/GFX/CharacterCotaint/Ears/Ears4.png" type="Texture" id=6]
+[ext_resource path="res://Resources/GFX/CharacterCotaint/Jowls/Jowls3.png" type="Texture" id=7]
 [ext_resource path="res://Resources/GFX/CharacterCotaint/Glasses/Glasses1.png" type="Texture" id=8]
 [ext_resource path="res://Resources/GFX/CharacterCotaint/Forehead/Forehead1.png" type="Texture" id=9]
-[ext_resource path="res://Resources/GFX/CharacterCotaint/Jowls/Jowls0.png" type="Texture" id=10]
-[ext_resource path="res://Resources/GFX/CharacterCotaint/Nose/Nose16.png" type="Texture" id=11]
+[ext_resource path="res://Resources/GFX/CharacterCotaint/Shirt/Shirt5.png" type="Texture" id=10]
+[ext_resource path="res://Resources/GFX/CharacterCotaint/Hair/Hair14.png" type="Texture" id=11]
 [ext_resource path="res://Resources/GFX/CharacterCotaint/Neck/Neck5.png" type="Texture" id=12]
-[ext_resource path="res://Resources/GFX/CharacterCotaint/Shirt/Shirt11.png" type="Texture" id=13]
+[ext_resource path="res://Resources/GFX/CharacterCotaint/Mouth/Mouth11.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/CharacterPortraitStandAlone.gd" type="Script" id=14]
 
 [node name="Character" type="Sprite" groups=[
@@ -29,7 +29,7 @@ texture = ExtResource( 12 )
 
 [node name="Shirt" type="Sprite" parent="."]
 scale = Vector2( 1.05, 1.05 )
-texture = ExtResource( 13 )
+texture = ExtResource( 10 )
 
 [node name="Bage" type="Sprite" parent="."]
 visible = false
@@ -41,7 +41,7 @@ texture = ExtResource( 1 )
 
 [node name="Ears" type="Sprite" parent="FullHead"]
 scale = Vector2( 1.05, 1.05 )
-texture = ExtResource( 3 )
+texture = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -55,7 +55,7 @@ __meta__ = {
 
 [node name="Eyes" type="Sprite" parent="FullHead"]
 scale = Vector2( 1.05, 1.05 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -69,7 +69,7 @@ __meta__ = {
 
 [node name="Jowls" type="Sprite" parent="FullHead"]
 scale = Vector2( 1.05, 1.05 )
-texture = ExtResource( 10 )
+texture = ExtResource( 7 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -84,14 +84,14 @@ __meta__ = {
 
 [node name="Mouth" type="Sprite" parent="FullHead"]
 scale = Vector2( 1.05, 1.05 )
-texture = ExtResource( 4 )
+texture = ExtResource( 13 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Hair" type="Sprite" parent="FullHead"]
 scale = Vector2( 1.05, 1.05 )
-texture = ExtResource( 6 )
+texture = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -99,11 +99,11 @@ __meta__ = {
 [node name="Nose" type="Sprite" parent="FullHead"]
 position = Vector2( 0, -100 )
 scale = Vector2( 1.05, 1.05 )
-texture = ExtResource( 11 )
+texture = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Eyebrows" type="Sprite" parent="FullHead"]
 scale = Vector2( 1.05, 1.05 )
-texture = ExtResource( 7 )
+texture = ExtResource( 3 )

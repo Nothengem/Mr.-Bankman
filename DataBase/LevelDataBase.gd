@@ -9,7 +9,7 @@ enum {
 
 const DATA = {
 	"LVL4" : ["LoseCBUp", "LoseTeamBottom", "LoseTeamUp", "LoseCutomButton", "LoseCustomUp", "LoseMoneyBottom", "LoseMoneyUp",],
-	"LVL1" : ["CreditHomeForCar", "Credit700000", 
+	"LVL1" : ["Random23", "CreditHomeForCar", "Credit700000", 
 	"CreditFlatFix", "CreditRefinance", "CreditUniversity", "DepositUniversity", "DepositStolenCars", "DepositSelledFlat", 
 	"DepositMadRetired", "DepositRetired", "CardToShopping", "CardToAirways", "CardToSallary", "CardToDebt", 
 	"CardToChineseWhoWantToLearnLanguage", "InvestitionGreenInvestor", "InvestitionOldInvestor", "InvestitionOpen", 
@@ -21,7 +21,7 @@ const DATA = {
 	
 const TUTORIAL = {
 	"LVL4" : ["LoseCBBottom"],
-	"LVL1" : ["TutorLev1Card1"],
+	"LVL1" : ["Credit700000"],  #TutorLev1Card1
 	"LVL2" : ["TutorLev2Card1"],
 	"LVL3" : [],
 }

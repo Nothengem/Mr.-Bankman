@@ -288,7 +288,7 @@ func card_var_generator(): #ПОХОЖЕ Я ЭТУ ШТУКУ ЗАПУСКАЮ 2
 	elif CardType == "Characters" or CardType == "Tutorial":
 		portrait_variables_update()
 		
-	CardName = CardInfo[3] #Ввели в переменную текстовое значение имени карты из массива БД
+	CardName = CardInfo[3] #Ввели в переменную текстовое значение имени персонажа из массива БД
 	CardText = CardInfo[2] #Ввели в переменную текстовое значение текста карты из массива БД
 	CardRAnswer = CardInfo[5] #левый ответ из БД
 	CardLAnswer = CardInfo[4] #Правый ответ из БД

@@ -12,12 +12,12 @@ enum {
 	}
 
 const DATA = {
-	
-	"MrBankman": [ "Head1", "Neck1", "Shirt1", "Eyebrows1", "Eyes1", "Forehead0", "Ears1", "Jowls1", "Glasses0", "Mouth1", "Hair1", "Nose3"],
-	
-	"Dictor": [ "Head1", "Neck1", "Shirt1", "Eyebrows1", "Eyes1", "Forehead0", "Ears1", "Jowls0", "Glasses0", "Mouth1", "Hair0", "Nose3"],
-	
-	"AlexeyKochanov" : [ "Head2", "Neck1", "Shirt2", "Eyebrows2", "Eyes2", "Forehead0", "Ears2", "Jowls1", "Glasses0", "Mouth2", "Hair1", "Nose3"],
+	#Руководитель игрока и владелец Банка. Любит только деньги
+	"Mr. Bankman": [ "Head10", "Neck1", "Shirt11", "Eyebrows12", "Eyes15", "Forehead1", "Ears7", "Jowls10", "Glasses1", "Mouth4", "Hair10", "Nose16"],
+	#Успешный молодой человек, который использует деньги с умом
+	"Sill Fpencer": [ "Head7", "Neck1", "Shirt1", "Eyebrows1", "Eyes2", "Forehead0", "Ears6", "Jowls0", "Glasses0", "Mouth7", "Hair13", "Nose13"],
+	#не очень удачливая и вечно залазиет в долги, но успешно оплачивает их. Может махинации?
+	"Getty Green" : [ "Head4", "Neck1", "Shirt5", "Eyebrows2", "Eyes10", "Forehead1", "Ears4", "Jowls3", "Glasses1", "Mouth11", "Hair14", "Nose5"],
 	
 	"AnastasiyaMalkova" : [ "Head3", "Neck1", "Shirt3", "Eyebrows3", "Eyes3", "Forehead0", "Ears3", "Jowls0", "Glasses0", "Mouth3", "Hair2", "Nose3"],
 	
