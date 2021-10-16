@@ -7,14 +7,22 @@ enum {
 	CBreviewer
 	}
 
+#onready var dossierSexDiction = [0"Мужской", 1"Женский"]
+#onready var dossierNationalDiction = [0"Russia", 1"France", 2"Germany", 3"England", 4"Italy", 
+#5"Spain", 6"USA", 7"China", 8"Japan", 9"UAE", 10"Africa", 11"India"]
+#onready var dossierCreditHistoryDiction = [0"Хорошая", 1"Плохая"]
+#onready var dossierBlackListDiction = [0"Чист", 1"Террорист", 2"Черный список"]
+#onready var dossierCreditRatingDiction = [0"Высокий", 1"Средний", 2"Низкий"]
+
+
 const DATA = {
 	#ключ: [имя, пол, возраст, национальность, кредитная история, черный лист, рейтинг]
 	"Mr. Bankman": ["Mr. Bankman", 0, 58, 0, 0, 0, 0],
 	"Sill Fpencer": ["Стилл Фпенсер", 0, 41, 6, 0, 0, 1],
 	"Getty Green": ["Гэтти Грин", 1, 25, 7, 1, 0, 1],
-	"AnastasiyaMalkova": ["Анастасия (A+)", 1, 30, 1, 0, 0, 0],
-	"AnastasiyaCherevatkina": ["Анастасия (А)", 1, 30, 1, 0, 0, 0],
-	"AlexeySilkin": ["Алексей (A+)", 1, 30, 1, 0, 0, 0],
+	"Cark Mukerberg": ["Царк Мукерберг", 0, 35, 1, 0, 0, 1],
+	"Borren Uaffet": ["Боррен Уаффет", 0, 80, 2, 0, 0, 0],
+	"Liktor Vustig": ["Ликтор Вюстиг", 1, 57, 3, 0, 2, 0],
 	"Bman": ["Мужик с улицы (C)", 1, 30, 1, 0, 0, 0],
 	"CBomjMan": ["Бомж (BlackList)", 1, 30, 1, 0, 0, 0],
 	"DmitriyOvsyannikov": ["Дмитрий (A+)", 1, 30, 1, 0, 0, 0],

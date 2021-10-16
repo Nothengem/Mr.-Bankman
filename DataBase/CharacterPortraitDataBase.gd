@@ -18,12 +18,12 @@ const DATA = {
 	"Sill Fpencer": [ "Head7", "Neck1", "Shirt1", "Eyebrows1", "Eyes2", "Forehead0", "Ears6", "Jowls0", "Glasses0", "Mouth7", "Hair13", "Nose13"],
 	#не очень удачливая и вечно залазиет в долги, но успешно оплачивает их. Может махинации?
 	"Getty Green" : [ "Head4", "Neck1", "Shirt5", "Eyebrows2", "Eyes10", "Forehead1", "Ears4", "Jowls3", "Glasses1", "Mouth11", "Hair14", "Nose5"],
-	
-	"AnastasiyaMalkova" : [ "Head3", "Neck1", "Shirt3", "Eyebrows3", "Eyes3", "Forehead0", "Ears3", "Jowls0", "Glasses0", "Mouth3", "Hair2", "Nose3"],
-	
-	"AnastasiyaCherevatkina" : [ "Head4", "Neck1", "Shirt4", "Eyebrows4", "Eyes4", "Forehead0", "Ears3", "Jowls1", "Glasses0", "Mouth4", "Hair3", "Nose2"],
-	
-	"AlexeySilkin" : [ "Head5", "Neck1", "Shirt5", "Eyebrows5", "Eyes5", "Forehead1", "Ears2", "Jowls0", "Glasses1", "Mouth5", "Hair4", "Nose2"],
+	#амбициозный юноша, который берёт деньги на своё собственное развитие
+	"Cark Mukerberg" : [ "Head8", "Neck1", "Shirt9", "Eyebrows15", "Eyes4", "Forehead0", "Ears10", "Jowls0", "Glasses0", "Mouth2", "Hair4", "Nose9"],
+	#не молодой человек, опытнфй инвестор понимающий во что вкладывать деньги. Прибедняется
+	"Borren Uaffet" : [ "Head4", "Neck1", "Shirt4", "Eyebrows4", "Eyes4", "Forehead2", "Ears4", "Jowls0", "Glasses1", "Mouth3", "Hair0", "Nose8"],
+	#второсортный аферист, который проворачивает махинации со всем краденным и незаконным
+	"Liktor Vustig" : [ "Head3", "Neck1", "Shirt8", "Eyebrows6", "Eyes6", "Forehead2", "Ears9", "Jowls0", "Glasses0", "Mouth4", "Hair6", "Nose6"],
 	
 	"Bman" : [ "Head1", "Neck1", "Shirt4", "Eyebrows4", "Eyes1", "Forehead0", "Ears1", "Jowls1", "Glasses0", "Mouth1", "Hair0", "Nose2"],
 	
