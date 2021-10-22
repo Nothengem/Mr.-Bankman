@@ -24,8 +24,8 @@ const DATA = {
 	"Borren Uaffet" : [ "Head4", "Neck1", "Shirt4", "Eyebrows4", "Eyes4", "Forehead2", "Ears4", "Jowls0", "Glasses1", "Mouth3", "Hair0", "Nose8"],
 	#второсортный аферист, который проворачивает махинации со всем краденным и незаконным
 	"Liktor Vustig" : [ "Head3", "Neck1", "Shirt8", "Eyebrows6", "Eyes6", "Forehead2", "Ears9", "Jowls0", "Glasses0", "Mouth4", "Hair6", "Nose6"],
-	
-	"Bman" : [ "Head1", "Neck1", "Shirt4", "Eyebrows4", "Eyes1", "Forehead0", "Ears1", "Jowls1", "Glasses0", "Mouth1", "Hair0", "Nose2"],
+	#семьянин, вроде не бедный но не умеет управлять финансами
+	"Kikolas Nage" : [ "Head6", "Neck1", "Shirt13", "Eyebrows11", "Eyes5", "Forehead0", "Ears2", "Jowls0", "Glasses0", "Mouth7", "Hair6", "Nose5"],
 	
 	"CBomjMan" : [ "Head2", "Neck1", "Shirt3", "Eyebrows3", "Eyes2", "Forehead0", "Ears1", "Jowls0", "Glasses0", "Mouth2", "Hair1", "Nose1"],
 	
