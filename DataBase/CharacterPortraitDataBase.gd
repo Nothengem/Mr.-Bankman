@@ -26,8 +26,8 @@ const DATA = {
 	"Liktor Vustig" : [ "Head3", "Neck1", "Shirt8", "Eyebrows6", "Eyes6", "Forehead2", "Ears9", "Jowls0", "Glasses0", "Mouth4", "Hair6", "Nose6"],
 	#семьянин, вроде не бедный но не умеет управлять финансами
 	"Kikolas Nage" : [ "Head6", "Neck1", "Shirt13", "Eyebrows11", "Eyes5", "Forehead0", "Ears2", "Jowls0", "Glasses0", "Mouth7", "Hair6", "Nose5"],
-	
-	"CBomjMan" : [ "Head2", "Neck1", "Shirt3", "Eyebrows3", "Eyes2", "Forehead0", "Ears1", "Jowls0", "Glasses0", "Mouth2", "Hair1", "Nose1"],
+	#самый сумасшедшийперсонаж в игре. Творит самую дичь
+	"Bichard Ranson" : [ "Head10", "Neck1", "Shirt4", "Eyebrows15", "Eyes14", "Forehead1", "Ears3", "Jowls0", "Glasses1", "Mouth4", "Hair4", "Nose9"],
 	
 	"DmitriyOvsyannikov" : [ "Head3", "Neck1", "Shirt2", "Eyebrows2", "Eyes3", "Forehead0", "Ears2", "Jowls1", "Glasses0", "Mouth3", "Hair2", "Nose1"],
 	

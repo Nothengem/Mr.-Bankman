@@ -24,7 +24,7 @@ const DATA = {
 	"Borren Uaffet": ["Боррен Уаффет", 0, 80, 2, 0, 0, 0],
 	"Liktor Vustig": ["Ликтор Вюстиг", 0, 57, 3, 0, 2, 0],
 	"Kikolas Nage": ["Киколас Нейдж", 0, 40, 6, 1, 0, 1],
-	"CBomjMan": ["Бомж (BlackList)", 1, 30, 1, 0, 0, 0],
+	"Bichard Ranson": ["Бичард Рэнсон", 0, 70, 3, 0, 2, 0],
 	"DmitriyOvsyannikov": ["Дмитрий (A+)", 1, 30, 1, 0, 0, 0],
 	"Chechen": ["Марио (BlackList)", 1, 30, 1, 0, 0, 0],
 	"BArtem": ["Артём (B)", 1, 30, 1, 0, 0, 0],
