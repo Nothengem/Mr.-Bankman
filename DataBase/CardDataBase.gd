@@ -546,9 +546,9 @@ const DATA = {
 	
 	"CardToChineseWhoWantToLearnLanguage" : 
 		["Characters",
-		"AlexeyKochanov", 
+		"Mjack Da", 
 		"Приведствую!..", #что говорит 2
-		"Шуань Чжи",
+		"Мжек Да",
 		"Добрый день!",
 		"Чем я могу вам помочь?",
 		0, 0, 0, 0,
@@ -559,9 +559,9 @@ const DATA = {
 		
 	"CardToChineseWhoWantToLearnLanguage1" : 
 		["Characters",
-		"AlexeyKochanov", 
+		"Mjack Da", 
 		"Во бу доунг дангди уяуан кьюнг банг банг во!", #что говорит 2
-		"Шуань Чжи",
+		"Мжек Да",
 		"Аааа???",
 		"Что???",
 		0, 0, 0, 0,

@@ -28,8 +28,8 @@ const DATA = {
 	"Kikolas Nage" : [ "Head6", "Neck1", "Shirt13", "Eyebrows11", "Eyes5", "Forehead0", "Ears2", "Jowls0", "Glasses0", "Mouth7", "Hair6", "Nose5"],
 	#самый сумасшедшийперсонаж в игре. Творит самую дичь
 	"Bichard Ranson" : [ "Head10", "Neck1", "Shirt4", "Eyebrows15", "Eyes14", "Forehead1", "Ears3", "Jowls0", "Glasses1", "Mouth4", "Hair4", "Nose9"],
-	
-	"DmitriyOvsyannikov" : [ "Head3", "Neck1", "Shirt2", "Eyebrows2", "Eyes3", "Forehead0", "Ears2", "Jowls1", "Glasses0", "Mouth3", "Hair2", "Nose1"],
+	#китаец, который случайно оказался у нас и не говорит на местном
+	"Mjack Da" : [ "Head1", "Neck1", "Shirt15", "Eyebrows5", "EyesClosed", "Forehead0", "Ears5", "Jowls0s", "Glasses0", "Mouth1", "Hair1", "Nose3"],
 	
 	"Chechen" : [ "Head4", "Neck1", "Shirt1", "Eyebrows1", "Eyes4", "Forehead0", "Ears3", "Jowls0", "Glasses0", "Mouth4", "Hair3", "Nose1"],
 	
