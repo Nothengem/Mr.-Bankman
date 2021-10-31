@@ -12,26 +12,16 @@ enum {
 	}
 
 const DATA = {
-	#Руководитель игрока и владелец Банка. Любит только деньги
 	"Mr. Bankman": [ "Head10", "Neck1", "Shirt11", "Eyebrows12", "Eyes7", "Forehead1", "Ears7", "Jowls10", "Glasses1", "Mouth4", "Hair10", "Nose16"],
-	#Успешный молодой человек, который использует деньги с умом
 	"Sill Fpencer": [ "Head7", "Neck1", "Shirt1", "Eyebrows1", "Eyes2", "Forehead0", "Ears6", "Jowls0", "Glasses0", "Mouth7", "Hair13", "Nose13"],
-	#не очень удачливая и вечно залазиет в долги, но успешно оплачивает их. Может махинации?
 	"Getty Green" : [ "Head4", "Neck1", "Shirt5", "Eyebrows2", "Eyes10", "Forehead1", "Ears4", "Jowls3", "Glasses1", "Mouth11", "Hair14", "Nose5"],
-	#амбициозный юноша, который берёт деньги на своё собственное развитие
 	"Cark Mukerberg" : [ "Head8", "Neck1", "Shirt9", "Eyebrows15", "Eyes4", "Forehead0", "Ears10", "Jowls0", "Glasses0", "Mouth2", "Hair4", "Nose9"],
-	#не молодой человек, опытнфй инвестор понимающий во что вкладывать деньги. Прибедняется
 	"Borren Uaffet" : [ "Head4", "Neck1", "Shirt4", "Eyebrows4", "Eyes4", "Forehead2", "Ears4", "Jowls0", "Glasses1", "Mouth3", "Hair0", "Nose8"],
-	#второсортный аферист, который проворачивает махинации со всем краденным и незаконным
 	"Liktor Vustig" : [ "Head3", "Neck1", "Shirt8", "Eyebrows6", "Eyes6", "Forehead2", "Ears9", "Jowls0", "Glasses0", "Mouth4", "Hair6", "Nose6"],
-	#семьянин, вроде не бедный но не умеет управлять финансами
 	"Kikolas Nage" : [ "Head6", "Neck1", "Shirt13", "Eyebrows11", "Eyes5", "Forehead0", "Ears2", "Jowls0", "Glasses0", "Mouth7", "Hair6", "Nose5"],
-	#самый сумасшедшийперсонаж в игре. Творит самую дичь
 	"Bichard Ranson" : [ "Head10", "Neck1", "Shirt4", "Eyebrows15", "Eyes14", "Forehead1", "Ears3", "Jowls0", "Glasses1", "Mouth4", "Hair4", "Nose9"],
-	#китаец, который случайно оказался у нас и не говорит на местном
 	"Mjack Da" : [ "Head1", "Neck1", "Shirt15", "Eyebrows5", "EyesClosed", "Forehead0", "Ears5", "Jowls0s", "Glasses0", "Mouth1", "Hair1", "Nose3"],
-	
-	"Chechen" : [ "Head4", "Neck1", "Shirt1", "Eyebrows1", "Eyes4", "Forehead0", "Ears3", "Jowls0", "Glasses0", "Mouth4", "Hair3", "Nose1"],
+	"El'Fa" : [ "Head6", "Neck1", "Shirt2", "Eyebrows1", "Eyes11", "Forehead0", "Ears4", "Jowls2", "Glasses0", "Mouth9", "Hair11", "Nose9"],
 	
 	"BArtem" : [ "Head5", "Neck1", "Shirt2", "Eyebrows2", "Eyes5", "Forehead0", "Ears3", "Jowls1", "Glasses0", "Mouth5", "Hair4", "Nose3"],
 	
