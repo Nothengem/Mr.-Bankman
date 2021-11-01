@@ -24,8 +24,7 @@ const DATA = {
 	"El'Fa" : [ "Head6", "Neck1", "Shirt2", "Eyebrows1", "Eyes11", "Forehead0", "Ears4", "Jowls2", "Glasses0", "Mouth9", "Hair11", "Nose9"],
 	"Dabygale Eonson" : [ "Head13", "Neck1", "Shirt14", "Eyebrows12", "Eyes16", "Forehead1", "Ears3", "Jowls1", "Glasses1", "Mouth6", "Hair14", "Nose10"],
 	"Crowley Shepard" : [ "Head8", "Neck1", "Shirt11", "Eyebrows12", "Eyes2", "Forehead2", "Ears1", "Jowls0", "Glasses0", "Mouth2", "Hair6", "Nose10"],
-	
-	"Babylia" : [ "Head2", "Neck1", "Shirt4", "Eyebrows4", "Eyes2", "Forehead0", "Ears1", "Jowls1", "Glasses0", "Mouth4", "Hair1", "Nose3"],
+	"Sanna Acol Nitt" : [ "Head8", "Neck1", "Shirt13", "Eyebrows8", "Eyes15", "Forehead0", "Ears1", "Jowls2", "Glasses0", "Mouth8", "Hair8", "Nose4"],
 	
 	"IlonMask" : [ "Head3", "Neck1", "Shirt5", "Eyebrows5", "Eyes3", "Forehead0", "Ears1", "Jowls0", "Glasses0", "Mouth3", "Hair2", "Nose2"],
 	
