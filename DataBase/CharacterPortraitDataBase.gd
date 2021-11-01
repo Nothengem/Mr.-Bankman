@@ -22,8 +22,7 @@ const DATA = {
 	"Bichard Ranson" : [ "Head10", "Neck1", "Shirt4", "Eyebrows15", "Eyes14", "Forehead1", "Ears3", "Jowls0", "Glasses1", "Mouth4", "Hair4", "Nose9"],
 	"Mjack Da" : [ "Head1", "Neck1", "Shirt15", "Eyebrows5", "EyesClosed", "Forehead0", "Ears5", "Jowls0s", "Glasses0", "Mouth1", "Hair1", "Nose3"],
 	"El'Fa" : [ "Head6", "Neck1", "Shirt2", "Eyebrows1", "Eyes11", "Forehead0", "Ears4", "Jowls2", "Glasses0", "Mouth9", "Hair11", "Nose9"],
-	
-	"BArtem" : [ "Head5", "Neck1", "Shirt2", "Eyebrows2", "Eyes5", "Forehead0", "Ears3", "Jowls1", "Glasses0", "Mouth5", "Hair4", "Nose3"],
+	"Dabygale Eonson" : [ "Head13", "Neck1", "Shirt14", "Eyebrows12", "Eyes16", "Forehead1", "Ears3", "Jowls1", "Glasses1", "Mouth6", "Hair14", "Nose10"],
 	
 	"KristinaStepanova" : [ "Head1", "Neck1", "Shirt3", "Eyebrows3", "Eyes3", "Forehead0", "Ears2", "Jowls0", "Glasses1", "Mouth5", "Hair0", "Nose3"],
 	
