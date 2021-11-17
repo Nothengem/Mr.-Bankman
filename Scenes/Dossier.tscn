@@ -20,9 +20,7 @@ size = 40
 use_filter = true
 font_data = ExtResource( 3 )
 
-[node name="Dossier" type="Control" groups=[
-"Dossier",
-]]
+[node name="Dossier" type="Control" groups=["Dossier"]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -75,9 +73,7 @@ margin_right = 260.0
 margin_bottom = 460.0
 rect_min_size = Vector2( 260, 260 )
 
-[node name="Photo" type="TextureRect" parent="Passport/MainHBox/PortraitVBox" groups=[
-"DossierPhoto",
-]]
+[node name="Photo" type="TextureRect" parent="Passport/MainHBox/PortraitVBox" groups=["DossierPhoto"]]
 margin_right = 260.0
 margin_bottom = 250.0
 rect_min_size = Vector2( 260, 250 )
@@ -121,8 +117,8 @@ alignment = 1
 margin_left = 29.0
 margin_right = 479.0
 margin_bottom = 66.0
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
 text = "Alexey Kochanov"
 align = 1
 valign = 1
@@ -143,8 +139,8 @@ margin_bottom = 53.0
 [node name="Description" type="Label" parent="Passport/MainHBox/ParametresHBox/StrokeOne/Sex"]
 margin_right = 96.0
 margin_bottom = 53.0
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "SEX:"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -154,8 +150,8 @@ __meta__ = {
 margin_left = 100.0
 margin_right = 196.0
 margin_bottom = 53.0
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Male"
 align = 1
 valign = 1
@@ -171,8 +167,8 @@ margin_bottom = 53.0
 [node name="Description" type="Label" parent="Passport/MainHBox/ParametresHBox/StrokeOne/Age"]
 margin_right = 96.0
 margin_bottom = 53.0
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "AGE:"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -182,8 +178,8 @@ __meta__ = {
 margin_left = 100.0
 margin_right = 148.0
 margin_bottom = 53.0
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "30"
 align = 1
 valign = 1
@@ -205,8 +201,8 @@ custom_constants/separation = 32
 [node name="Description" type="Label" parent="Passport/MainHBox/ParametresHBox/StrokeTwo/BlackList"]
 margin_right = 264.0
 margin_bottom = 53.0
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Black List:"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -216,8 +212,8 @@ __meta__ = {
 margin_left = 296.0
 margin_right = 416.0
 margin_bottom = 53.0
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Clean"
 align = 1
 valign = 1
@@ -233,8 +229,8 @@ margin_bottom = 333.0
 [node name="Description" type="Label" parent="Passport/MainHBox/ParametresHBox/StrokeThree"]
 margin_right = 384.0
 margin_bottom = 53.0
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Credit History: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -244,8 +240,8 @@ __meta__ = {
 margin_left = 388.0
 margin_right = 508.0
 margin_bottom = 53.0
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Clean"
 align = 1
 valign = 1
@@ -265,8 +261,8 @@ margin_bottom = 53.0
 [node name="Description" type="Label" parent="Passport/MainHBox/ParametresHBox/StrokeFour/LoanRating"]
 margin_right = 312.0
 margin_bottom = 53.0
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Loan Rating: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -276,8 +272,8 @@ __meta__ = {
 margin_left = 316.0
 margin_right = 412.0
 margin_bottom = 53.0
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Good"
 align = 1
 valign = 1

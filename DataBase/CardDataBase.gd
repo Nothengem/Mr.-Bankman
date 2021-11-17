@@ -16,7 +16,7 @@ enum {
 		TutorLev1Card1, TutorLev1Card2, TutorLev1Card3, TutorLev1Card31,
 		TutorLev2Card1, TutorLev2Card2, TutorLev2Card3, TutorLev2Card4, TutorLev2Card5, TutorLev2Card6,
 	
-	#колода первого уровня (20 штук)
+	#колода 1 уровня (20 штук)
 	#Кредиты
 		CreditHomeForCar, Credit700000, Credit7000001, Credit7000002, Credit7000003,
 		CreditFlatFix, CreditRefinance, CreditUniversity, CreditUniversity1, 
@@ -31,21 +31,48 @@ enum {
 		InvestitionGreenInvestor, InvestitionGreenInvestor1, InvestitionOldInvestor, InvestitionOpen, 
 		InvestitionClose, InvestitionClose1,
 	
-	#колода второго уровня (10 штук)
+	#колода 2 уровня (10 штук)
 	#кредиты
 		CreditHonestly, CreditHonestly1, CreditHonestly2, CreditRobbery, CreditRobbery1,
 	#депозиты
 		 DepositSaveMoney, DepositSaveMoney1, DepositSaveMoney2,
 	#Кредитные карты
 		CardSmartBlocking, CardSmartBlocking1, CardAffraidOfPay, CardAffraidOfPay1,
+		CreditLiveAt15Oclock,
 	#ЖалобыКлиентов
-		IncassationCrush, CreditDenyLoterry, MerryTOBankir, 
+		IncassationCrush, CreditDenyLoterry, MerryTOBankir,
+	#Поучения от руководителя
+		DepositLoanForAfriend, DepositLoanForAfriend1, DepositLoanForAfriend2,
 		
-	#колода третьего уровня (10 штук)
-	CreditLiveAt15Oclock, DepositLoanForAfriend, DepositLoanForAfriend1, DepositLoanForAfriend2,
-	DepositPovertyIsNotAVice, CreditReturnCredit, BankRobberyMe, BankRobberyMe1, ForgiveMeCredit, 
-	InvestitionBillion, InvestitionCreditToBank, InvestitionCreditToBank1, InvestitionCreditToBank2, 
-	CreditListIpotec, CreditMoneySource, CreditMoneySource1,
+	#колода 3 уровня (10 штук)
+	#Депозиты
+	DepositPovertyIsNotAVice, 
+	#кредит
+	CreditReturnCredit, BankRobberyMe, BankRobberyMe1, ForgiveMeCredit, 
+	CreditListIpotec, CreditMoneySource, CreditMoneySource1, CreditIfIwontReturm
+	#инвестиции
+	InvestitionBillion, InvestitionCreditToBank, InvestitionCreditToBank1, 
+	InvestitionCreditToBank2,
+	#Сотрудники 
+	StaffEconomicalQuestions, 
+	
+	#колода 4 уровня (10 штук)
+	#Жалобы
+	ComplainsCredit, CreditNotInMyWay, ClaimBankTrustYou,
+	#Инвестиции
+	InvestitionSmallBusiness, InvestitionFlipOver,
+	#Кредит
+	CreditCleymoIpotek, CreditRefrigerator
+	#новости
+	ClaimGrandmother, StaffDepositNeverBack,
+	#Депозит
+	DepositLetterWrite, 
+	
+	# колода 5 дня (10 штук)
+	#Жалобы
+	ClaimNoMoneyNoProblem, ClaimCreditWontPay,
+	#Инвестиции
+	CreditDeathScheme, MoneyPrinting,
 	
 	
 	#концовки
@@ -74,7 +101,7 @@ const DATA = {
 		0, 0, 0, 0, 
 		"Random", "Random",
 		"None",
-		"..."],
+		0],
 		
 	"LoseTeamBottom" : 
 		["Tutorial",
@@ -87,7 +114,7 @@ const DATA = {
 		0, 0, 0, 0, 
 		"Random", "Random",
 		"None",
-		"..."],
+		0],
 		
 	"LoseCBUp" : 
 		["Tutorial",
@@ -100,7 +127,7 @@ const DATA = {
 		0, 0, 0, 0, 
 		"Random", "Random",
 		"None",
-		"..."],
+		0],
 		
 	"LoseTeamUp" : 
 		["Tutorial",
@@ -113,7 +140,7 @@ const DATA = {
 		0, 0, 0, 0, 
 		"Random", "Random",
 		"None",
-		"..."],
+		0],
 		
 	"LoseCutomButton" : 
 		["Tutorial",
@@ -126,7 +153,7 @@ const DATA = {
 		0, 0, 0, 0, 
 		"Random", "Random",
 		"None",
-		"..."],
+		0],
 		
 	"LoseCustomUp" : 
 		["Tutorial",
@@ -139,7 +166,7 @@ const DATA = {
 		0, 0, 0, 0, 
 		"Random", "Random",
 		"None",
-		"..."],
+		0],
 		
 	"LoseMoneyBottom" : 
 		["Tutorial",
@@ -152,7 +179,7 @@ const DATA = {
 		0, 0, 0, 0, 
 		"Random", "Random",
 		"None",
-		"..."],
+		0],
 		
 	"LoseMoneyUp" : 
 		["Tutorial",
@@ -165,7 +192,7 @@ const DATA = {
 		0, 0, 0, 0, 
 		"Random", "Random",
 		"None",
-		"..."],
+		0],
 	
 	"TutorLev1Card1" : 
 		["Tutorial",
@@ -178,7 +205,7 @@ const DATA = {
 		0, 0, 0, 0, 
 		"TutorLev1Card2", "TutorLev1Card2",
 		"None",
-		"..."],
+		0],
 		
 	"TutorLev1Card2" : 
 		["Tutorial",
@@ -204,7 +231,7 @@ const DATA = {
 		0, 0, 0, 0, 
 		"TutorLev1Card31", "Random",
 		"None",
-		"..."],
+		0],
 		
 	"TutorLev1Card31" : 
 		["Tutorial",
@@ -217,7 +244,7 @@ const DATA = {
 		0, 0, 0, 0, 
 		"Random", "Random",
 		"None",
-		"..."],
+		0],
 		
 	"TutorLev2Card1" : 
 		["Tutorial",
@@ -230,7 +257,7 @@ const DATA = {
 		0, 0, 0, 0, 
 		"TutorLev2Card2", "TutorLev2Card2",
 		"None",
-		"..."],
+		0],
 	
 	"TutorLev2Card2" : 
 		["Tutorial",
@@ -243,7 +270,7 @@ const DATA = {
 		0, 0, 0, 0, 
 		"TutorLev2Card3", "TutorLev2Card3",
 		"None",
-		"..."],
+		0],
 	
 	"TutorLev2Card3" : 
 		["Tutorial",
@@ -256,12 +283,12 @@ const DATA = {
 		0, 0, 0, 0, 
 		"TutorLev2Card4", "TutorLev2Card4",
 		"None",
-		"..."],
+		0],
 		
 	"TutorLev2Card4" : 
 		["Tutorial",
 		"Mr. Bankman", 
-		"Наш отдел аналитики сообщает, что не стоит выдавать кредиты клиентам на инвестиции и шопинг. А чтобы ты не забыл об этом внизу будет книжка с напоминанием", #что говорит 2
+		"Наш отдел аналитики сообщает, что не стоит выдавать кредиты клиентам на инвестиции. А чтобы ты не забыл об этом внизу будет книжка с напоминанием", #что говорит 2
 		"Mr. Bankman",
 		"Злой ты, просто ужас",
 		"Зарплату то платить мне начнёшь?",
@@ -269,7 +296,7 @@ const DATA = {
 		0, 0, 0, 0, 
 		"TutorLev2Card4", "TutorLev2Card4",
 		"None",
-		"..."],
+		0],
 		
 	"TutorLev2Card5" : 
 		["Tutorial",
@@ -282,7 +309,7 @@ const DATA = {
 		0, 0, 0, 0, 
 		"TutorLev2Card6", "TutorLev2Card6",
 		"None",
-		"..."],
+		0],
 		
 	"TutorLev2Card6" : 
 		["Tutorial",
@@ -295,7 +322,7 @@ const DATA = {
 		0, 0, 0, 0, 
 		"Random", "Random",
 		"None",
-		"..."],
+		0],
 	
 	"CreditHomeForCar" : 
 		["Characters",
@@ -308,7 +335,7 @@ const DATA = {
 		+10, +10, 0, -20, 
 		"Random", "Random",
 		"None",
-		"Недвижимость"],
+		10],
 		
 	"Credit700000" : 
 		["Characters",
@@ -321,7 +348,7 @@ const DATA = {
 		-15, +10, 0, -10, 
 		"Credit7000001", "Random",
 		"None",
-		"До зарплаты"],
+		1],
 		
 	"Credit7000001" : 
 		["Characters",
@@ -334,7 +361,7 @@ const DATA = {
 		+20, -10, 0, 0, 
 		"Credit7000002", "Credit7000003",
 		"None",
-		"До зарплаты"],
+		1],
 		
 	"Credit7000002" : 
 		["Characters",
@@ -347,7 +374,7 @@ const DATA = {
 		0, -5, -20, 0, 
 		"Random", "Random",
 		"None",
-		"До зарплаты"],
+		1],
 		
 	"Credit7000003" : 
 		["Characters",
@@ -360,7 +387,7 @@ const DATA = {
 		+10, +10, 0, -10, 
 		"Random", "Random",
 		"None",
-		"До зарплаты"],
+		1],
 		
 	"CreditFlatFix" : 
 		["Characters",
@@ -373,7 +400,7 @@ const DATA = {
 		+10, +15, 0, -10, 
 		"Random", "Random",
 		"None",
-		"Ремонт"],
+		9],
 		
 	"CreditRefinance" : 
 		["Characters",
@@ -386,7 +413,7 @@ const DATA = {
 		-5, +20, +10, -10, 
 		"Random", "Random",
 		"None",
-		"Рефинансирование"],
+		6],
 		
 	"CreditUniversity" : 
 		["Characters",
@@ -399,7 +426,7 @@ const DATA = {
 		-5, +20, +10, -10, 
 		"CreditUniversity1", "CreditUniversity2",
 		"None",
-		"Образование"],
+		2],
 		
 	"CreditUniversity1" : 
 		["Characters",
@@ -412,7 +439,7 @@ const DATA = {
 		-10, +5, 0, 0, 
 		"Random", "CreditUniversity2",
 		"None",
-		"Образование"],
+		2],
 		
 	"CreditUniversity2" : 
 		["Characters",
@@ -425,7 +452,7 @@ const DATA = {
 		0, +10, 0, 0, 
 		"Random", "Random",
 		"None",
-		"Образование"],
+		2],
 		
 	"DepositUniversity" : 
 		["Characters",
@@ -438,7 +465,7 @@ const DATA = {
 		0, +10, 0, 0, 
 		"Random", "Random",
 		"None",
-		"Образование"],
+		12],
 		
 	"DepositStolenCars" : 
 		["Characters",
@@ -451,7 +478,7 @@ const DATA = {
 		0, +10, -20, +18, 
 		"Random", "Random",
 		"None",
-		"Сбережения"],
+		12],
 		
 	"DepositSelledFlat" : 
 		["Characters",
@@ -464,7 +491,7 @@ const DATA = {
 		+13, -8, 0, 8, 
 		"Random", "DepositSelledFlat1",
 		"None",
-		"Сбережения"],
+		12],
 		
 	"DepositSelledFlat1" : 
 		["Characters",
@@ -477,7 +504,7 @@ const DATA = {
 		+5, +10, 0, +20, 
 		"Random", "Random",
 		"None",
-		"Образование"],
+		12],
 		
 	"DepositMadRetired" : 
 		["Characters",
@@ -490,7 +517,7 @@ const DATA = {
 		0, 0, 0, 0,
 		"DepositMadRetired1", "DepositMadRetired1",
 		"None",
-		"..."],
+		14],
 		
 	"DepositMadRetired1" : 
 		["Characters",
@@ -503,7 +530,7 @@ const DATA = {
 		0, +6, 0, 0,
 		"Random", "DepositMadRetired2",
 		"None",
-		"..."],
+		14],
 		
 	"DepositMadRetired2" : 
 		["Characters",
@@ -516,7 +543,7 @@ const DATA = {
 		0, +4, 0, 0,
 		"Random", "DepositMadRetired3",
 		"None",
-		"..."],
+		14],
 		
 	"DepositMadRetired3" : 
 		["Characters",
@@ -529,7 +556,7 @@ const DATA = {
 		+7, +3, 0,+17,
 		"Random", "DepositMadRetired2",
 		"None",
-		"..."],
+		12],
 		
 	"DepositRetired" : 
 		["Characters",
@@ -542,7 +569,7 @@ const DATA = {
 		+7, +3, +13, +12,
 		"Random", "Random",
 		"None",
-		"Сбережения"],
+		12],
 	
 	"CardToChineseWhoWantToLearnLanguage" : 
 		["Characters",
@@ -555,7 +582,7 @@ const DATA = {
 		0, 0, 0, 0,
 		"CardToChineseWhoWantToLearnLanguage1", "CardToChineseWhoWantToLearnLanguage1",
 		"None",
-		"Банджу!"],
+		0],
 		
 	"CardToChineseWhoWantToLearnLanguage1" : 
 		["Characters",
@@ -568,7 +595,7 @@ const DATA = {
 		0, 0, 0, 0,
 		"Random", "Random",
 		"None",
-		"Банджу!"],
+		0],
 		
 	"CardToShopping" : 
 		["Characters",
@@ -581,7 +608,7 @@ const DATA = {
 		0, +7, 0, -7,
 		"Random", "Random",
 		"None",
-		"Шоппинг"],
+		4],
 		
 	"CardToAirways" : 
 		["Characters",
@@ -594,7 +621,7 @@ const DATA = {
 		0, +14, 0, -7,
 		"Random", "Random",
 		"None",
-		"Путешествия"],
+		5],
 		
 	"CardToSallary" : 
 		["Characters",
@@ -607,7 +634,7 @@ const DATA = {
 		0, +14, 0, -7,
 		"Random", "Random",
 		"None",
-		"До зарплаты"],
+		1],
 		
 	"CardToDebt" : 
 		["Characters",
@@ -620,7 +647,7 @@ const DATA = {
 		+10, +14, 0, -7,
 		"Random", "Random",
 		"None",
-		"До зарплаты"],
+		1],
 		
 	"InvestitionGreenInvestor" : 
 		["Characters",
@@ -633,7 +660,7 @@ const DATA = {
 		+4, +4, +4, 0,
 		"Random", "InvestitionGreenInvestor1",
 		"None",
-		"Инвестиции"],
+		13],
 		
 	"InvestitionGreenInvestor1" : 
 		["Characters",
@@ -646,7 +673,7 @@ const DATA = {
 		+4, +4, +4, +5,
 		"Random", "Random",
 		"None",
-		"Инвестиции"],
+		13],
 		
 	"InvestitionOldInvestor" : 
 		["Characters",
@@ -659,7 +686,7 @@ const DATA = {
 		+4, +4, +4, +7,
 		"Random", "Random",
 		"None",
-		"Инвестиции"],
+		13],
 		
 	"InvestitionOpen" : 
 		["Characters",
@@ -672,7 +699,7 @@ const DATA = {
 		+4, +4, -14, +7,
 		"Random", "Random",
 		"None",
-		"Инвестиции"],
+		13],
 		
 	"InvestitionClose" : 
 		["Characters",
@@ -685,7 +712,7 @@ const DATA = {
 		0, 0, 0, 0,
 		"Random", "InvestitionClose1",
 		"None",
-		"Инвестиции"],
+		15],
 		
 	"InvestitionClose1" : 
 		["Characters",
@@ -698,7 +725,7 @@ const DATA = {
 		+5, 0, 0, +12,
 		"Random", "Random",
 		"None",
-		"Инвестиции"],
+		15],
 		
 	"CreditHonestly" : 
 		["Characters",
@@ -711,7 +738,7 @@ const DATA = {
 		-19, 0, 0, 0,
 		"Random", "CreditHonestly1",
 		"None",
-		"На ремонт"],
+		14],
 		
 	"CreditHonestly1" : 
 		["Characters",
@@ -724,7 +751,7 @@ const DATA = {
 		+5, -8, 0, 0,
 		"Random", "CreditHonestly2",
 		"None",
-		"На ремонт"],
+		14],
 		
 	"CreditHonestly2" : 
 		["Characters",
@@ -737,7 +764,7 @@ const DATA = {
 		+5, -12, 0, 0,
 		"Random", "Random",
 		"None",
-		"На ремонт"],
+		14],
 		
 	"CreditReturnCredit" : 
 		["Characters",
@@ -750,7 +777,7 @@ const DATA = {
 		+12, 0, 0, +20,
 		"Random", "Random",
 		"None",
-		"Возврат займа"],
+		15],
 		
 	"CreditRobbery" : 
 		["Characters",
@@ -763,7 +790,7 @@ const DATA = {
 		-7, 0, 0, -20,
 		"Random", "CreditRobbery1",
 		"None",
-		"На автомобиль"],
+		15],
 		
 	"CreditRobbery1" : 
 		["Characters",
@@ -776,7 +803,7 @@ const DATA = {
 		+7, 0, -20, -10,
 		"Random", "Random",
 		"None",
-		"На автомобиль"],
+		15],
 		
 	"CreditLiveAt15Oclock" : 
 		["Characters",
@@ -789,7 +816,7 @@ const DATA = {
 		+7, 0, -20, -10,
 		"Random", "Random",
 		"None",
-		"Сложно"],
+		15],
 		
 	"CardSmartBlocking" : 
 		["Characters",
@@ -802,7 +829,7 @@ const DATA = {
 		0, 0, 0, 0,
 		"Random", "CardSmartBlocking1",
 		"None",
-		"Женщины"],
+		12],
 		
 	"CardSmartBlocking1" : 
 		["Characters",
@@ -815,7 +842,7 @@ const DATA = {
 		+12, +12, 0, 0,
 		"Random", "Random",
 		"None",
-		"Женщины"],
+		12],
 		
 		
 	"CardAffraidOfPay" : 
@@ -829,7 +856,7 @@ const DATA = {
 		+15, 0, 0, 0,
 		"Random", "CardAffraidOfPay1",
 		"None",
-		"Женщины"],
+		12],
 		
 	"CardAffraidOfPay1" : 
 		["Characters",
@@ -842,7 +869,7 @@ const DATA = {
 		+15, +15, 0, -10,
 		"Random", "Random",
 		"None",
-		"Женщины"],
+		12],
 		
 	"IncassationCrush" : 
 		["Characters",
@@ -855,7 +882,7 @@ const DATA = {
 		+13, 0, 0, 0,
 		"IncassationCrush1", "IncassationCrush1",
 		"None",
-		"Ремонт"],
+		15],
 		
 	"IncassationCrush1" : 
 		["Characters",
@@ -868,7 +895,7 @@ const DATA = {
 		+13, 0, 0, 0,
 		"Random", "Random",
 		"None",
-		"Ремонт"],
+		15],
 		
 	"CreditDenyLoterry" : 
 		["Characters",
@@ -881,7 +908,7 @@ const DATA = {
 		0, +7, 0, 0,
 		"Random", "Random",
 		"None",
-		"Инвестиции"],
+		3],
 		
 	"MerryTOBankir" : 
 		["Characters",
@@ -894,7 +921,7 @@ const DATA = {
 		+7, +7, 0, 0,
 		"Random", "Random",
 		"None",
-		"Любовь"],
+		13],
 		
 	"BankRobberyMe" : 
 		["Characters",
@@ -907,7 +934,7 @@ const DATA = {
 		0, 0, 0, 0,
 		"Random", "BankRobberyMe1",
 		"None",
-		"None"],
+		14],
 		
 	"BankRobberyMe1" : 
 		["Characters",
@@ -920,59 +947,59 @@ const DATA = {
 		-10, 0, -10, -10,
 		"Random", "Random",
 		"None",
-		"None"],
+		14],
 		
 	"ForgiveMeCredit" : 
 		["Characters",
-		"AlexeyKochanov", 
+		"Getty Green", 
 		"Сегодня прощёное воскресенье! Вы знаете, что это значит? :)", #что говорит 2
-		"Джон, вечно без денег",
+		"Гэтти Грин",
 		"Нет, мы не простим вам кредит. Оплачивайте его по графику",
 		"Сегодня вторник...",
 		+3, -7, 0, +13,
 		0, 0, 0, 0,
 		"Random", "Random",
 		"None",
-		"Долги"], 
+		15], 
 		
 	"InvestitionBillion" : 
 		["Characters",
-		"AlexeyKochanov", 
+		"Liktor Vustig", 
 		"Идея: беру кредит в банке 1 миллиард, покупаю этот банк, разрешаю себе не отдавать кредит! Я — олигарх! Гениально же!?", #что говорит 2
-		"Бизнесмен Джерри",
+		"Ликтор Вюстиг",
 		"Может лучше устроишься наконец на работу!?",
 		"Отличная идея! Осталось получить одобрение на эту сумму...",
 		+14, -7, 0, 0,
 		0, +14, 0, 0,
 		"Random", "Random",
 		"None",
-		"Инвестиции"],
+		3],
 		
 	"InvestitionCreditToBank" : 
 		["Characters",
-		"BillGates", 
+		"Borren Uaffet", 
 		"Здравствуйте! Я к вам по поводу кредита", #что говорит 2
-		"Гилл Бейтс",
+		"Боррен Уаффет",
 		"Какая сумма вам нужна?",
 		"На что собираете потратить деньги?",
 		0, 0, 0, 0,
 		0, 0, 0, 0,
 		"InvestitionCreditToBank1", "InvestitionCreditToBank1",
 		"None",
-		"Инвестиции"],
+		13],
 		
 	"InvestitionCreditToBank1" : 
 		["Characters",
-		"BillGates", 
+		"Borren Uaffet", 
 		"На самом деле я пришел, потмоу что деньги нужны вам...", #что говорит 2
-		"Гилл Бейтс",
+		"Боррен Уаффет",
 		"Что???",
 		"В смысле???",
 		0, 0, 0, 0,
 		0, 0, 0, 0,
 		"InvestitionCreditToBank2", "InvestitionCreditToBank2",
 		"None",
-		"Инвестиции"],
+		13],
 		
 	"InvestitionCreditToBank2" : 
 		["Characters",
@@ -985,7 +1012,7 @@ const DATA = {
 		0, 0, 0, +30,
 		"Random", "Random",
 		"None",
-		"Инвестиции"], 
+		13], 
 		
 	"DepositLoanForAfriend" : 
 		["Characters",
@@ -998,7 +1025,7 @@ const DATA = {
 		0, 0, 0, 0,
 		"DepositLoanForAfriend1", "DepositLoanForAfriend2",
 		"None",
-		"Инвестиции"],
+		0],
 		
 	"DepositLoanForAfriend1" : 
 		["Characters",
@@ -1011,7 +1038,7 @@ const DATA = {
 		+10, 0, +5, 0,
 		"Random", "Random",
 		"None",
-		"Инвестиции"],
+		0],
 		
 	"DepositLoanForAfriend2" : 
 		["Characters",
@@ -1024,7 +1051,7 @@ const DATA = {
 		0, 0, 0, 0,
 		"Random", "Random",
 		"None",
-		"Инвестиции"],
+		0],
 		
 	"DepositSaveMoney" : 
 		["Characters",
@@ -1037,7 +1064,7 @@ const DATA = {
 		+17, 0, 0, +17,
 		"DepositSaveMoney1", "DepositSaveMoney2",
 		"None",
-		"Инвестиции"],
+		0],
 		
 	"DepositSaveMoney1" : 
 		["Characters",
@@ -1050,7 +1077,7 @@ const DATA = {
 		0, 0, 0, 0,
 		"Random", "Random",
 		"None",
-		"Инвестиции"],
+		0],
 		
 	"DepositSaveMoney2" : 
 		["Characters",
@@ -1063,59 +1090,59 @@ const DATA = {
 		0, 0, 0, 0,
 		"Random", "Random",
 		"None",
-		"Инвестиции"],
+		0],
 		
 	"DepositPovertyIsNotAVice" : 
 		["Characters",
-		"AlexeyKochanov", 
+		"Dabygale Eonson", 
 		"Шепотом: Я хочу положить на мой счет три миллиона долларов!", #что говорит 2
-		"Оливер Гарфилд",
+		"Дэбигейл Эонсон",
 		"Говорите громче, бедность у нас не считается пороком!!!",
-		"Конечно СЭР",
+		"Конечно!",
 		0, -12, 0, +20,
 		0, 0, 0, +20,
 		"Random", "Random",
 		"None",
-		"Инвестиции"],
+		12],
 		
 	"CreditListIpotec" : 
 		["Characters",
-		"AlexeyKochanov", 
+		"Kikolas Nage", 
 		"Что это значит!? Показывает лист: Взяв этот листок, вы дали согласие на заключение договора ипотечного кредита под 30 процентов годовых сроком на 10 лет", #что говорит 2
-		"Бенджамин Маркул",
+		"Киколас Нейдж",
 		"Отлично... ещё один попался!",
 		"Добро пожаловать в наш чудестный Банк!",
 		+8, -12, 0, -10,
 		+8, +7, 0, -10,
 		"Random", "Random",
 		"None",
-		"Инвестиции"], 
+		8], 
 		
-"CreditMoneySource" : 
+	"CreditMoneySource" : 
 		["Characters",
-		"AlexeyKochanov", 
+		"Sanna Acol Nitt", 
 		"Хочу взять деньги в кредит, на новое платье", #что говорит 2
-		"Олисия Олдман",
+		"Санна Аколь Нитт",
 		"Хорошо, подскажите какой источник вашего дохода?",
 		"Вы не похожи на леди у которой есть работа...",
 		+10, 0, 0, 0,
 		0, -10, 0, 0,
 		"CreditMoneySource1", "CreditMoneySource1",
 		"None",
-		"Инвестиции"],
+		4],
 		
 "CreditMoneySource1" : 
 		["Characters",
-		"AlexeyKochanov", 
-		"Источник моего дохода: муж", #что говорит 2
-		"Олисия Олдман",
+		"Sanna Acol Nitt", 
+		"Источник моего дохода: ухажер", #что говорит 2
+		"Санна Аколь Нитт",
 		"Хахаха... кредит одобрен!",
 		"Ну...  почему-то... так и думал :)",
 		0, +9, 0, -10,
 		0, -5, 0, -10,
 		"Random", "Random",
 		"None",
-		"Инвестиции"],
+		4],
 		
 	"Tutorial1" : 
 		["Tutorial", #ссылка на папку персонажей 0

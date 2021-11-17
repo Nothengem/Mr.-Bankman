@@ -41,13 +41,13 @@ func _ready():
 func change_proportions_right():
 	Scriptwriter.Heath_var = Scriptwriter.Heath_var + Scriptwriter.HealthRightChoose
 	animate_value_health(HealthProgress.value, Scriptwriter.Heath_var)
-
+	
 	Scriptwriter.Law_var = Scriptwriter.Law_var + Scriptwriter.LawRightChoose
 	animate_value_law(LawProgress.value, Scriptwriter.Law_var)
-
+	
 	Scriptwriter.Banditism_var = Scriptwriter.Banditism_var + Scriptwriter.BanditismRightChoose
 	animate_value_banditism(BanditismProgress.value, Scriptwriter.Banditism_var)
-
+	
 	Scriptwriter.Luck_var = Scriptwriter.Luck_var + Scriptwriter.LuckRightChoose
 	animate_value_luck(LuckProgress.value, Scriptwriter.Luck_var)
 

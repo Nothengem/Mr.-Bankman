@@ -2,8 +2,8 @@ extends Control
 
 onready var text_generation = "- Не совпадает фото и имя \n"
 onready var sex = str(Scriptwriter.ruleOfLevel[0])
-onready var ageMin = Scriptwriter.ruleOfLevel[1]
-onready var ageMax = Scriptwriter.ruleOfLevel[2]
+onready var ageMin = str(Scriptwriter.ruleOfLevel[1])
+onready var ageMax = str(Scriptwriter.ruleOfLevel[2])
 onready var country = Scriptwriter.ruleOfLevel[3]
 onready var creditHistory = Scriptwriter.ruleOfLevel[4]
 onready var blackList = Scriptwriter.ruleOfLevel[5]
@@ -12,6 +12,7 @@ onready var whatFor = Scriptwriter.ruleOfLevel[7]
 
 
 func _ready():
+	
 	pass
 	
 	
@@ -22,19 +23,19 @@ func text_generations():
 	elif !(sex in Scriptwriter.dossierSexDiction):
 		Scriptwriter.SexRule = false
 		
-	if ageMin == 0:
+	if ageMin == "0":
 		Scriptwriter.AgeRule = false
-	elif ageMin != 0:
+	elif ageMin != "0":
 		Scriptwriter.AgeRule = true
-		text_generation = text_generation + "- Возраст от " + ageMin
+		text_generation = str(text_generation) + "- Возраст от " + str(ageMin)
 		
-	if ageMax != 0:
+	if ageMax != "0":
 		Scriptwriter.AgeRule = true
-		if ageMax != 0:
-			text_generation = text_generation + " до " + ageMax + " \n"
-		elif ageMax == 0:
-			text_generation = text_generation + "- Возраст до " + ageMax + " \n"
-	elif ageMax == 0:
+		if ageMax != "0":
+			text_generation = str(text_generation) + " до " + str(ageMax) + " \n"
+		elif ageMax == "0":
+			text_generation = str(text_generation) + "- Возраст до " + str(ageMax) + " \n"
+	elif ageMax == "0":
 		Scriptwriter.AgeRule = false
 			
 	if country != null:
@@ -65,6 +66,7 @@ func text_generations():
 		
 	if whatFor != null:
 		Scriptwriter.WhatForRule = true
+		whatFor = str(PoolStringArray(whatFor).join(", "))
 		text_generation = text_generation + "- Продукт нужен для: " + whatFor + " \n"
 	elif whatFor == null:
 		Scriptwriter.WhatForRule = false

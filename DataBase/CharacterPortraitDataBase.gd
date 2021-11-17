@@ -12,7 +12,7 @@ enum {
 	}
 
 const DATA = {
-	"Mr. Bankman": [ "Head10", "Neck1", "Shirt11", "Eyebrows12", "Eyes7", "Forehead1", "Ears7", "Jowls10", "Glasses1", "Mouth4", "Hair10", "Nose16"],
+	"Mr. Bankman": [ "Head10", "Neck1", "Shirt11", "Eyebrows12", "Eyes7", "Forehead1", "Ears7", "Jowls0", "Glasses1", "Mouth4", "Hair10", "Nose16"],
 	"Sill Fpencer": [ "Head7", "Neck1", "Shirt1", "Eyebrows1", "Eyes2", "Forehead0", "Ears6", "Jowls0", "Glasses0", "Mouth7", "Hair13", "Nose13"],
 	"Getty Green" : [ "Head4", "Neck1", "Shirt5", "Eyebrows2", "Eyes10", "Forehead1", "Ears4", "Jowls3", "Glasses1", "Mouth11", "Hair14", "Nose5"],
 	"Cark Mukerberg" : [ "Head8", "Neck1", "Shirt9", "Eyebrows15", "Eyes4", "Forehead0", "Ears10", "Jowls0", "Glasses0", "Mouth2", "Hair4", "Nose9"],

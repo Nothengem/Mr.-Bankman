@@ -771,14 +771,14 @@ outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 7 )
 
-[node name="MainScene" type="Node" groups=[
-"MainScene",
-]]
+[node name="MainScene" type="Node" groups=["MainScene"]]
 script = ExtResource( 6 )
 
 [node name="Control" type="Control" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 540, 960 )
 mouse_filter = 2
 __meta__ = {
@@ -857,7 +857,6 @@ position = Vector2( -277.186, -214.96 )
 normal = ExtResource( 8 )
 
 [node name="MainCardsBack8" parent="Control" instance=ExtResource( 9 )]
-visible = false
 margin_left = 85.12
 margin_top = 90.48
 margin_right = -0.879883
@@ -868,7 +867,6 @@ mouse_filter = 2
 texture = ExtResource( 11 )
 
 [node name="MainCardsBack7" parent="Control" instance=ExtResource( 9 )]
-visible = false
 margin_left = 85.12
 margin_top = 90.48
 margin_right = -0.879883
@@ -879,7 +877,6 @@ mouse_filter = 2
 texture = ExtResource( 11 )
 
 [node name="MainCardsBack6" parent="Control" instance=ExtResource( 9 )]
-visible = false
 margin_left = 85.12
 margin_top = 90.48
 margin_right = -0.879883
@@ -890,7 +887,6 @@ mouse_filter = 2
 texture = ExtResource( 11 )
 
 [node name="MainCardsBack5" parent="Control" instance=ExtResource( 9 )]
-visible = false
 margin_left = 85.12
 margin_top = 90.48
 margin_right = -0.879944
@@ -901,7 +897,6 @@ mouse_filter = 2
 texture = ExtResource( 11 )
 
 [node name="MainCardsBack4" parent="Control" instance=ExtResource( 9 )]
-visible = false
 margin_left = 85.12
 margin_top = 90.48
 margin_right = -0.880005
@@ -912,7 +907,6 @@ mouse_filter = 2
 texture = ExtResource( 11 )
 
 [node name="MainCardsBack3" parent="Control" instance=ExtResource( 9 )]
-visible = false
 margin_left = 85.12
 margin_top = 90.48
 margin_right = -0.879944
@@ -923,7 +917,6 @@ mouse_filter = 2
 texture = ExtResource( 11 )
 
 [node name="MainCardsBack2" parent="Control" instance=ExtResource( 9 )]
-visible = false
 margin_top = 0.480042
 margin_right = -85.8799
 margin_bottom = 174.0
@@ -985,7 +978,7 @@ anims/BadSex = SubResource( 15 )
 anims/GoodJob = SubResource( 16 )
 
 [node name="Message" type="Label" parent="Control/MessagesFeedBack"]
-modulate = Color( 1, 0, 0, 1 )
+modulate = Color( 0.32549, 0.952941, 0.27451, 1 )
 self_modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 0.5

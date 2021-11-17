@@ -122,6 +122,7 @@ onready var dossierNationalDiction = ["Russia", "France", "Germany", "England", 
 onready var dossierCreditHistoryDiction = ["Хорошая", "Плохая"]
 onready var dossierBlackListDiction = ["Чист", "Террорист", "Черный список"]
 onready var dossierCreditRatingDiction = ["Высокий", "Средний", "Низкий"]
+onready var dossierBankRlationPurpose = ["...", "До зарплаты", "Обучение", "На бизнес", "Шоппинг", "Отпуск", "Вернуть долги", "Лечение", "Дом", "Ремонт", "Автомобиль", "Хобби", "Сохранить деньги", "Инвестиции", "Не скажу", "Жалоба"]
 
 #переменные для правил уровня
 onready var RulesDataBase = preload("res://DataBase/RulesDataBase.gd")

@@ -245,9 +245,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 1, 0.203922, 1 ), Color( 0, 1, 0.203922, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="BalanceGUI" type="Control" groups=[
-"BalanceGUI",
-]]
+[node name="BalanceGUI" type="Control" groups=["BalanceGUI"]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
