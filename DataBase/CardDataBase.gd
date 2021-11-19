@@ -49,12 +49,12 @@ enum {
 	DepositPovertyIsNotAVice, 
 	#кредит
 	CreditReturnCredit, BankRobberyMe, BankRobberyMe1, ForgiveMeCredit, 
-	CreditListIpotec, CreditMoneySource, CreditMoneySource1, CreditIfIwontReturm
+	CreditListIpotec, CreditMoneySource, CreditMoneySource1, CreditIfIwontReturm, CreditIfIwontReturm1,
 	#инвестиции
 	InvestitionBillion, InvestitionCreditToBank, InvestitionCreditToBank1, 
 	InvestitionCreditToBank2,
 	#Сотрудники 
-	StaffEconomicalQuestions, 
+	StaffEconomicalQuestions, StaffEconomicalQuestions1,
 	
 	#колода 4 уровня (10 штук)
 	#Жалобы
@@ -1131,7 +1131,7 @@ const DATA = {
 		"None",
 		4],
 		
-"CreditMoneySource1" : 
+	"CreditMoneySource1" : 
 		["Characters",
 		"Sanna Acol Nitt", 
 		"Источник моего дохода: ухажер", #что говорит 2
@@ -1143,6 +1143,59 @@ const DATA = {
 		"Random", "Random",
 		"None",
 		4],
+		
+	"StaffEconomicalQuestions" : 
+		["Characters",
+		"NULL", 
+		"На самом деле экономисты отвечают на вопросы не потому, что знают на них ответы", #что говорит 2
+		"NULL",
+		"Мне это не интересно",
+		"???",
+		-15, 0, 0, 0,
+		0, 0, 0, 0,
+		"Random", "StaffEconomicalQuestions1",
+		"None",
+		4],
+		
+	"StaffEconomicalQuestions1" : 
+		["Characters",
+		"NULL", 
+		"Мы отвечаем потому, что нас спрашивают", #что говорит 2
+		"NULL",
+		"Так вот почему экономина страны в заднице",
+		"Блин, ты серьёзно?",
+		-10, 0, 0, 0,
+		0, 0, 0, 0,
+		"Random", "Random",
+		"None",
+		4],
+		
+	"CreditIfIwontReturm" : 
+		["Characters",
+		"NULL", 
+		"А если я не верну деньги, которые у вас занял?", #что говорит 2
+		"NULL",
+		"Продадим ваш долг менее приятному банку",
+		"Вам будет стыдно перед Всевышним, когда предстанете",
+		+14, -12, -5, 0,
+		+7, -13, 0, 0,
+		"Random", "CreditIfIwontReturm1",
+		"None",
+		4],
+		
+	"CreditIfIwontReturm1" : 
+		["Characters",
+		"NULL", 
+		"Когда это ещё будет...", #что говорит 2
+		"NULL",
+		"Вот, если десятого не вернете, одиннадцатого предстанете",
+		"Бог, вам судья",
+		+12, -8, -12, +20,
+		-12, 0, 0, -14,
+		"Random", "CreditIfIwontReturm1",
+		"None",
+		4],
+		
 		
 	"Tutorial1" : 
 		["Tutorial", #ссылка на папку персонажей 0
