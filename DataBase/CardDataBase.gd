@@ -49,7 +49,7 @@ enum {
 	DepositPovertyIsNotAVice, 
 	#кредит
 	CreditReturnCredit, BankRobberyMe, BankRobberyMe1, ForgiveMeCredit, 
-	CreditListIpotec, CreditMoneySource, CreditMoneySource1, CreditIfIwontReturm, CreditIfIwontReturm1,
+	CreditListIpotec, CreditMoneySource, CreditMoneySource1, CreditIfIwontReturn, CreditIfIwontReturn1,
 	#инвестиции
 	InvestitionBillion, InvestitionCreditToBank, InvestitionCreditToBank1, 
 	InvestitionCreditToBank2,
@@ -1155,7 +1155,7 @@ const DATA = {
 		0, 0, 0, 0,
 		"Random", "StaffEconomicalQuestions1",
 		"None",
-		4],
+		0],
 		
 	"StaffEconomicalQuestions1" : 
 		["Characters",
@@ -1168,9 +1168,9 @@ const DATA = {
 		0, 0, 0, 0,
 		"Random", "Random",
 		"None",
-		4],
+		0],
 		
-	"CreditIfIwontReturm" : 
+	"CreditIfIwontReturn" : 
 		["Characters",
 		"NULL", 
 		"А если я не верну деньги, которые у вас занял?", #что говорит 2
@@ -1179,11 +1179,11 @@ const DATA = {
 		"Вам будет стыдно перед Всевышним, когда предстанете",
 		+14, -12, -5, 0,
 		+7, -13, 0, 0,
-		"Random", "CreditIfIwontReturm1",
+		"Random", "CreditIfIwontReturn1",
 		"None",
-		4],
+		15],
 		
-	"CreditIfIwontReturm1" : 
+	"CreditIfIwontReturn1" : 
 		["Characters",
 		"NULL", 
 		"Когда это ещё будет...", #что говорит 2
@@ -1192,10 +1192,48 @@ const DATA = {
 		"Бог, вам судья",
 		+12, -8, -12, +20,
 		-12, 0, 0, -14,
-		"Random", "CreditIfIwontReturm1",
+		"Random", "CreditIfIwontReturn1",
 		"None",
-		4],
+		15],
 		
+	"ComplainsCredit" : 
+		["Characters",
+		"NULL", 
+		"Банк идет навстречу клиенту. Даёт денег столько, сколько они хотят, чтобы...", #что говорит 2
+		"NULL",
+		"помочь людям?",
+		"заработать?",
+		-15, 0, +22, 0,
+		+9, 0, -12, 0,
+		"ComplainsCredit1", "ComplainsCredit2",
+		"None",
+		0],
+		
+	"ComplainsCredit1" : 
+		["Characters",
+		"NULL", 
+		"И как ты ещё не разорил мой Банк!?", #что говорит 2
+		"NULL",
+		"...",
+		"Я стараюсь, но не получается",
+		0, 0, 0, 0,
+		0, 0, 0, 0,
+		"Random", "Random",
+		"None",
+		0],
+		
+	"ComplainsCredit2" : 
+		["Characters",
+		"NULL", 
+		"Умничка! Чтобы мы взяли с них столько сколько хотим!", #что говорит 2
+		"NULL",
+		"...",
+		"Даааа... ты гений...",
+		0, 0, 0, 0,
+		0, 0, 0, 0,
+		"Random", "Random",
+		"None",
+		0],
 		
 	"Tutorial1" : 
 		["Tutorial", #ссылка на папку персонажей 0
