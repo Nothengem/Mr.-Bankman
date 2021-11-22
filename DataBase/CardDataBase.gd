@@ -62,7 +62,7 @@ enum {
 	#Инвестиции
 	InvestitionSmallBusiness, InvestitionFlipOver,
 	#Кредит
-	CreditCleymoIpotek, CreditRefrigerator
+	CreditCleymoIpotek, CreditCleymoIpotek1, CreditRefrigerator
 	#новости
 	ClaimGrandmother, StaffDepositNeverBack,
 	#Депозит
@@ -1234,6 +1234,61 @@ const DATA = {
 		"Random", "Random",
 		"None",
 		0],
+		
+	"StaffDepositNeverBack" : 
+		["Characters",
+		"NULL", 
+		"Я хочу положить у вас деньги на сбережение. Скажите, что с ними станет, если вы обанкротитесь?", #что говорит 2
+		"NULL",
+		"Вы сможете забрать ничего и сразу",
+		"Вы сможете забрать всё обратно, но никогда",
+		0, -15, 0, +15,
+		0, -15, 0, +15,
+		"Random", "Random",
+		"None",
+		12],
+		
+		
+	"InvestitionSmallBusiness" : 
+		["Characters",
+		"NULL", 
+		"Я хочу начать малый бизнес. Что мне делать?", #что говорит 2
+		"NULL",
+		"Не стоит, мой босс начал бизнес. Теперь приходится на него работать",
+		"Займите у нас деньги, купите большой бизнес и подождите",
+		-18, -12, 0, 0,
+		0, +12, 0, -20,
+		"Random", "Random",
+		"None",
+		3],
+		
+
+		
+	"CreditCleymoIpotek" : 
+		["Characters",
+		"NULL", 
+		"(читает толстенный договор ипотечного кредита и морщится)", #что говорит 2
+		"NULL",
+		"Я тоже не понимаю, что написано в этом договоре",
+		"Вас, что-то смущает?",
+		0, -6, 0, 0,
+		0, +12, 0, 0,
+		"Random", "CreditCleymoIpotek1",
+		"None",
+		8],
+		
+	"CreditCleymoIpotek1" : 
+		["Characters",
+		"NULL", 
+		"Да вот здесь, параграф 1594, пункт 18: На лбу клиента калёным железом выжигается клеймо с логотипом банка.", #что говорит 2
+		"NULL",
+		"Хорошо... вколим вам обезболивающее за доп плату",
+		"Всегда приходится чем-то жертвовать",
+		+18, -6, 0, +6,
+		0, -12, 0, 0,
+		"Random", "CreditCleymoIpotek1",
+		"None",
+		8],
 		
 	"Tutorial1" : 
 		["Tutorial", #ссылка на папку персонажей 0
