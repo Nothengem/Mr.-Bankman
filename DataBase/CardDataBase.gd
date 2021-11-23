@@ -58,19 +58,20 @@ enum {
 	
 	#колода 4 уровня (10 штук)
 	#Жалобы
-	ComplainsCredit, CreditNotInMyWay, ClaimBankTrustYou,
+	ComplainsCredit, CreditNotInMyWay, CreditNotInMyWay1, CreditNotInMyWay2, ClaimBankTrustYou,
 	#Инвестиции
 	InvestitionSmallBusiness, InvestitionFlipOver,
 	#Кредит
 	CreditCleymoIpotek, CreditCleymoIpotek1, CreditRefrigerator
 	#новости
-	ClaimGrandmother, StaffDepositNeverBack,
+	ClaimGrandmother, ClaimGrandmother1, ClaimGrandmother2, ClaimGrandmother3,
+	StaffDepositNeverBack,
 	#Депозит
 	DepositLetterWrite, 
 	
 	# колода 5 дня (10 штук)
 	#Жалобы
-	ClaimNoMoneyNoProblem, ClaimCreditWontPay,
+	ClaimCreditWontPay,
 	#Инвестиции
 	CreditDeathScheme, MoneyPrinting,
 	
@@ -1235,19 +1236,6 @@ const DATA = {
 		"None",
 		0],
 		
-	"StaffDepositNeverBack" : 
-		["Characters",
-		"NULL", 
-		"Я хочу положить у вас деньги на сбережение. Скажите, что с ними станет, если вы обанкротитесь?", #что говорит 2
-		"NULL",
-		"Вы сможете забрать ничего и сразу",
-		"Вы сможете забрать всё обратно, но никогда",
-		0, -15, 0, +15,
-		0, -15, 0, +15,
-		"Random", "Random",
-		"None",
-		12],
-		
 		
 	"InvestitionSmallBusiness" : 
 		["Characters",
@@ -1262,7 +1250,6 @@ const DATA = {
 		"None",
 		3],
 		
-
 		
 	"CreditCleymoIpotek" : 
 		["Characters",
@@ -1277,6 +1264,7 @@ const DATA = {
 		"None",
 		8],
 		
+		
 	"CreditCleymoIpotek1" : 
 		["Characters",
 		"NULL", 
@@ -1289,6 +1277,100 @@ const DATA = {
 		"Random", "CreditCleymoIpotek1",
 		"None",
 		8],
+		
+		
+	"ClaimGrandmother" : 
+		["Characters",
+		"NULL Охранник", 
+		"Я задержал банду бабушек специально создававших очередь в кассах. Что мне с ними сделать?", #что говорит 2
+		"NULL",
+		"Рецедевистов нужно сажать в тюрьму",
+		"Может всё же спросим их, чего они хотят?",
+		+12, -18, 0, 0,
+		0, +14, 0, 0,
+		"Random", "ClaimGrandmother1",
+		"None",
+		0],
+		
+		
+	"ClaimGrandmother1" : 
+		["Characters",
+		"NULL бабушка", 
+		"Два года назад мы открыли здесь счет! Тогда у Банка было иное название и нам сообщили, что Банк разорился, но это ложь! Владелец то старый!", #что говорит 2
+		"NULL",
+		"Я здесь работаю недавно...",
+		"Ну... эмн....",
+		0, -7, 0, 0,
+		0, -7, 0, 0,
+		"ClaimGrandmother2", "ClaimGrandmother2",
+		"None",
+		14],
+		
+	"ClaimGrandmother2" : 
+		["Characters",
+		"NULL банкман", 
+		"Не переживай малыш, я разберусь с этим. Итак дорогие дамы...", #что говорит 2
+		"NULL",
+		"Скажешь им, что ты не крал их деньги?",
+		"Вернёшь им деньги?",
+		0, 0, 0, 0,
+		0, 0, 0, 0,
+		"ClaimGrandmother3", "ClaimGrandmother3",
+		"None",
+		0],
+		
+	"ClaimGrandmother3" : 
+		["Characters",
+		"NULL банкман", 
+		"... вы сможете забрать все свои деньги все, но никогда, либо ничегое, но сегодня! Выбирайте!", #что говорит 2
+		"NULL",
+		"Блин... на кого мне приходится работать?",
+		"Ну... это тоже ответ на происходящее...",
+		0, -7, 0, +10,
+		0, -7, 0, +10,
+		"Random", "Random",
+		"None",
+		0],
+		
+		
+	"CreditNotInMyWay" : 
+		["Characters",
+		"NULL", 
+		"Я хотел бы оформить кредит... уже шестой возьму в вашей Банке...", #что говорит 2
+		"NULL",
+		"Не уверен, что тебе стоит это делать",
+		"Так... у вас ведь есть счет в нашем Банке?",
+		0, -12, 0, 0,
+		0, 0, 0, 0,
+		"Random", "CreditNotInMyWay1",
+		"None",
+		1],
+		
+	"CreditNotInMyWay1" : 
+		["Characters",
+		"NULL", 
+		"Да и он не в мою пользу", #что говорит 2
+		"NULL",
+		"Может брать кредиты это не твоё?",
+		"Вы испытываете финансовые проблемы?",
+		0, -4, 0, 0,
+		0, 0, 0, 0,
+		"Random", "CreditNotInMyWay2",
+		"None",
+		1],
+		
+	"CreditNotInMyWay2" : 
+		["Characters",
+		"NULL", 
+		"Нет, потому что у меня нет финансов", #что говорит 2
+		"NULL",
+		"Отказано!",
+		"Совесть не позволит выдать вам ещё один кредит",
+		0, -4, 0, 0,
+		0, +6, 0, 0,
+		"Random", "Random",
+		"None",
+		1],
 		
 	"Tutorial1" : 
 		["Tutorial", #ссылка на папку персонажей 0
