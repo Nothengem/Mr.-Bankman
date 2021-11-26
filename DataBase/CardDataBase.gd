@@ -62,7 +62,7 @@ enum {
 	#Инвестиции
 	InvestitionSmallBusiness, InvestitionFlipOver,
 	#Кредит
-	CreditCleymoIpotek, CreditCleymoIpotek1, CreditRefrigerator
+	CreditCleymoIpotek, CreditCleymoIpotek1, CreditRefrigerator, CreditRefrigerator1,
 	#новости
 	ClaimGrandmother, ClaimGrandmother1, ClaimGrandmother2, ClaimGrandmother3,
 	StaffDepositNeverBack,
@@ -1147,9 +1147,9 @@ const DATA = {
 		
 	"StaffEconomicalQuestions" : 
 		["Characters",
-		"NULL", 
+		"Darls Choy",
 		"На самом деле экономисты отвечают на вопросы не потому, что знают на них ответы", #что говорит 2
-		"NULL",
+		"Дарлс Чоу",
 		"Мне это не интересно",
 		"???",
 		-15, 0, 0, 0,
@@ -1160,10 +1160,10 @@ const DATA = {
 		
 	"StaffEconomicalQuestions1" : 
 		["Characters",
-		"NULL", 
+		"Darls Choy", 
 		"Мы отвечаем потому, что нас спрашивают", #что говорит 2
-		"NULL",
-		"Так вот почему экономина страны в заднице",
+		"Дарлс Чоу",
+		"Так вот почему экономика страны в заднице",
 		"Блин, ты серьёзно?",
 		-10, 0, 0, 0,
 		0, 0, 0, 0,
@@ -1435,6 +1435,33 @@ const DATA = {
 		"...",
 		0, 0, 0, 0,
 		0, 0, 0, 0,
+		"Random", "Random",
+		"None",
+		0],
+		
+		
+	"CreditRefrigerator" : 
+		["Characters",
+		"NULL", 
+		"Я пришел для погашения кредита. Подскажите в какое окно мне подойти?", #что говорит 2
+		"NULL",
+		"Я что? Справочное бюро? Иди спроси у охранника!",
+		"Кредит оформлен на Вас?",
+		0, -15, 0, 0,
+		0, 0, 0, 0,
+		"Random", "CreditRefrigerator1",
+		"None",
+		0],
+		
+	"CreditRefrigerator1" : 
+		["Characters",
+		"NULL", 
+		"Нет, на холодильник. (показывает документы)", #что говорит 2
+		"NULL",
+		"Боюсь, вы шиблись Банком",
+		"Вам во 2е окно, 5го этажа по адресу Вантер стрит 8",
+		0, -10, 0, 0,
+		0, +15, 0, 0,
 		"Random", "Random",
 		"None",
 		0],
