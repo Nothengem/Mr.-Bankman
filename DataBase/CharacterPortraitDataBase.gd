@@ -25,8 +25,7 @@ const DATA = {
 	"Dabygale Eonson" : [ "Head13", "Neck1", "Shirt14", "Eyebrows12", "Eyes16", "Forehead1", "Ears3", "Jowls1", "Glasses1", "Mouth6", "Hair14", "Nose10"],
 	"Crowley Shepard" : [ "Head8", "Neck1", "Shirt11", "Eyebrows12", "Eyes2", "Forehead2", "Ears1", "Jowls0", "Glasses0", "Mouth2", "Hair6", "Nose10"],
 	"Sanna Acol Nitt" : [ "Head8", "Neck1", "Shirt13", "Eyebrows8", "Eyes15", "Forehead0", "Ears1", "Jowls2", "Glasses0", "Mouth8", "Hair8", "Nose4"],
-	
-	"Darls Choy" : [ "Head3", "Neck1", "Shirt5", "Eyebrows5", "Eyes3", "Forehead0", "Ears1", "Jowls0", "Glasses0", "Mouth3", "Hair2", "Nose2"],
+	"Darls Coy" : [ "Head5", "Neck1", "Shirt7", "Eyebrows6", "Eyes1", "Forehead0", "Ears8", "Jowls0", "Glasses0", "Mouth6", "Hair1", "Nose8"],
 	
 	"Mafiosi" : [ "Head4", "Neck1", "Shirt4", "Eyebrows4", "Eyes4", "Forehead0", "Ears2", "Jowls1", "Glasses0", "Mouth2", "Hair3", "Nose2"],
 	
