@@ -27,8 +27,7 @@ const DATA = {
 	"Sanna Acol Nitt" : [ "Head8", "Neck1", "Shirt13", "Eyebrows8", "Eyes15", "Forehead0", "Ears1", "Jowls2", "Glasses0", "Mouth8", "Hair8", "Nose4"],
 	"Darls Coy" : [ "Head5", "Neck1", "Shirt7", "Eyebrows6", "Eyes1", "Forehead0", "Ears8", "Jowls0", "Glasses0", "Mouth6", "Hair1", "Nose8"],
 	"Bantonio Anderas" : [ "Head9", "Neck1", "Shirt7", "Eyebrows1", "Eyes4", "Forehead1", "Ears5", "Jowls0", "Glasses0", "Mouth1", "Hair6", "Nose15"],
-	
-	"GrishaGrachev" : [ "Head5", "Neck1", "Shirt3", "Eyebrows3", "Eyes5", "Forehead1", "Ears3", "Jowls0", "Glasses1", "Mouth1", "Hair4", "Nose2"],
+	"Barlo Cenetton" : [ "Head7", "Neck1", "Shirt14", "Eyebrows11", "Eyes12", "Forehead1", "Ears3", "Jowls3", "Glasses1", "Mouth14", "Hair5", "Nose4"],
 	
 	"BitKogan" : [ "Head1", "Neck1", "Shirt2", "Eyebrows2", "Eyes1", "Forehead0", "Ears3", "Jowls1", "Glasses0", "Mouth1", "Hair0", "Nose1"],
 	
