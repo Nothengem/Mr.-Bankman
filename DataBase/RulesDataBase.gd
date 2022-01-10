@@ -14,8 +14,8 @@ const DATA = {
 		["Высокий", "Средний"], #кредитный рейтинг(Финансы)
 		["На инвестиции"], #запрет на работу с такими клиентами
 		],
-	"LVL1": [["Женщины"], 21, 65, ["England", "India"], "Средняя", "Чист", ["Низкий"], ["На инвестиции"],],
-	"LVL0": [null, 0, 0, null, null, null, null, null,],
+	"LVL0": [["Женщины"], 21, 65, ["England", "India"], "Средняя", "Чист", ["Низкий"], ["На инвестиции"],],
+	"LVL1": [false, false, false, false, false, false, false, false],
 	"LVL2": [null, null, null, null, null, null, null, ["На инвестиции", "На шоппинг"],],
 	"LVL3": [null, null, null, null, null, null, null, null,],
 	"LVL4": [null, null, null, null, null, null, null, null,],

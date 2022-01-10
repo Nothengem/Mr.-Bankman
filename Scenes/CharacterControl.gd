@@ -183,6 +183,7 @@ func choosedone():
 			if Scriptwriter.CardType != "Tutorial":
 				print(Scriptwriter.CardType)
 					
+					
 				if Scriptwriter.NameRule == true:
 					if Scriptwriter.dossierName != Scriptwriter.CardName:
 						print("не совпало имя")

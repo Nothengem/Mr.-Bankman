@@ -134,6 +134,7 @@ onready var ruleCreditHistory
 onready var ruleBlackList
 onready var ruleLoanRating
 onready var ruleOfLevel
+onready var ruleWhatFor
 
 #переменная в которой буду хранить позицию центра карточки
 onready var MainCardsBack
@@ -172,25 +173,10 @@ func _ready():
 	victory_count = 0
 	position_on_level = 0
 	
-	if levels_complete >= 3:
+	if CurrentLevel >= 3:
 		NameRule = true
 		PhotoRule = true
-#	if levels_complete >= 3:
-#		
-#	if levels_complete == 2 or levels_complete == 7 or levels_complete == 12 or levels_complete == 17 or levels_complete == 22 or levels_complete == 27:
-#		WhatForRule = true
-#	if levels_complete == 5 or levels_complete == 10 or levels_complete == 15 or levels_complete == 20 or levels_complete == 25 or levels_complete == 30:
-#		SexRule = true
-#	if levels_complete == 6 or levels_complete == 11 or levels_complete == 16 or levels_complete == 21 or levels_complete == 26 or levels_complete == 31:
-#		AgeRule = true
-#	if levels_complete == 7 or levels_complete == 12 or levels_complete == 17 or levels_complete == 22 or levels_complete == 27 or levels_complete == 32:
-#		CountryRule = true
-#	if levels_complete == 8 or levels_complete == 13 or levels_complete == 18 or levels_complete == 23 or levels_complete == 28 or levels_complete == 33:
-#		HistoryRule = true
-#	if levels_complete == 9 or levels_complete == 14 or levels_complete == 19 or levels_complete == 24 or levels_complete == 29 or levels_complete == 33:
-#		BlackListRule = true
-#	if levels_complete == 10 or levels_complete == 15 or levels_complete == 20 or levels_complete == 25 or levels_complete == 30 or levels_complete == 33:
-#		RatingRule = true
+
 
 
 func level_massive_generator():
@@ -213,6 +199,26 @@ func level_massive_generator():
 	ruleCreditHistory = ruleOfLevel[4]
 	ruleBlackList = ruleOfLevel[5]
 	ruleLoanRating = ruleOfLevel[6]
+	ruleWhatFor = ruleOfLevel[7]
+	level_massive_rule_generetor()
+	
+func level_massive_rule_generetor():
+	ruleLoanRating = ruleOfLevel[6]
+	
+	if ruleAgeMin != false or ruleAgeMax != false:
+		AgeRule = true
+	if ruleSex != false:
+		SexRule = true
+	if ruleNational != false:
+		CountryRule = true
+	if ruleCreditHistory != false:
+		HistoryRule = true
+	if ruleBlackList != false:
+		BlackListRule = true
+	if ruleLoanRating != false:
+		RatingRule = true
+	if ruleWhatFor != false:
+		WhatForRule = true
 	
 
 #	var level_composit
