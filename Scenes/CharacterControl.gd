@@ -190,8 +190,8 @@ func choosedone():
 						Scriptwriter.HealthRightChoose = -50
 						
 				if Scriptwriter.AgeRule == true:
-					if str(Scriptwriter.dossierAge) <= str(Scriptwriter.ruleAgeMin) or \
-					str(Scriptwriter.dossierAge) >= str(Scriptwriter.ruleAgeMax):
+					if str(Scriptwriter.dossierAge) < str(Scriptwriter.ruleAgeMin) or \
+					str(Scriptwriter.dossierAge) > str(Scriptwriter.ruleAgeMax):
 						print("не проходит по возрасту")
 						Scriptwriter.HealthRightChoose = -50
 						
@@ -227,7 +227,7 @@ func choosedone():
 						Scriptwriter.HealthRightChoose = -50
 					
 				if Scriptwriter.WhatForRule == true:
-					if Scriptwriter.WhatFor != Scriptwriter.ruleOfLevel[7]:
+					if Scriptwriter.WhatFor in Scriptwriter.ruleOfLevel[7]:
 						print("не совпала цель")
 						Scriptwriter.HealthRightChoose = -50
 				

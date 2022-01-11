@@ -6,48 +6,48 @@ enum {
 
 const DATA = {
 	"SpisokVsego": #ключ:
-		[["Мужской", "Женский"], #[пол(Финансы),
-		21, 65, #возраст (Банк),
-		["Russia", "France", "Germany", "England", "Italy", "Spain", "USA", "China", "Japan", "UAE", "Africa", "India"], #страна(Банк и Финансы )
-		"Хорошая", #история(Финансы)
-		"Чист", #лист(Банк)
-		["Высокий", "Средний"], #кредитный рейтинг(Финансы)
+		[["Мужской", "Женский"], #[пол(Финансы), список разрешенных
+		21, 65, #возраст (Банк), разрешенный диапазон
+		["Russia", "France", "Germany", "England", "Italy", "Spain", "USA", "China", "Japan", "UAE", "Africa", "India"], #страна(Банк и Финансы) запрещено
+		"Хорошая", #история(Финансы) только такие клиенты
+		"Чист", #лист(Банк) только такие клиенты
+		["Высокий", "Средний"], #кредитный рейтинг(Финансы) только такие клиенты
 		["На инвестиции"], #запрет на работу с такими клиентами
 		],
 	"LVL0": [["Женщины"], 21, 65, ["England", "India"], "Средняя", "Чист", ["Низкий"], ["На инвестиции"],],
-	"LVL1": [false, false, false, false, false, false, false, false],
-	"LVL2": [null, null, null, null, null, null, null, ["На инвестиции", "На шоппинг"],],
-	"LVL3": [null, null, null, null, null, null, null, null,],
-	"LVL4": [null, null, null, null, null, null, null, null,],
-	"LVL5": [["Женщины"], null, null, null, null, null, null, null,],
-	"LVL6": [null, 0, 0, null, null, null, null, null,],
-	"LVL7": [null, 0, 0, null, null, null, null, null,],
-	"LVL8": [null, 0, 0, null, null, null, null, null,],
-	"LVL9": [null, 0, 0, null, null, null, null, null,],
-	"LVL10": [null, 0, 0, null, null, null, null, null,],
-	"LVL11": [null, 0, 0, null, null, null, null, null,],
-	"LVL12": [null, 0, 0, null, null, null, null, null,],
-	"LVL13": [null, 0, 0, null, null, null, null, null,],
-	"LVL14": [null, 0, 0, null, null, null, null, null,],
-	"LVL15": [null, 0, 0, null, null, null, null, null,],
-	"LVL16": [null, 0, 0, null, null, null, null, null,],
-	"LVL17": [null, 0, 0, null, null, null, null, null,],
-	"LVL18": [null, 0, 0, null, null, null, null, null,],
-	"LVL19": [null, 0, 0, null, null, null, null, null,],
-	"LVL20": [null, 0, 0, null, null, null, null, null,],
-	"LVL21": [null, 0, 0, null, null, null, null, null,],
-	"LVL22": [null, 0, 0, null, null, null, null, null,],
-	"LVL23": [null, 0, 0, null, null, null, null, null,],
-	"LVL24": [null, 0, 0, null, null, null, null, null,],
-	"LVL25": [null, 0, 0, null, null, null, null, null,],
-	"LVL26": [null, 0, 0, null, null, null, null, null,],
-	"LVL27": [null, 0, 0, null, null, null, null, null,],
-	"LVL28": [null, 0, 0, null, null, null, null, null,],
-	"LVL29": [null, 0, 0, null, null, null, null, null,],
-	"LVL30": [null, 0, 0, null, null, null, null, null,],
-	"LVL31": [null, 0, 0, null, null, null, null, null,],
-	"LVL32": [null, 0, 0, null, null, null, null, null,],
-	"LVL33": [null, 0, 0, null, null, null, null, null,],
+	"LVL1": [false, false, false, false, false, false, false, false], #выбор
+	"LVL2": [null, null, null, null, null, null, null, ["На инвестиции"],], #спрашивать
+	"LVL3": [null, null, null, null, null, null, null, null,], #коллеги вниз
+	"LVL4": [null, null, null, null, null, null, null, null,], #сверять фото и имя
+	"LVL5": [["Женщины"], null, null, null, null, null, null, null,], #спрашивать
+	"LVL6": [null, 0, 0, null, null, null, null, null,], #доставка
+	"LVL7": [null, 0, 0, null, null, null, null, null,], #клиенты вниз
+	"LVL8": [null, 0, 0, null, null, null, null, null,], #пол
+	"LVL9": [null, 0, 0, null, null, null, null, null,], #ЦБ вниз
+	"LVL10": [null, 0, 0, null, null, null, null, null,], #страна
+	"LVL11": [null, 0, 0, null, null, null, null, null,], #кости
+	"LVL12": [null, 0, 0, null, null, null, null, null,], #деньги вниз
+	"LVL13": [null, 0, 0, null, null, null, null, null,], #история
+	"LVL14": [null, 0, 0, null, null, null, null, null,], #черный лист
+	"LVL15": [null, 0, 0, null, null, null, null, null,], #кредитный рейтинг
+	"LVL16": [null, 0, 0, null, null, null, null, null,], #перетасовка
+	"LVL17": [null, 0, 0, null, null, null, null, null,], #коллеги вверх
+	"LVL18": [null, 0, 0, null, null, null, null, null,], #цель
+	"LVL19": [null, 0, 0, null, null, null, null, null,], #страна
+	"LVL20": [null, 0, 0, null, null, null, null, null,], #клиенты вверх
+	"LVL21": [null, 0, 0, null, null, null, null, null,], #маятник
+	"LVL22": [null, 0, 0, null, null, null, null, null,], #ЦБ вверх
+	"LVL23": [null, 0, 0, null, null, null, null, null,], #возраст + рейтинг
+	"LVL24": [null, 0, 0, null, null, null, null, null,], #черный лист
+	"LVL25": [null, 0, 0, null, null, null, null, null,], #страны
+	"LVL26": [null, 0, 0, null, null, null, null, null,], #рулетка
+	"LVL27": [null, 0, 0, null, null, null, null, null,], #деньги вниз
+	"LVL28": [null, 0, 0, null, null, null, null, null,], #пол и возраст
+	"LVL29": [null, 0, 0, null, null, null, null, null,], #страна и рейтинг
+	"LVL30": [null, 0, 0, null, null, null, null, null,], #только 3 страны
+	"LVL31": [null, 0, 0, null, null, null, null, null,], #рост клиентов
+	"LVL32": [null, 0, 0, null, null, null, null, null,], #всё вниз и все механики
+	"LVL33": [null, 0, 0, null, null, null, null, null,], #бесконечная игра
 }
  
 
