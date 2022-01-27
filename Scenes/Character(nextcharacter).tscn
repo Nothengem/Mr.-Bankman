@@ -177,8 +177,8 @@ anchor_top = 0.08
 anchor_right = 0.85
 anchor_bottom = 0.76
 rect_min_size = Vector2( 640, 340 )
-custom_fonts/font = ExtResource( 4 )
 custom_constants/line_spacing = -6
+custom_fonts/font = ExtResource( 4 )
 text = "HelpText
 привет"
 autowrap = true
@@ -213,8 +213,8 @@ margin_bottom = 340.0
 rect_min_size = Vector2( 640, 340 )
 rect_rotation = -90.0
 rect_pivot_offset = Vector2( 640, 0 )
-custom_fonts/font = ExtResource( 4 )
 custom_constants/line_spacing = -6
+custom_fonts/font = ExtResource( 4 )
 text = "HelpText
 привет"
 align = 2

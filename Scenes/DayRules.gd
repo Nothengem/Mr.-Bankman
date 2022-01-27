@@ -38,37 +38,37 @@ func text_generations():
 	elif ageMax == "0":
 		Scriptwriter.AgeRule = false
 			
-	if country != null:
+	if country != false:
 		Scriptwriter.CountryRule = true
 		country = str(PoolStringArray(country).join(", "))
 		text_generation = text_generation + "- Не из стран: " + country + " \n"
-	elif country == null:
+	elif country == false:
 		Scriptwriter.CountryRule = false
 		
-	if creditHistory != null:
+	if creditHistory != false:
 		Scriptwriter.HistoryRule = true
 		text_generation = text_generation + "- Кредитная история: " + creditHistory + " \n"
-	elif creditHistory == null:
+	elif creditHistory == false:
 		Scriptwriter.HistoryRule = false
 		
-	if blackList != null:
+	if blackList != false:
 		Scriptwriter.BlackListRule = true
 		text_generation = text_generation + "- Числится в списках: " + blackList + " \n"
-	elif blackList == null:
+	elif blackList == false:
 		Scriptwriter.BlackListRule = false
 		
-	if creditRating != null:
+	if creditRating != false:
 		Scriptwriter.RatingRule = true
 		creditRating = str(PoolStringArray(creditRating).join(", "))
 		text_generation = text_generation + "- Кредитный рейтинг: " + creditRating + " \n"
-	elif creditRating == null:
+	elif creditRating == false:
 		Scriptwriter.RatingRule = false
 		
-	if whatFor != null:
+	if whatFor != false:
 		Scriptwriter.WhatForRule = true
 		whatFor = str(PoolStringArray(whatFor).join(", "))
 		text_generation = text_generation + "- Продукт нужен для: " + whatFor + " \n"
-	elif whatFor == null:
+	elif whatFor == false:
 		Scriptwriter.WhatForRule = false
 		
 	$Passport/LoanRating/Description2.text = text_generation

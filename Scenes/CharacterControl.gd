@@ -57,7 +57,6 @@ func _ready():
 	Animator.play("Apperiance")
 	start_position = Scriptwriter.MainCardsBack
 #	(screensize/2)*2.5
-	print(start_position)
 	leftxposition = Vector2(-start_position.x, 0)
 	rightxposition = Vector2(start_position.x, 0)
 	
@@ -131,6 +130,7 @@ func card_generation():
 	elif Scriptwriter.CardType == "LooseScreen" or Scriptwriter.CardType == "StatusScreen":
 		$CharacterCard/Character.visible = false
 		$CharacterCard/IventPortrait.self_modulate = Color("ffffff")
+		Scriptwriter.CharacterPortrait = Scriptwriter.CardImage #костыль!
 		$CharacterCard/IventPortrait.texture = load(Scriptwriter.CharacterPortrait)
 		$CharacterCard/Control.visible = false
 #		if Scriptwriter.CardType == "LooseScreen":
@@ -141,6 +141,8 @@ func card_generation():
 		$CharacterCard/Control.visible = false
 		$CharacterCard/TextItog.visible = true
 		$CharacterCard/TextItog/Label.text = Scriptwriter.IventInfo[7]
+		
+		
 	if !Scriptwriter.Heath_var <= 0 and !Scriptwriter.Law_var <= 0 and !Scriptwriter.Banditism_var <= 0 and !Scriptwriter.Luck_var <= 0 and !Scriptwriter.Heath_var >= 100 and !Scriptwriter.Law_var >= 100 and !Scriptwriter.Banditism_var >= 100 and !Scriptwriter.Luck_var >= 100:
 		CardRAnswer.text = Scriptwriter.CardLAnswer
 		CardLAnswer.text = Scriptwriter.CardRAnswer
@@ -181,8 +183,6 @@ func choosedone():
 			get_tree().call_group("BalanceGUI", "victory_count_update")
 			
 			if Scriptwriter.CardType != "Tutorial":
-				print(Scriptwriter.CardType)
-					
 					
 				if Scriptwriter.NameRule == true:
 					if Scriptwriter.dossierName != Scriptwriter.CardName:

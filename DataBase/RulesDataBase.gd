@@ -16,8 +16,8 @@ const DATA = {
 		],
 	"LVL0": [["Женщины"], 21, 65, ["England", "India"], "Средняя", "Чист", ["Низкий"], ["На инвестиции"],],
 	"LVL1": [false, false, false, false, false, false, false, false], #выбор
-	"LVL2": [null, null, null, null, null, null, null, ["На инвестиции"],], #спрашивать
-	"LVL3": [null, null, null, null, null, null, null, null,], #коллеги вниз
+	"LVL2": [false, false, false, false, false, false, false, ["На инвестиции"]], #спрашивать
+	"LVL3": [false, false, false, false, false, false, false, ["На инвестиции"]], #коллеги вниз
 	"LVL4": [null, null, null, null, null, null, null, null,], #сверять фото и имя
 	"LVL5": [["Женщины"], null, null, null, null, null, null, null,], #спрашивать
 	"LVL6": [null, 0, 0, null, null, null, null, null,], #доставка

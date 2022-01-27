@@ -19,18 +19,21 @@ func _ready():
 	
 
 func card_generation():
-	Head.texture = load(Scriptwriter.CharacterHead)
-	Neck.texture = load(Scriptwriter.CharacterNeck)
-	Shirt.texture = load(Scriptwriter.CharacterShirt)
-	Eyebrows.texture = load(Scriptwriter.CharacterEyebrows)
-	Eyes.texture = load(Scriptwriter.CharacterEyes)
-	Forehead.texture = load(Scriptwriter.CharacterForehead)
-	Ears.texture = load(Scriptwriter.CharacterEars)
-	Jowls.texture = load(Scriptwriter.CharacterJowls)
-	Glasses.texture = load(Scriptwriter.CharacterGlasses)
-	Mouth.texture = load(Scriptwriter.CharacterMouth)
-	Hair.texture = load(Scriptwriter.CharacterHair)
-	Nose.texture = load(Scriptwriter.CharacterNose)
+	if Scriptwriter.CardType == "Characters" or Scriptwriter.CardType == "Tutorial":
+		Head.texture = load(Scriptwriter.CharacterHead)
+		Neck.texture = load(Scriptwriter.CharacterNeck)
+		Shirt.texture = load(Scriptwriter.CharacterShirt)
+		Eyebrows.texture = load(Scriptwriter.CharacterEyebrows)
+		Eyes.texture = load(Scriptwriter.CharacterEyes)
+		Forehead.texture = load(Scriptwriter.CharacterForehead)
+		Ears.texture = load(Scriptwriter.CharacterEars)
+		Jowls.texture = load(Scriptwriter.CharacterJowls)
+		Glasses.texture = load(Scriptwriter.CharacterGlasses)
+		Mouth.texture = load(Scriptwriter.CharacterMouth)
+		Hair.texture = load(Scriptwriter.CharacterHair)
+		Nose.texture = load(Scriptwriter.CharacterNose)
+	elif Scriptwriter.CardType != "Characters" or Scriptwriter.CardType != "Tutorial":
+		pass
 	
 func card_portrait_update():
 	Scriptwriter.portrait_variables_update()

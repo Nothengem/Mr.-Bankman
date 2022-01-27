@@ -74,7 +74,7 @@ var FirstCard = true
 # Сохранённая игра
 var levels_complete = 1
 #переменная обозначающая текущий уровень
-var  CurrentLevel
+var  CurrentLevel = 5
 
 #массив содержащий в себе карты для уровня
 var level_cards = []
@@ -327,11 +327,12 @@ func card_var_generator(): #ПОХОЖЕ Я ЭТУ ШТУКУ ЗАПУСКАЮ 2
 	elif CardType == "StatusScreen":
 		status_generator()
 	
-	
-	get_tree().call_group("CharacterControl", "card_generation")
+	get_tree().call_group("CharacterControl", "card_generation") #на проверке
 	get_tree().call_group("IventCard", "cardupdate")
 	get_tree().call_group("Dossier", "dossier_update")
 	get_tree().call_group("NeedTo", "answer_update")
+	
+
 
 func portrait_variables_update():
 	CharacterHead = str ("res://Resources/GFX/CharacterCotaint/Head", "/", CharacterPortrait[0], ".png")

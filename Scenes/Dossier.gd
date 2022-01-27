@@ -59,4 +59,4 @@ func dossier_update():
 		randomNumber = roulette(howMuchCards)
 		if randomNumber <= percentOfFalseNames:
 			Scriptwriter.dossierName = random_name_generation()
-			$Passport/Name/Parameter.text = Scriptwriter.dossierName
+			$Passport/MainHBox/ParametresHBox/StrokeZero/Name.text = str(Scriptwriter.dossierName)
