@@ -72,9 +72,9 @@ var count_to_victory
 var FirstCard = true
 
 # Сохранённая игра
-var levels_complete = 1
+var levels_complete = 3
 #переменная обозначающая текущий уровень
-var  CurrentLevel = 5
+var  CurrentLevel = 2
 
 #массив содержащий в себе карты для уровня
 var level_cards = []
@@ -205,7 +205,7 @@ func level_massive_generator():
 func level_massive_rule_generetor():
 	ruleLoanRating = ruleOfLevel[6]
 	
-	if ruleAgeMin != false or ruleAgeMax != false:
+	if ruleAgeMin != 0 or ruleAgeMax != 0:
 		AgeRule = true
 	if ruleSex != false:
 		SexRule = true
@@ -217,7 +217,7 @@ func level_massive_rule_generetor():
 		BlackListRule = true
 	if ruleLoanRating != false:
 		RatingRule = true
-	if ruleWhatFor != false:
+	if "false" in ruleWhatFor:
 		WhatForRule = true
 	
 
@@ -335,6 +335,7 @@ func card_var_generator(): #ПОХОЖЕ Я ЭТУ ШТУКУ ЗАПУСКАЮ 2
 
 
 func portrait_variables_update():
+	print(level_cards)
 	CharacterHead = str ("res://Resources/GFX/CharacterCotaint/Head", "/", CharacterPortrait[0], ".png")
 	CharacterNeck = str ("res://Resources/GFX/CharacterCotaint/Neck", "/", CharacterPortrait[1], ".png")
 	CharacterShirt =  str ("res://Resources/GFX/CharacterCotaint/Shirt", "/", CharacterPortrait[2], ".png")

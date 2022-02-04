@@ -64,11 +64,11 @@ func text_generations():
 	elif creditRating == false:
 		Scriptwriter.RatingRule = false
 		
-	if whatFor != false:
+	if whatFor != ["false"]:
 		Scriptwriter.WhatForRule = true
 		whatFor = str(PoolStringArray(whatFor).join(", "))
 		text_generation = text_generation + "- Продукт нужен для: " + whatFor + " \n"
-	elif whatFor == false:
+	elif whatFor == ["false"]:
 		Scriptwriter.WhatForRule = false
 		
 	$Passport/LoanRating/Description2.text = text_generation

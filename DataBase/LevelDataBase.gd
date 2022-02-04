@@ -8,15 +8,19 @@ enum {
 	}
 
 const DATA = {
-	"LVL4" : ["LoseCBUp", "LoseTeamBottom", "LoseTeamUp", "LoseCutomButton", "LoseCustomUp", "LoseMoneyBottom", "LoseMoneyUp",],
+	"LVL35" : ["LoseCBUp", "LoseTeamBottom", "LoseTeamUp", "LoseCutomButton", "LoseCustomUp", "LoseMoneyBottom", "LoseMoneyUp",],
 	"LVL1" : ["CreditHomeForCar", "Credit700000", 
 	"CreditFlatFix", "CreditRefinance", "CreditUniversity", "DepositUniversity", "DepositStolenCars", "DepositSelledFlat", 
 	"DepositMadRetired", "DepositRetired", "CardToShopping", "CardToAirways", "CardToSallary", "CardToDebt", 
 	"CardToChineseWhoWantToLearnLanguage", "InvestitionGreenInvestor", "InvestitionOldInvestor", "InvestitionOpen", 
 	"InvestitionClose"],
 	
-	"LVL2" : ["Random1", "Random2", "Random3", "Random4", "Random5", "Random6", "Random7", "Random8", "Random9", "Random10", "Random11", "Random12", "Random13", "Random14"],
-	"LVL3" : ["Random1", "Random2", "Random3", "Random4", "Random5", "Random6", "Random7", "Random8", "Random9", "Random10", "Random11", "Random12", "Random13", "Random14"],
+	"LVL2" : ["CreditHonestly", "CreditRobbery", "DepositSaveMoney", "CardSmartBlocking", "CardAffraidOfPay",
+	"CreditLiveAt15Oclock", "IncassationCrush", "CreditDenyLoterry", "MerryTOBankir", "DepositLoanForAfriend"],
+	
+	"LVL3" : ["DepositPovertyIsNotAVice", "CreditReturnCredit", "BankRobberyMe", "ForgiveMeCredit", 
+	"CreditListIpotec", "CreditMoneySource", "CreditIfIwontReturn", "InvestitionBillion", "InvestitionCreditToBank",
+	"StaffEconomicalQuestions"],
 	}
 	
 	
