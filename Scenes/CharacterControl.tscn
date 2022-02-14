@@ -7,7 +7,7 @@
 [ext_resource path="res://Resources/GFX/MainCards/CardShirt.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 835.374, 1150.14 )
+extents = Vector2( 542.316, 783.91 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Apperiance"
@@ -177,7 +177,6 @@ tracks/0/keys = {
 
 [node name="CharacterControl" type="Area2D" groups=["CharacterControl"]]
 position = Vector2( 540, 1122 )
-scale = Vector2( 1, 1 )
 script = ExtResource( 2 )
 
 [node name="NeedTo" parent="." instance=ExtResource( 4 )]
@@ -191,6 +190,7 @@ margin_right = 1200.0
 margin_bottom = 840.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 5.52094, 4.53052 )
 shape = SubResource( 1 )
 
 [node name="CharacterCard" parent="." instance=ExtResource( 1 )]
@@ -221,7 +221,8 @@ anims/RESET = SubResource( 5 )
 [node name="Tween" type="Tween" parent="."]
 
 [node name="Timer_choosedone" type="Timer" parent="."]
-wait_time = 0.01
+wait_time = 0.1
+one_shot = true
 
 [node name="MainCardsBack" parent="." instance=ExtResource( 3 )]
 anchor_left = 0.5

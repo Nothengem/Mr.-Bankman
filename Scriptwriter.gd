@@ -72,9 +72,9 @@ var count_to_victory
 var FirstCard = true
 
 # Сохранённая игра
-var levels_complete = 3
+var levels_complete = 4
 #переменная обозначающая текущий уровень
-var  CurrentLevel = 2
+var  CurrentLevel = 4
 
 #массив содержащий в себе карты для уровня
 var level_cards = []
@@ -158,6 +158,8 @@ onready var RandomSernames = RandomNamesSernames.sernames
 #техническая переменная для сохранения имени лживого портрета для сравнения с настоящим
 var falsePortrait
 
+var feedBackMessage
+
 
 func _ready():
 	NameRule = false
@@ -204,6 +206,8 @@ func level_massive_generator():
 	
 func level_massive_rule_generetor():
 	ruleLoanRating = ruleOfLevel[6]
+	
+
 	
 	if ruleAgeMin != 0 or ruleAgeMax != 0:
 		AgeRule = true
@@ -335,7 +339,6 @@ func card_var_generator(): #ПОХОЖЕ Я ЭТУ ШТУКУ ЗАПУСКАЮ 2
 
 
 func portrait_variables_update():
-	print(level_cards)
 	CharacterHead = str ("res://Resources/GFX/CharacterCotaint/Head", "/", CharacterPortrait[0], ".png")
 	CharacterNeck = str ("res://Resources/GFX/CharacterCotaint/Neck", "/", CharacterPortrait[1], ".png")
 	CharacterShirt =  str ("res://Resources/GFX/CharacterCotaint/Shirt", "/", CharacterPortrait[2], ".png")

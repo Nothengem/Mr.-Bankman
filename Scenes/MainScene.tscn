@@ -464,56 +464,6 @@ tracks/1/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 0.1, 0.1 ) ]
 }
 
-[sub_resource type="Animation" id=11]
-tracks/0/type = "value"
-tracks/0/path = NodePath("MessagesFeedBack/Message:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "Не подходит по возрасту" ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("MessagesFeedBack/Message:rect_position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 180, 263.308 ), Vector2( 180, 15.4617 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("MessagesFeedBack/Message:self_modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1, 0.9, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("MessagesFeedBack/Message:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.7, 0.9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 0, 0, 1 ), Color( 0.937255, 0.435294, 0.435294, 1 ), Color( 1, 0, 0, 1 ), Color( 0.933333, 0.447059, 0.447059, 1 ), Color( 1, 0, 0, 1 ), Color( 0.890196, 0.427451, 0.427451, 1 ) ]
-}
-
 [sub_resource type="Animation" id=12]
 tracks/0/type = "value"
 tracks/0/path = NodePath("MessagesFeedBack/Message:text")
@@ -714,6 +664,45 @@ tracks/3/keys = {
 "values": [ Color( 1, 0, 0, 1 ), Color( 0.937255, 0.435294, 0.435294, 1 ), Color( 1, 0, 0, 1 ), Color( 0.933333, 0.447059, 0.447059, 1 ), Color( 1, 0, 0, 1 ), Color( 0.890196, 0.427451, 0.427451, 1 ) ]
 }
 
+[sub_resource type="Animation" id=11]
+resource_name = "FeedBack"
+tracks/0/type = "value"
+tracks/0/path = NodePath("MessagesFeedBack/Message:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 180, 263.308 ), Vector2( 180, 15.4617 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MessagesFeedBack/Message:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MessagesFeedBack/Message:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.7, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 0.937255, 0.435294, 0.435294, 1 ), Color( 1, 0, 0, 1 ), Color( 0.933333, 0.447059, 0.447059, 1 ), Color( 1, 0, 0, 1 ), Color( 0.890196, 0.427451, 0.427451, 1 ) ]
+}
+
 [sub_resource type="Animation" id=16]
 tracks/0/type = "value"
 tracks/0/path = NodePath("MessagesFeedBack/Message:text")
@@ -775,10 +764,8 @@ font_data = ExtResource( 7 )
 script = ExtResource( 6 )
 
 [node name="Control" type="Control" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 540, 960 )
 mouse_filter = 2
 __meta__ = {
@@ -857,6 +844,7 @@ position = Vector2( -277.186, -214.96 )
 normal = ExtResource( 8 )
 
 [node name="MainCardsBack8" parent="Control" instance=ExtResource( 9 )]
+visible = false
 margin_left = 85.12
 margin_top = 90.48
 margin_right = -0.879883
@@ -867,6 +855,7 @@ mouse_filter = 2
 texture = ExtResource( 11 )
 
 [node name="MainCardsBack7" parent="Control" instance=ExtResource( 9 )]
+visible = false
 margin_left = 85.12
 margin_top = 90.48
 margin_right = -0.879883
@@ -877,6 +866,7 @@ mouse_filter = 2
 texture = ExtResource( 11 )
 
 [node name="MainCardsBack6" parent="Control" instance=ExtResource( 9 )]
+visible = false
 margin_left = 85.12
 margin_top = 90.48
 margin_right = -0.879883
@@ -887,9 +877,10 @@ mouse_filter = 2
 texture = ExtResource( 11 )
 
 [node name="MainCardsBack5" parent="Control" instance=ExtResource( 9 )]
+visible = false
 margin_left = 85.12
 margin_top = 90.48
-margin_right = -0.879944
+margin_right = -0.879883
 margin_bottom = 264.0
 rect_min_size = Vector2( 670, 930 )
 rect_pivot_offset = Vector2( 335, 465 )
@@ -897,6 +888,7 @@ mouse_filter = 2
 texture = ExtResource( 11 )
 
 [node name="MainCardsBack4" parent="Control" instance=ExtResource( 9 )]
+visible = false
 margin_left = 85.12
 margin_top = 90.48
 margin_right = -0.880005
@@ -907,9 +899,10 @@ mouse_filter = 2
 texture = ExtResource( 11 )
 
 [node name="MainCardsBack3" parent="Control" instance=ExtResource( 9 )]
+visible = false
 margin_left = 85.12
 margin_top = 90.48
-margin_right = -0.879944
+margin_right = -0.880005
 margin_bottom = 264.0
 rect_min_size = Vector2( 670, 930 )
 rect_pivot_offset = Vector2( 335, 465 )
@@ -917,9 +910,11 @@ mouse_filter = 2
 texture = ExtResource( 11 )
 
 [node name="MainCardsBack2" parent="Control" instance=ExtResource( 9 )]
-margin_top = 0.480042
-margin_right = -85.8799
-margin_bottom = 174.0
+visible = false
+margin_left = 85.12
+margin_top = 90.48
+margin_right = -0.879883
+margin_bottom = 264.001
 rect_min_size = Vector2( 670, 930 )
 rect_pivot_offset = Vector2( 335, 465 )
 mouse_filter = 2
@@ -930,10 +925,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -420.0
-margin_top = -420.0
-margin_right = 250.0
-margin_bottom = 510.0
+margin_left = -335.0
+margin_top = -330.0
+margin_right = 335.0
+margin_bottom = 600.0
 rect_min_size = Vector2( 670, 930 )
 rect_pivot_offset = Vector2( 335, 465 )
 mouse_filter = 2
@@ -970,15 +965,15 @@ anims/MakeDayRullesBig = SubResource( 9 )
 anims/MakeDayRullesSmall = SubResource( 10 )
 
 [node name="MessagesFeedBack" type="AnimationPlayer" parent="Control"]
-anims/BadAge = SubResource( 11 )
 anims/BadCountry = SubResource( 12 )
 anims/BadName = SubResource( 13 )
 anims/BadPhoto = SubResource( 14 )
 anims/BadSex = SubResource( 15 )
+anims/FeedBack = SubResource( 11 )
 anims/GoodJob = SubResource( 16 )
 
 [node name="Message" type="Label" parent="Control/MessagesFeedBack"]
-modulate = Color( 0.32549, 0.952941, 0.27451, 1 )
+modulate = Color( 1, 0, 0, 1 )
 self_modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 0.5

@@ -10,17 +10,19 @@ func _ready():
 	Scriptwriter.FirstCard = true
 	$Control/AnimationPlayer2.play("Appearance")
 	
-	if str(Scriptwriter.CurrentLevel) == "LVL1" or str(Scriptwriter.CurrentLevel) == "LVL2":
-		$Control/Dossier.visible = true
-		$Control/DossierButton.visible = true
-		$Control/DayRules.visible = true
-		$Control/DayRulesButton.visible = true
-		$Control/DayRules.text_generations()
-	elif str(Scriptwriter.CurrentLevel) == "LVL3":
+	if str(Scriptwriter.CurrentLevel) == "LVL1":
 		$Control/Dossier.visible = false
+		$Control/DossierButton.visible = false
+		$Control/DayRules.visible = false
+		$Control/DayRulesButton.visible = false
+#		$Control/DayRules.text_generations()
+	elif str(Scriptwriter.CurrentLevel) == "LVL2" or str(Scriptwriter.CurrentLevel) == "LVL3":
+		$Control/Dossier.visible = false
+		$Control/DossierButton.visible = false
+		$Control/DayRules.text_generations()
 	elif str(Scriptwriter.CurrentLevel) != "LVL1" or str(Scriptwriter.CurrentLevel) != "LVL2" or str(Scriptwriter.CurrentLevel) != "LVL3":
 		$Control/DayRules.text_generations()
-		$Control/DayRules/Passport/LoanRating/Description2.text = "none"
+#		$Control/DayRules/Passport/LoanRating/Description2.text = "none"
 	
 
 
@@ -82,8 +84,11 @@ func _on_CharacterControl_input_event(_viewport, event, _shape_idx):
 		get_tree().set_input_as_handled()
 		previous_mouse_position = event.position
 		is_dragging = true
-
-
+		
+func messageFeedBack():
+	$Control/MessagesFeedBack/Message.text = Scriptwriter.feedBackMessage
+	$Control/MessagesFeedBack.play("FeedBack")
+		
 
 func _on_AnimationPlayer_animation_finished(_LevelComplete):
 	$Control/AnimationPlayer.play("TapTextPulse")

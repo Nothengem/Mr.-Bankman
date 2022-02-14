@@ -4,15 +4,15 @@ enum {
 }
 
 const names = [
-	"Alexey ",
-	"Dmitriy ",
-	"Anastasia ",
-	"Julia ",
+	"Алекс ",
+	"Дами ",
+	"Анастас ",
+	"Джуниор ",
 ]
 
 const sernames = [
-	"Smith",
-	"Doe",
-	"Ivanov",
-	"Burmistrova"
+	"Смит",
+	"Доэ",
+	"Ивано",
+	"Бурмистр"
 ]

@@ -53,6 +53,9 @@ var middle_position = false
 
 
 func _ready():
+	print(Scriptwriter.level_cards)
+	print(Scriptwriter.victory_count)
+	print(Scriptwriter.count_to_victory)
 	get_tree().call_group("Dossier", "dossier_update")
 	Animator.play("Apperiance")
 	start_position = Scriptwriter.MainCardsBack
@@ -186,50 +189,59 @@ func choosedone():
 					
 				if Scriptwriter.NameRule == true:
 					if Scriptwriter.dossierName != Scriptwriter.CardName:
-						print("не совпало имя")
+						Scriptwriter.feedBackMessage = "не совпало имя"
+						get_tree().call_group("MainScene", "messageFeedBack")
 						Scriptwriter.HealthRightChoose = -50
 						
 				if Scriptwriter.AgeRule == true:
-					print(Scriptwriter.AgeRule)
 					if str(Scriptwriter.dossierAge) < str(Scriptwriter.ruleAgeMin) or \
 					str(Scriptwriter.dossierAge) > str(Scriptwriter.ruleAgeMax):
-						print("не проходит по возрасту")
+						Scriptwriter.feedBackMessage = "не проходит по возрасту"
+						get_tree().call_group("MainScene", "messageFeedBack")
 						Scriptwriter.HealthRightChoose = -50
+						print("Правило сработало")
 						
 				if Scriptwriter.SexRule == true:
 					if !(Scriptwriter.dossierSex in Scriptwriter.ruleSex):
-						print("не проходит по полу")
+						Scriptwriter.feedBackMessage = "не проходит по полу"
+						get_tree().call_group("MainScene", "messageFeedBack")
 						Scriptwriter.LawRightChoose = +50
 						
 				if Scriptwriter.CountryRule == true:
 					if !(Scriptwriter.dossierNational in Scriptwriter.ruleNational):
-						print("не подходит по национальности")
+						Scriptwriter.feedBackMessage = "не подходит по национальности"
+						get_tree().call_group("MainScene", "messageFeedBack")
 						Scriptwriter.LawRightChoose = -50
 						
 				if Scriptwriter.HistoryRule == true:
 					if Scriptwriter.dossierCreditHistory != Scriptwriter.ruleCreditHistory:
-						print("плохая кредитная история")
+						Scriptwriter.feedBackMessage = "плохая кредитная история"
+						get_tree().call_group("MainScene", "messageFeedBack")
 						Scriptwriter.LuckRightChoose = -50
 					
 				
 				if Scriptwriter.BlackListRule == true:
 					if Scriptwriter.dossierBlackList != Scriptwriter.ruleBlackList:
-						print("в черном списке")
+						Scriptwriter.feedBackMessage = "в черном списке"
+						get_tree().call_group("MainScene", "messageFeedBack")
 						Scriptwriter.BanditismRightChoose = -50
 				
 				if Scriptwriter.RatingRule == true:
 					if !(Scriptwriter.dossierCreditRaiting in Scriptwriter.ruleLoanRating):
-						print("слабый кредитный рейтинг")
+						Scriptwriter.feedBackMessage = "слабый кредитный рейтинг"
+						get_tree().call_group("MainScene", "messageFeedBack")
 						Scriptwriter.LuckRightChoose = -50
 				
 				if Scriptwriter.PhotoRule == true:
-					if Scriptwriter.CardInfo[3] != Scriptwriter.falsePortrait:
-						print("не совпало фото")
+					if Scriptwriter.CardInfo[1] == Scriptwriter.falsePortrait:
+						Scriptwriter.feedBackMessage = "не совпало фото"
+						get_tree().call_group("MainScene", "messageFeedBack")
 						Scriptwriter.HealthRightChoose = -50
 					
 				if Scriptwriter.WhatForRule == true:
 					if Scriptwriter.WhatFor in Scriptwriter.ruleOfLevel[7]:
-						print("не совпала цель")
+						Scriptwriter.feedBackMessage = "не совпала цель"
+						get_tree().call_group("MainScene", "messageFeedBack")
 						Scriptwriter.HealthRightChoose = -50
 				
 			get_tree().call_group("BalanceGUI", "change_proportions_right")

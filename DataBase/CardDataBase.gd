@@ -59,14 +59,13 @@ enum {
 	
 	#колода 4 уровня (10 штук)
 	#Жалобы
-	ComplainsCredit, CreditNotInMyWay, CreditNotInMyWay1, CreditNotInMyWay2, ClaimBankTrustYou,
+	ComplainsCredit, ComplainsCredit1, ComplainsCredit2, CreditNotInMyWay, CreditNotInMyWay1, CreditNotInMyWay2, ClaimBankTrustYou,
 	#Инвестиции
 	InvestitionSmallBusiness, InvestitionFlipOver,
 	#Кредит
 	CreditCleymoIpotek, CreditCleymoIpotek1, CreditRefrigerator, CreditRefrigerator1,
 	#новости
 	ClaimGrandmother, ClaimGrandmother1, ClaimGrandmother2, ClaimGrandmother3,
-	StaffDepositNeverBack,
 	#Депозит
 	DepositLetterWrite, DepositLetterWrite1, DepositLetterWrite2,
 	
@@ -80,6 +79,7 @@ enum {
 	#концовки
 		TeamUp, CustomersUp, CentralBankUp, MoneyUp, 
 		TeamDown, CustomersDown, CentralBankDown, MoneyDown,
+		TeamDownFullDay,
 		
 		LooseTopHealth, LooseBottomHealth, LooseTopLaw, 
 		LooseBottomLaw, LooseTopBanditism, LooseBottomBanditism, 
@@ -352,20 +352,8 @@ const DATA = {
 		"None",
 		0],
 		
-	"TutorLev3Card3" : 
-		["Tutorial",
-		"Mr. Bankman", 
-		"И так как сейчас тяжёлое время, мне пришлось урезать все зарплату! Но не переживай дружок, ты единственный кого это не коснулось.", #что говорит 2
-		"Mr. Bankman",
-		"Естественно! Ты же мне не платишь!",
-		"Ну ты мог брать с меня плату за мою же работу...",
-		0, 0, 0, 0,
-		0, 0, 0, 0, 
-		"TutorLev3Card4", "TutorLev3Card4",
-		"None",
-		0],
 		
-	"TutorLev3Card4" : 
+	"TutorLev3Card3" : 
 		["Tutorial",
 		"Mr. Bankman", 
 		"Ты быстро учишься! Сегодня коллеги будут к тебе немного... неравнодушны! Но ты правишься мой дорогой! А теперь ЗА РАБОТУ!", #что говорит 2
@@ -374,8 +362,73 @@ const DATA = {
 		"Мерзавец...",
 		0, 0, 0, 0,
 		0, 0, 0, 0, 
+		"TeamDownFullDay", "TeamDownFullDay",
+		"None",
+		0],
+		
+	"TutorLev4Card1" : 
+		["Tutorial",
+		"Mr. Bankman", 
+		"Как ты оцениваешь свою работу? Достаточно, чтобы повысить твою зарплату с нуля до одного доллара в месяц?", #что говорит 2
+		"Mr. Bankman",
+		"Может лучше уволишь меня сразу? Это не сложно...",
+		"Я оценивать себя немного выше...",
+		0, 0, 0, 0,
+		0, 0, 0, 0, 
+		"TutorLev4Card2", "TutorLev4Card2",
+		"None",
+		0],
+		
+	"TutorLev4Card2" : 
+		["Tutorial",
+		"Mr. Bankman", 
+		"Не обижайся! Все мы с чего начинали. Кстати, а при взаимодействии с клиентами, ты проверяешь у них документы?", #что говорит 2
+		"Mr. Bankman",
+		"Какие ещё документы?",
+		"Ты об этом не упомянал!",
+		0, 0, 0, 0,
+		0, 0, 0, 0, 
+		"TutorLev4Card3", "TutorLev4Card3",
+		"None",
+		0],
+		
+	"TutorLev4Card3" : 
+		["Tutorial",
+		"Mr. Bankman", 
+		"ЭТО НАПИСАНО В УСТАВЕ БАНКА! (швыряет вам в лицо книгу, вы пытаетесь найти упоминания о документах там)", #что говорит 2
+		"Mr. Bankman",
+		"Там ничего нет! Какого чёрта ты творишь!?",
+		"Я всё делаю по инструкции, здесь какая-то ошибка",
+		0, 0, 0, 0,
+		0, 0, 0, 0, 
+		"TutorLev4Card4", "TutorLev4Card4",
+		"None",
+		0],
+		
+	"TutorLev4Card4" : 
+		["Tutorial",
+		"Mr. Bankman", 
+		"СМОТРИ ВНИМАТЕЛЬНЕЕ!!! (тыкает на последнюю страницу книги, где свежими черналами от руки написана рекомендация о проверке)", #что говорит 2
+		"Mr. Bankman",
+		"Этого здесь раньше не было, ты что только что это придумал?",
+		"Ладно... ладно... разберёмся",
+		0, 0, 0, 0,
+		0, 0, 0, 0, 
+		"TutorLev4Card5", "TutorLev4Card5",
+		"None",
+		0],
+		
+	"TutorLev4Card5" : 
+		["Tutorial",
+		"Mr. Bankman", 
+		"С этого дня в обязательном порядке сверяй фотографию и имя клиента с указанным в документах. Понижаю твою зарплату с доллара до нуля!", #что говорит 2
+		"Mr. Bankman",
+		"Ну как так то???",
+		"Может хватит издеваться надо мной?",
+		0, 0, 0, 0,
+		0, 0, 0, 0, 
 		"Random", "Random",
-		"TeamDown",
+		"None",
 		0],
 	
 	"CreditHomeForCar" : 
@@ -1199,7 +1252,7 @@ const DATA = {
 		4],
 		
 	"StaffEconomicalQuestions" : 
-		["Characters",
+		["Tutorial",
 		"Darls Coy",
 		"На самом деле экономисты отвечают на вопросы не потому, что знают на них ответы", #что говорит 2
 		"Дарлс Коу",
@@ -1212,7 +1265,7 @@ const DATA = {
 		0],
 		
 	"StaffEconomicalQuestions1" : 
-		["Characters",
+		["Tutorial",
 		"Darls Coy", 
 		"Мы отвечаем потому, что нас спрашивают", #что говорит 2
 		"Дарлс Коу",
@@ -2436,7 +2489,7 @@ const DATA = {
 	"TeamUp" : 
 		["StatusScreen", #ссылка на папку персонажей 0
 		"TeamUp", #кто говорит 1
-		"Дух Банка ратет. Многие устраиваются к вам на работу", #что говорит 2
+		"Дух Банка растет. Многие устраиваются к вам на работу", #что говорит 2
 		"Рост Банка", #Имя говорящего 3
 		" ", #Ответ на лево 4
 		" ", #ответ на право 5
@@ -2531,6 +2584,26 @@ const DATA = {
 		"Random",
 		"Random",
 		"TeamDown", #Карточный ивент
+		"None"], #Игровое событие
+		
+	"TeamDownFullDay" : 
+		["StatusScreen", #ссылка на папку персонажей 0
+		"TeamDown", #кто говорит 1
+		"Все коллеги злобно смотрят на вас... старайтесь никого не раздражать...", #что говорит 2
+		"Внутренний голос", #Имя говорящего 3
+		" ", #Ответ на лево 4
+		" ", #ответ на право 5
+		0, #Ренессанс на лево 6
+		0, #Люди на лево 7
+		0, #ЦБ на лево 8
+		0, #Деньги на лево 9
+		0, #Ренессанс на право 10
+		0, #Люди на право 11
+		0, #ЦБ на право 12
+		0, #Деньги на право 13
+		"Random",
+		"Random",
+		"TeamDownFullDay", #Карточный ивент
 		"None"], #Игровое событие
 		
 	"CustomersDown" : 

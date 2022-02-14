@@ -9,8 +9,14 @@ var sernamechoose
 
 func _ready():
 	howMuchCards = Scriptwriter.level_cards.size()
-	percentOfFalseNames = round(howMuchCards * 0.25)
-	#задаем вероятность изменения имени или фото клиента 25% от общего числа карт
+	percentOfFalseNames = round(howMuchCards * 0.05)
+	#задаем вероятность изменения имени или фото клиента 5% от общего числа карт
+	if Scriptwriter.CurrentLevel in ["LVL4"]:
+		$Passport/MainHBox/PortraitVBox/HBoxContainer.visible = false
+		$Passport/MainHBox/ParametresHBox/StrokeOne.visible = false
+		$Passport/MainHBox/ParametresHBox/StrokeTwo.visible = false
+		$Passport/MainHBox/ParametresHBox/StrokeThree.visible = false
+		$Passport/MainHBox/ParametresHBox/StrokeFour.visible = false
 	
 	
 	
@@ -48,14 +54,14 @@ func dossier_update():
 	$Passport/MainHBox/ParametresHBox/StrokeFour/LoanRating/Parameter.text= Scriptwriter.dossierCreditRaiting
 	
 	
-	if Scriptwriter.PhotoRule == true:
+	if Scriptwriter.PhotoRule == true and Scriptwriter.CardType != "Tutorial":
 		randomNumber = roulette(howMuchCards)
 		if randomNumber <= percentOfFalseNames:
 			random_portrait_generation()
 			Scriptwriter.CharacterPortrait = portraitchoose
 			get_tree().call_group("DossierPhoto", "changePhotoToFalse")
 			
-	if Scriptwriter.NameRule == true:
+	if Scriptwriter.NameRule == true and Scriptwriter.CardType != "Tutorial":
 		randomNumber = roulette(howMuchCards)
 		if randomNumber <= percentOfFalseNames:
 			Scriptwriter.dossierName = random_name_generation()

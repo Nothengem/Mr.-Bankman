@@ -15,10 +15,10 @@ const DATA = {
 		["На инвестиции"], #запрет на работу с такими клиентами
 		],
 	"LVL0": [["Женщины"], 21, 65, ["England", "India"], "Средняя", "Чист", ["Низкий"], ["На инвестиции"],],
-	"LVL1": [false, 0, 0, false, false, false, false, ["false"],], #выбор
+	"LVL1": [false, 0, 0, false, false, false, false, ["false"]], #выбор
 	"LVL2": [false, 0, 0, false, false, false, false, ["Инвестиции"]], #спрашивать
 	"LVL3": [false, 0, 0, false, false, false, false, ["false"]], #весь уровень коллеги вниз
-	"LVL4": [null, null, null, null, null, null, null, null,], #сверять фото и имя
+	"LVL4": [false, 0, 0, false, false, false, false, ["false"]], #сверять фото и имя
 	"LVL5": [["Женщины"], null, null, null, null, null, null, null,], #спрашивать
 	"LVL6": [null, 0, 0, null, null, null, null, null,], #доставка
 	"LVL7": [null, 0, 0, null, null, null, null, null,], #клиенты вниз

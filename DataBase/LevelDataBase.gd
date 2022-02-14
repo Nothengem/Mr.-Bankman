@@ -21,6 +21,10 @@ const DATA = {
 	"LVL3" : ["DepositPovertyIsNotAVice", "CreditReturnCredit", "BankRobberyMe", "ForgiveMeCredit", 
 	"CreditListIpotec", "CreditMoneySource", "CreditIfIwontReturn", "InvestitionBillion", "InvestitionCreditToBank",
 	"StaffEconomicalQuestions"],
+	
+	"LVL4" : ["ComplainsCredit", "CreditNotInMyWay", "ClaimBankTrustYou", "InvestitionSmallBusiness", 
+	"InvestitionFlipOver", "CreditCleymoIpotek", "CreditRefrigerator", "ClaimGrandmother",
+	"DepositLetterWrite"],
 	}
 	
 	
@@ -28,7 +32,7 @@ const TUTORIAL = {
 	"LVL1" : ["TutorLev1Card1"], #механика выбора
 	"LVL2" : ["TutorLev2Card1"], 
 	"LVL3" : ["TutorLev3Card1"], #механика спросить
-	"LVL4" : ["TutorLev4Card1"],
+	"LVL4" : ["TutorLev4Card1"], #механика сверки фото
 	"LVL5" : ["TutorLev5Card1"], #реакция коллег вниз
 	"LVL6" : ["TutorLev6Card1"], 
 	"LVL7" : ["TutorLev7Card1"], #мини-игра доставка

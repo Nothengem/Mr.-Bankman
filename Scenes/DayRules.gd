@@ -1,6 +1,6 @@
 extends Control
 
-onready var text_generation = "- Не совпадает фото и имя \n"
+onready var text_generation = ""
 onready var sex = str(Scriptwriter.ruleOfLevel[0])
 onready var ageMin = str(Scriptwriter.ruleOfLevel[1])
 onready var ageMax = str(Scriptwriter.ruleOfLevel[2])
@@ -12,8 +12,10 @@ onready var whatFor = Scriptwriter.ruleOfLevel[7]
 
 
 func _ready():
-	
-	pass
+	if Scriptwriter.CurrentLevel in ["LVL1", "LVL2", "LVL3"]:
+		text_generation = ""
+	else:
+		text_generation = "- Не совпадает фото и имя \n"
 	
 	
 func text_generations():

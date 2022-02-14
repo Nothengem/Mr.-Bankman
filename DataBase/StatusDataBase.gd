@@ -2,7 +2,8 @@ extends Node
 
 enum { 
 	TeamUp, CustomersUp, CentralBankUp, MoneyUp, 
-	TeamDown, CustomersDown, CentralBankDown, MoneyDown
+	TeamDown, CustomersDown, CentralBankDown, MoneyDown,
+	TeamDownFullDay
 }
 
 
@@ -15,6 +16,7 @@ const DATA = {
 	TeamDown : ["Status", "TeamDown", "Scriptwriter.Heath_var", 20, 1, "Down"],
 	CustomersDown : ["Status", "CustomersDown", "Scriptwriter.Law_var", 20, 1, "Down"],
 	CentralBankDown : ["Status", "CentralBankDown", "Scriptwriter.Banditism_var", 20, 1, "Down"],
-	MoneyDown : ["Status", "MoneyDown", "Scriptwriter.Luck_var", 20, 1, "Down"]
+	MoneyDown : ["Status", "MoneyDown", "Scriptwriter.Luck_var", 20, 1, "Down"],
+	TeamDownFullDay : ["Status", "TeamDown", "Scriptwriter.Heath_var", 2000, 0.25, "Down"],
 }
  
