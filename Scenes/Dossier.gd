@@ -9,8 +9,9 @@ var sernamechoose
 
 func _ready():
 	howMuchCards = Scriptwriter.level_cards.size()
-	percentOfFalseNames = round(howMuchCards * 0.05)
-	#задаем вероятность изменения имени или фото клиента 5% от общего числа карт
+	percentOfFalseNames = round(howMuchCards * 0.24)
+	print(percentOfFalseNames)
+	#задаем вероятность изменения имени или фото клиента 2.5% от общего числа карт
 	if Scriptwriter.CurrentLevel in ["LVL4"]:
 		$Passport/MainHBox/PortraitVBox/HBoxContainer.visible = false
 		$Passport/MainHBox/ParametresHBox/StrokeOne.visible = false
@@ -54,15 +55,22 @@ func dossier_update():
 	$Passport/MainHBox/ParametresHBox/StrokeFour/LoanRating/Parameter.text= Scriptwriter.dossierCreditRaiting
 	
 	
-	if Scriptwriter.PhotoRule == true and Scriptwriter.CardType != "Tutorial":
-		randomNumber = roulette(howMuchCards)
-		if randomNumber <= percentOfFalseNames:
-			random_portrait_generation()
-			Scriptwriter.CharacterPortrait = portraitchoose
-			get_tree().call_group("DossierPhoto", "changePhotoToFalse")
-			
-	if Scriptwriter.NameRule == true and Scriptwriter.CardType != "Tutorial":
-		randomNumber = roulette(howMuchCards)
-		if randomNumber <= percentOfFalseNames:
-			Scriptwriter.dossierName = random_name_generation()
-			$Passport/MainHBox/ParametresHBox/StrokeZero/Name.text = str(Scriptwriter.dossierName)
+	if !(Scriptwriter.CardChoose[-1] in ["1", "2", "3", "4", "5", "6", "7"]):
+		Scriptwriter.permissionToDenide = true
+		get_tree().call_group("BalanceGUI", "denide_photo_and_name_correction")
+		
+		
+		if Scriptwriter.PhotoRule == true and Scriptwriter.CardType != "Tutorial":
+			randomNumber = roulette(howMuchCards)
+			if randomNumber <= percentOfFalseNames:
+				random_portrait_generation()
+				Scriptwriter.CharacterPortrait = portraitchoose
+				get_tree().call_group("DossierPhoto", "changePhotoToFalse")
+					
+		if Scriptwriter.NameRule == true and Scriptwriter.CardType != "Tutorial":
+			randomNumber = roulette(howMuchCards)
+			if randomNumber <= percentOfFalseNames:
+				Scriptwriter.dossierName = random_name_generation()
+				$Passport/MainHBox/ParametresHBox/StrokeZero/Name.text = str(Scriptwriter.dossierName)
+				
+		

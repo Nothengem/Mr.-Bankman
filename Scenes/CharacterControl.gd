@@ -53,9 +53,6 @@ var middle_position = false
 
 
 func _ready():
-	print(Scriptwriter.level_cards)
-	print(Scriptwriter.victory_count)
-	print(Scriptwriter.count_to_victory)
 	get_tree().call_group("Dossier", "dossier_update")
 	Animator.play("Apperiance")
 	start_position = Scriptwriter.MainCardsBack
@@ -70,7 +67,7 @@ func _ready():
 			Scriptwriter.FirstCard = false
 			Scriptwriter.victory_count = int(Scriptwriter.victory_count) + 1
 			
-		if  !Scriptwriter.FirstCard and Scriptwriter.CardType == "Tutorial" and Scriptwriter.CardType != "Characters":
+		elif  !Scriptwriter.FirstCard and Scriptwriter.CardType == "Tutorial" and Scriptwriter.CardType != "Characters":
 			Scriptwriter.card_var_generator()
 			
 		elif !Scriptwriter.FirstCard and Scriptwriter.CardChoose == "StatusScreen" or Scriptwriter.CardChoose =="EventResult":
@@ -199,7 +196,6 @@ func choosedone():
 						Scriptwriter.feedBackMessage = "не проходит по возрасту"
 						get_tree().call_group("MainScene", "messageFeedBack")
 						Scriptwriter.HealthRightChoose = -50
-						print("Правило сработало")
 						
 				if Scriptwriter.SexRule == true:
 					if !(Scriptwriter.dossierSex in Scriptwriter.ruleSex):
@@ -243,9 +239,15 @@ func choosedone():
 						Scriptwriter.feedBackMessage = "не совпала цель"
 						get_tree().call_group("MainScene", "messageFeedBack")
 						Scriptwriter.HealthRightChoose = -50
-				
-			get_tree().call_group("BalanceGUI", "change_proportions_right")
-			choosedone_next_card_right()
+						
+						
+			if Scriptwriter.permissionToDenide == false:
+				get_tree().call_group("BalanceGUI", "change_proportions_right")
+			elif Scriptwriter.permissionToDenide == true:
+				get_tree().call_group("BalanceGUI", "denide_photo_and_name_correction")
+				get_tree().call_group("BalanceGUI", "change_proportions_right")
+				Scriptwriter.permissionToDenide = false
+			choosedone_next_card_right() #здесь остановка
 		
 		elif Scriptwriter.CardType == "EventResult":
 			Scriptwriter.CardChoose = Scriptwriter.NextCardRight

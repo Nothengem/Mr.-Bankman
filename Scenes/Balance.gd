@@ -128,6 +128,22 @@ func correction_calculating():
 		b = b - Modi
 	elif b == 50:
 		pass
+		
+func denide_photo_and_name_correction():
+	Scriptwriter.Heath_var = denide_photo_and_name_correction_helper(Scriptwriter.Heath_var)
+	Scriptwriter.Law_var = denide_photo_and_name_correction_helper(Scriptwriter.Law_var)
+	Scriptwriter.Banditism_var = denide_photo_and_name_correction_helper(Scriptwriter.Banditism_var)
+	Scriptwriter.Luck_var = denide_photo_and_name_correction_helper(Scriptwriter.Luck_var)
+		
+func denide_photo_and_name_correction_helper(alpha):
+	if alpha < 50:
+		alpha = alpha + 10
+	elif alpha > 50:
+		alpha = alpha - 10
+	elif alpha == 50:
+		alpha = 50
+	return alpha
+		
 
 #Когда-нибудь повторить
 #func correction_calculating_Banditism():

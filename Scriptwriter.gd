@@ -160,6 +160,8 @@ var falsePortrait
 
 var feedBackMessage
 
+var permissionToDenide = false
+
 
 func _ready():
 	NameRule = false
@@ -333,9 +335,9 @@ func card_var_generator(): #ПОХОЖЕ Я ЭТУ ШТУКУ ЗАПУСКАЮ 2
 	
 	get_tree().call_group("CharacterControl", "card_generation") #на проверке
 	get_tree().call_group("IventCard", "cardupdate")
-	get_tree().call_group("Dossier", "dossier_update")
+#	get_tree().call_group("Dossier", "dossier_update")
 	get_tree().call_group("NeedTo", "answer_update")
-	
+
 
 
 func portrait_variables_update():
