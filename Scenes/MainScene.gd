@@ -5,6 +5,14 @@ var is_dragging = false
 
 
 func _ready():
+	
+	if int(Scriptwriter.CurrentLevel[-1]) >= 3:
+		Scriptwriter.NameRule = true
+		Scriptwriter.PhotoRule = true
+	
+
+	
+	
 	Scriptwriter.MainCardsBack = Vector2($Control.rect_pivot_offset.x, $Control.rect_pivot_offset.y*1.15)
 	
 	Scriptwriter.FirstCard = true

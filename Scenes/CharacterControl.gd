@@ -215,7 +215,6 @@ func choosedone():
 						get_tree().call_group("MainScene", "messageFeedBack")
 						Scriptwriter.LuckRightChoose = -50
 					
-				
 				if Scriptwriter.BlackListRule == true:
 					if Scriptwriter.dossierBlackList != Scriptwriter.ruleBlackList:
 						Scriptwriter.feedBackMessage = "в черном списке"
@@ -235,11 +234,10 @@ func choosedone():
 						Scriptwriter.HealthRightChoose = -50
 					
 				if Scriptwriter.WhatForRule == true:
-					if Scriptwriter.WhatFor in Scriptwriter.ruleOfLevel[7]:
+					if Scriptwriter.dossierBankRlationPurpose[Scriptwriter.WhatFor] in Scriptwriter.ruleOfLevel[7][0]:
 						Scriptwriter.feedBackMessage = "не совпала цель"
 						get_tree().call_group("MainScene", "messageFeedBack")
 						Scriptwriter.HealthRightChoose = -50
-						
 						
 			if Scriptwriter.permissionToDenide == false:
 				get_tree().call_group("BalanceGUI", "change_proportions_right")
@@ -248,7 +246,7 @@ func choosedone():
 				get_tree().call_group("BalanceGUI", "change_proportions_right")
 				Scriptwriter.permissionToDenide = false
 			choosedone_next_card_right() #здесь остановка
-		
+			
 		elif Scriptwriter.CardType == "EventResult":
 			Scriptwriter.CardChoose = Scriptwriter.NextCardRight
 			choosedone_next_card_right()

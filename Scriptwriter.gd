@@ -74,7 +74,7 @@ var FirstCard = true
 # Сохранённая игра
 var levels_complete = 4
 #переменная обозначающая текущий уровень
-var  CurrentLevel = 4
+var  CurrentLevel = 0
 
 #массив содержащий в себе карты для уровня
 var level_cards = []
@@ -84,7 +84,7 @@ var level_tutorial = []
 var position_on_level = 0
 
 #для отслеживания уровня, который выбрал игрок
-var level_was_choosen
+var level_was_choosen = 0
 
 #предзагрузка БД карт
 onready var CardDataBase = preload ("res://DataBase/CardDataBase.gd")
@@ -173,13 +173,15 @@ func _ready():
 	RatingRule = false
 	PhotoRule = false
 	WhatForRule = false
+	NameRule = false
+	PhotoRule = false
 	
 	victory_count = 0
 	position_on_level = 0
 	
-	if CurrentLevel >= 3:
-		NameRule = true
-		PhotoRule = true
+#	if CurrentLevel >= 3:
+#		NameRule = true
+#		PhotoRule = true
 
 
 
@@ -223,8 +225,9 @@ func level_massive_rule_generetor():
 		BlackListRule = true
 	if ruleLoanRating != false:
 		RatingRule = true
-	if "false" in ruleWhatFor:
+	if !("false" in ruleWhatFor):
 		WhatForRule = true
+	
 	
 
 #	var level_composit

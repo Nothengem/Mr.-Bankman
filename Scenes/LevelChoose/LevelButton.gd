@@ -22,6 +22,7 @@ func _on_1_pressed():
 	if $".".disabled == false:
 		if int($".".name) != 5:
 			Scriptwriter.CurrentLevel = "LVL" + str($".".name)
+			Scriptwriter.level_was_choosen = str($".".name)
 			Scriptwriter.level_massive_generator()
 			if get_tree().change_scene("res://Scenes/MainScene.tscn") != OK:
 				print ("An unexpected error occured when trying to switch to the Readme scene (MainScene)")

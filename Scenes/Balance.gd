@@ -54,6 +54,13 @@ func change_proportions_right():
 
 
 func change_proportions_left():
+	
+
+	if Scriptwriter.CardType == "Characters" and \
+	Scriptwriter.dossierBankRlationPurpose[Scriptwriter.WhatFor] in \
+	Scriptwriter.ruleWhatFor: #проверяем, что запрос клиента совпадает с запретом
+		denide_photo_and_name_correction()
+	
 	Scriptwriter.Heath_var = Scriptwriter.Heath_var + Scriptwriter.HealthLeftChoose
 	animate_value_health(HealthProgress.value, Scriptwriter.Heath_var)
 	
@@ -65,6 +72,7 @@ func change_proportions_left():
 	
 	Scriptwriter.Luck_var = Scriptwriter.Luck_var + Scriptwriter.LuckLeftChoose
 	animate_value_luck(LuckProgress.value, Scriptwriter.Luck_var)
+	
 	
 
 

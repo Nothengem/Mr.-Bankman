@@ -19,7 +19,7 @@ const DATA = {
 	"LVL2": [false, 0, 0, false, false, false, false, ["Инвестиции"]], #спрашивать
 	"LVL3": [false, 0, 0, false, false, false, false, ["false"]], #весь уровень коллеги вниз
 	"LVL4": [false, 0, 0, false, false, false, false, ["false"]], #сверять фото и имя
-	"LVL5": [["Женщины"], null, null, null, null, null, null, null,], #спрашивать
+	"LVL5": [["Женщины"], 0, 0, false, false, false, false, false,], #проверять пол
 	"LVL6": [null, 0, 0, null, null, null, null, null,], #доставка
 	"LVL7": [null, 0, 0, null, null, null, null, null,], #клиенты вниз
 	"LVL8": [null, 0, 0, null, null, null, null, null,], #пол
