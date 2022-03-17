@@ -77,7 +77,8 @@ enum {
 	CreditDeathScheme, CreditDeathScheme1, MoneyPrinting, MoneyPrinting1, 
 	MrBankManScarySecret, MrBankManScarySecret1, MrBankManScarySecret2,
 	CustomerLastWish, CustomerLastWish1, CreditProphetReturn, CreditProphetReturn1,
-	CreditProphetReturn2, CreditProphetReturn3,
+	CreditProphetReturn2, ErogenZone, CantMeetMoney, CollectorsGuardians, CollectorsGuardians1,
+	CollectorsGuardians2, CollectorsGuardians3, CollectorsGuardians4,
 	
 	
 	#концовки
@@ -1759,6 +1760,98 @@ const DATA = {
 		"Random", "Random",
 		"None",
 		0],
+		
+	"ErogenZone" : 
+		["Characters",
+		"Sanna Acol Nitt", 
+		"Моя эрогенная зона - Ладошки! Кладёшь в каждую по 5 тысяч и я сразу вся такая ласковая, нежная, возбуждённая!", #что говорит 2
+		"Санна Аколь Нитт",
+		"Боюсь здесь вам ничего не светит... уходите",
+		"У Mr.Bankman тажк проблема...",
+		0, 0, 0, 0,
+		0, 0, 0, 0,
+		"Random", "Random",
+		"None",
+		0],
+		
+	"CantMeetMoney" :
+		["Characters",
+		"Darls Coy", 
+		"Секрет богатства состоит в том, чтобы легко расставаться с деньгами.", #что говорит 2
+		"Дарлс Коу",
+		"Да, с ними встретится никак не могу!",
+		"Оформлю кредит, и тут растрачу",
+		-9, 0, 0, 0,
+		+9, 0, 0, 0,
+		"Random", "Random",
+		"None",
+		0],
+		
+	"CollectorsGuardians" :
+		["Characters",
+		"Darls Coy", 
+		"Куба должна вашему Банку 30 миллиардов долларов?", #что говорит 2
+		"Дарлс Коу",
+		"Ничего об этом не знаю",
+		"Да, и мы готовы понять и простить им долг",
+		-9, 0, 0, 0,
+		+9, 0, 0, 0,
+		"CollectorsGuardians1", "CollectorsGuardians1",
+		"None",
+		0],
+		
+	"CollectorsGuardians1" :
+		["Characters",
+		"Darls Coy", 
+		"Африка должна вам 20 миллиардов?", #что говорит 2
+		"Дарлс Коу",
+		"Ничего об этом не знаю",
+		"Они для нас как друзья, можем и это простить",
+		-9, 0, 0, 0,
+		+9, 0, 0, 0,
+		"CollectorsGuardians2", "CollectorsGuardians2",
+		"None",
+		0],
+		
+	"CollectorsGuardians2" :
+		["Characters",
+		"Darls Coy", 
+		"Америка должна вам 40 миллиардов долларов?", #что говорит 2
+		"Дарлс Коу",
+		"Ну хватит уже",
+		"Мы относимся с уважением к проблемам наших партнёров!",
+		-9, 0, 0, 0,
+		+9, 0, 0, 0,
+		"CollectorsGuardians3", "CollectorsGuardians3",
+		"None",
+		0],
+		
+	"CollectorsGuardians3" :
+		["Characters",
+		"Darls Coy", 
+		"Я клоню к тому... я, ветеран труда, и заслужанный врач, просрочил месячный платеж 150 долларов, по кредиту!", #что говорит 2
+		"Дарлс Коу",
+		"Нуууу...",
+		"Эмн...",
+		-9, 0, 0, 0,
+		+9, 0, 0, 0,
+		"CollectorsGuardians4", "CollectorsGuardians4",
+		"None",
+		0],
+		
+	"CollectorsGuardians4" :
+		["Characters",
+		"Darls Coy", 
+		"Коллекторы!!! Стража!!!! Схватить его!!!", #что говорит 2
+		"Дарлс Коу",
+		"Мне кажется, что это черезе чур...",
+		"ДА! ХВАТАЙТЕ ЕГО!",
+		-9, 0, 0, 0,
+		+9, 0, 0, 0,
+		"Random", "Random",
+		"None",
+		0],
+		
 		
 	"Tutorial1" : 
 		["Tutorial", #ссылка на папку персонажей 0
