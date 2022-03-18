@@ -78,7 +78,9 @@ enum {
 	MrBankManScarySecret, MrBankManScarySecret1, MrBankManScarySecret2,
 	CustomerLastWish, CustomerLastWish1, CreditProphetReturn, CreditProphetReturn1,
 	CreditProphetReturn2, ErogenZone, CantMeetMoney, CollectorsGuardians, CollectorsGuardians1,
-	CollectorsGuardians2, CollectorsGuardians3, CollectorsGuardians4,
+	CollectorsGuardians2, CollectorsGuardians3, CollectorsGuardians4, 
+	DepositArgument, DepositArgument1, DepositArgument2, MrBankManPocket,
+	MrBankManPocket1,
 	
 	
 	#концовки
@@ -1789,68 +1791,133 @@ const DATA = {
 		
 	"CollectorsGuardians" :
 		["Characters",
-		"Darls Coy", 
+		"Crowley Shepard",
 		"Куба должна вашему Банку 30 миллиардов долларов?", #что говорит 2
-		"Дарлс Коу",
+		"Кроули Шеппард",
 		"Ничего об этом не знаю",
 		"Да, и мы готовы понять и простить им долг",
-		-9, 0, 0, 0,
-		+9, 0, 0, 0,
+		0, -5, 0, 0,
+		0, +5, 0, 0,
 		"CollectorsGuardians1", "CollectorsGuardians1",
 		"None",
-		0],
+		15],
 		
 	"CollectorsGuardians1" :
 		["Characters",
-		"Darls Coy", 
+		"Crowley Shepard", 
 		"Африка должна вам 20 миллиардов?", #что говорит 2
-		"Дарлс Коу",
+		"Кроули Шеппард",
 		"Ничего об этом не знаю",
 		"Они для нас как друзья, можем и это простить",
-		-9, 0, 0, 0,
-		+9, 0, 0, 0,
+		0, -5, 0, 0,
+		0, +5, 0, 0,
 		"CollectorsGuardians2", "CollectorsGuardians2",
 		"None",
-		0],
+		15],
 		
 	"CollectorsGuardians2" :
 		["Characters",
-		"Darls Coy", 
+		"Crowley Shepard", 
 		"Америка должна вам 40 миллиардов долларов?", #что говорит 2
-		"Дарлс Коу",
+		"Кроули Шеппард",
 		"Ну хватит уже",
 		"Мы относимся с уважением к проблемам наших партнёров!",
-		-9, 0, 0, 0,
-		+9, 0, 0, 0,
+		0, -5, 0, 0,
+		0, +5, 0, 0,
 		"CollectorsGuardians3", "CollectorsGuardians3",
 		"None",
-		0],
+		15],
 		
 	"CollectorsGuardians3" :
 		["Characters",
-		"Darls Coy", 
+		"Crowley Shepard", 
 		"Я клоню к тому... я, ветеран труда, и заслужанный врач, просрочил месячный платеж 150 долларов, по кредиту!", #что говорит 2
-		"Дарлс Коу",
+		"Кроули Шеппард",
 		"Нуууу...",
 		"Эмн...",
-		-9, 0, 0, 0,
-		+9, 0, 0, 0,
+		0, 0, 0, -10,
+		0, 0, 0, -10,
 		"CollectorsGuardians4", "CollectorsGuardians4",
 		"None",
-		0],
+		15],
 		
 	"CollectorsGuardians4" :
 		["Characters",
-		"Darls Coy", 
+		"Mr. Bankman", 
 		"Коллекторы!!! Стража!!!! Схватить его!!!", #что говорит 2
-		"Дарлс Коу",
+		"Mr. Bankman",
 		"Мне кажется, что это черезе чур...",
 		"ДА! ХВАТАЙТЕ ЕГО!",
-		-9, 0, 0, 0,
-		+9, 0, 0, 0,
+		-12, 0, -7, 0,
+		+12, 0, +12, 0,
 		"Random", "Random",
 		"None",
 		0],
+		
+	"DepositArgument" :
+		["Characters",
+		"Crowley Shepard", 
+		"Я хочу взять у вас кредит! Инфляция полностью съела мои сбережения!", #что говорит 2
+		"Кроули Шеппард",
+		"Вынужден вам отказать. Вы проблемный клиент...",
+		"Конечно! Что вы готовы оставить под залог?",
+		0, -14, -7, 0,
+		+12, 0, +12, 0,
+		"DepositArgument1", "DepositArgument2",
+		"None",
+		1],
+		
+	"DepositArgument1" :
+		["Characters",
+		"Crowley Shepard", 
+		"Что значит проблемный! У вас в банке сейчас находятся мои вложения, которые мне не отдают!", #что говорит 2
+		"Кроули Шеппард",
+		"Ваши средства под надёжной защитой, досвидания!",
+		"Чтож, вы сразу не сказали? Сейчас дадим вам в кредит ваши деньги!",
+		-12, 0, -7, 0,
+		+12, 0, +12, 0,
+		"Random", "Random",
+		"None",
+		15],
+		
+	"DepositArgument2" :
+		["Characters",
+		"Crowley Shepard", 
+		"Какой ещё залог? Когда я отдавал вам свои деньги на сохранение, вы залог мне не предоставляли!", #что говорит 2
+		"Кроули Шеппард",
+		"Я же говорил, с вами и вашими деньгами сплошные проблемы!",
+		"Приходите завтра! Мы что-нибудь придумаем",
+		-12, 0, -7, 0,
+		+12, 0, +12, 0,
+		"Random", "Random",
+		"None",
+		15],
+		
+	"DepositArgument2" :
+		["Characters",
+		"Crowley Shepard", 
+		"(Звон монет в мешке клиента) У меня есть небольшие накопления. Не знаете, куда сейчас лучше их вложить?", #что говорит 2
+		"Кроули Шеппард",
+		"Я же говорил, с вами и вашими деньгами сплошные проблемы!",
+		"Приходите завтра! Мы что-нибудь придумаем",
+		-12, 0, -7, 0,
+		+12, 0, +12, 0,
+		"Random", "Random",
+		"None",
+		15],
+		
+	"DepositArgument2" :
+		["Characters",
+		"Crowley Shepard", 
+		"(Услышал звон монет, прибежал и говорит с отдышкой) Мой карман к вашим услугам СЭР!", #что говорит 2
+		"Кроули Шеппард",
+		"Я же говорил, с вами и вашими деньгами сплошные проблемы!",
+		"Приходите завтра! Мы что-нибудь придумаем",
+		-12, 0, -7, 0,
+		+12, 0, +12, 0,
+		"Random", "Random",
+		"None",
+		15],
 		
 		
 	"Tutorial1" : 
