@@ -72,7 +72,7 @@ var count_to_victory
 var FirstCard = true
 
 # Сохранённая игра
-var levels_complete = 4
+var levels_complete = 5
 #переменная обозначающая текущий уровень
 var  CurrentLevel = 0
 
@@ -186,6 +186,7 @@ func _ready():
 
 
 func level_massive_generator():
+	print("вызвали генерацию уровня")
 	position_on_level = 0
 	LevelDataBase = load("res://DataBase/LevelDataBase.gd")
 	victory_count = 0
@@ -212,10 +213,10 @@ func level_massive_rule_generetor():
 	ruleLoanRating = ruleOfLevel[6]
 	
 
-	
+	print(ruleSex)
 	if ruleAgeMin != 0 or ruleAgeMax != 0:
 		AgeRule = true
-	if ruleSex != false:
+	if ruleSex != ["false"]:
 		SexRule = true
 	if ruleNational != false:
 		CountryRule = true

@@ -25,6 +25,10 @@ const DATA = {
 	"LVL4" : ["ComplainsCredit", "CreditNotInMyWay", "ClaimBankTrustYou", "InvestitionSmallBusiness", 
 	"InvestitionFlipOver", "CreditCleymoIpotek", "CreditRefrigerator", "ClaimGrandmother",
 	"DepositLetterWrite"],
+	
+	"LVL5" : ["CreditDeathScheme", "MoneyPrinting", "MrBankManScarySecret", "CustomerLastWish", 
+	"CreditProphetReturn", "ErogenZone", "CantMeetMoney", "CollectorsGuardians", 
+	"DepositArgument", "MrBankManPocket"],
 	}
 	
 	

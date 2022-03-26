@@ -84,7 +84,6 @@ enum {
 	CollectorsGuardians2, CollectorsGuardians3, CollectorsGuardians4, 
 	DepositArgument, DepositArgument1, DepositArgument2, MrBankManPocket,
 	MrBankManPocket1,
-	# 2 карточки курьерской доставки
 	
 	
 	#колода 6 дня (10 штук)

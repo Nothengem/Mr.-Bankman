@@ -6,5 +6,6 @@ func _ready():
 
 func _on_Button_released():
 	Scriptwriter.level_massive_generator()
+	print(Scriptwriter.level_massive_generator())
 	get_tree().change_scene("res://Scenes/MainScene.tscn")
 

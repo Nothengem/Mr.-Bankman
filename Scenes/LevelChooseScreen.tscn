@@ -24,7 +24,9 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="LevelChooseScreen" type="Control" groups=["LevelChooseScreen"]]
+[node name="LevelChooseScreen" type="Control" groups=[
+"LevelChooseScreen",
+]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 540, 960 )
