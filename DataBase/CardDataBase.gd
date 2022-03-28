@@ -466,10 +466,23 @@ const DATA = {
 		"В таком случае первый отказ твой!",
 		0, 0, 0, 0,
 		0, 0, 0, 0, 
+		"TutorLev5Card3", "TutorLev5Card3",
+		"None",
+		0],
+		
+	"TutorLev5Card3" : 
+		["Tutorial",
+		"Mr. Bankman", 
+		"И не забывал каждый день проверять правила в книге правил! Это ВАЖНО!", #что говорит 2
+		"Mr. Bankman",
+		"...",
+		"...",
+		0, 0, 0, 0,
+		0, 0, 0, 0, 
 		"Random", "Random",
 		"None",
 		0],
-	
+		
 	"CreditHomeForCar" : 
 		["Characters",
 		"Sill Fpencer", 

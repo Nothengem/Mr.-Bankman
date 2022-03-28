@@ -198,7 +198,11 @@ func choosedone():
 						Scriptwriter.HealthRightChoose = -50
 						
 				if Scriptwriter.SexRule == true:
-					if !(Scriptwriter.dossierSex in Scriptwriter.ruleSex):
+					print("Scriptwriter.SexRule")
+					print(Scriptwriter.dossierSex)
+					print(Scriptwriter.ruleSex)
+					print(Scriptwriter.dossierSex == Scriptwriter.ruleSex)
+					if Scriptwriter.dossierSex == Scriptwriter.ruleSex:
 						Scriptwriter.feedBackMessage = "не проходит по полу"
 						get_tree().call_group("MainScene", "messageFeedBack")
 						Scriptwriter.LawRightChoose = +50

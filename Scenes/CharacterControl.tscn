@@ -175,7 +175,9 @@ tracks/0/keys = {
 "values": [ true ]
 }
 
-[node name="CharacterControl" type="Area2D" groups=["CharacterControl"]]
+[node name="CharacterControl" type="Area2D" groups=[
+"CharacterControl",
+]]
 position = Vector2( 540, 1122 )
 script = ExtResource( 2 )
 

@@ -14,12 +14,12 @@ const DATA = {
 		["Высокий", "Средний"], #кредитный рейтинг(Финансы) только такие клиенты
 		["На инвестиции"], #запрет на работу с такими клиентами
 		],
-	"LVL0": [["Женщины"], 21, 65, ["England", "India"], "Средняя", "Чист", ["Низкий"], ["На инвестиции"],],
-	"LVL1": [["false"], 0, 0, false, false, false, false, ["false"]], #выбор
-	"LVL2": [["false"], 0, 0, false, false, false, false, ["Инвестиции"]], #спрашивать
-	"LVL3": [["false"], 0, 0, false, false, false, false, ["false"]], #весь уровень коллеги вниз
-	"LVL4": [["false"], 0, 0, false, false, false, false, ["false"]], #сверять фото и имя
-	"LVL5": [["Женщины"], 0, 0, false, false, false, false, ["false"]], #проверять пол
+	"LVL0": ["Женский", 21, 65, ["England", "India"], "Средняя", "Чист", ["Низкий"], ["На инвестиции"],],
+	"LVL1": ["false", 0, 0, false, false, false, false, ["false"]], #выбор
+	"LVL2": ["false", 0, 0, false, false, false, false, ["Инвестиции"]], #спрашивать
+	"LVL3": ["false", 0, 0, false, false, false, false, ["false"]], #весь уровень коллеги вниз
+	"LVL4": ["false", 0, 0, false, false, false, false, ["false"]], #сверять фото и имя
+	"LVL5": ["Мужской", 0, 0, false, false, false, false, ["false"]], #проверять пол
 	"LVL6": [null, 0, 0, null, null, null, null, null,], #доставка
 	"LVL7": [null, 0, 0, null, null, null, null, null,], #клиенты вниз
 	"LVL8": [null, 0, 0, null, null, null, null, null,], #пол

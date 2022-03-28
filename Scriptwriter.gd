@@ -216,7 +216,7 @@ func level_massive_rule_generetor():
 	print(ruleSex)
 	if ruleAgeMin != 0 or ruleAgeMax != 0:
 		AgeRule = true
-	if ruleSex != ["false"]:
+	if ruleSex != "false":
 		SexRule = true
 	if ruleNational != false:
 		CountryRule = true
