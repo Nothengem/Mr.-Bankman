@@ -182,8 +182,7 @@ func choosedone():
 
 			get_tree().call_group("BalanceGUI", "victory_count_update")
 			
-			if Scriptwriter.CardType != "Tutorial":
-					
+			if Scriptwriter.CardType != "Tutorial" and Scriptwriter.CharacterTechicalName != "Mr. Bankman" and Scriptwriter.CharacterTechicalName != "Bantonio Anderas":
 				if Scriptwriter.NameRule == true:
 					if Scriptwriter.dossierName != Scriptwriter.CardName:
 						Scriptwriter.feedBackMessage = "не совпало имя"
@@ -198,10 +197,6 @@ func choosedone():
 						Scriptwriter.HealthRightChoose = -50
 						
 				if Scriptwriter.SexRule == true:
-					print("Scriptwriter.SexRule")
-					print(Scriptwriter.dossierSex)
-					print(Scriptwriter.ruleSex)
-					print(Scriptwriter.dossierSex == Scriptwriter.ruleSex)
 					if Scriptwriter.dossierSex == Scriptwriter.ruleSex:
 						Scriptwriter.feedBackMessage = "не проходит по полу"
 						get_tree().call_group("MainScene", "messageFeedBack")

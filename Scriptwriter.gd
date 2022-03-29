@@ -13,6 +13,7 @@ var CardRAnswer #переменная для правого ответа
 var CardLAnswer #переменная для левого ответа
 var CardIvent #переменная для активации события после карточки
 var WhatFor #содержит ответ на вопрос "зачем клиенту этот продукты"
+var CharacterTechicalName
 
 #переменные для формирования потрета карты
 export var CharacterPortrait = [] #переменная хранящая название массива портрета в БД персонажей
@@ -186,7 +187,6 @@ func _ready():
 
 
 func level_massive_generator():
-	print("вызвали генерацию уровня")
 	position_on_level = 0
 	LevelDataBase = load("res://DataBase/LevelDataBase.gd")
 	victory_count = 0
@@ -213,7 +213,6 @@ func level_massive_rule_generetor():
 	ruleLoanRating = ruleOfLevel[6]
 	
 
-	print(ruleSex)
 	if ruleAgeMin != 0 or ruleAgeMax != 0:
 		AgeRule = true
 	if ruleSex != "false":
@@ -321,6 +320,7 @@ func card_var_generator(): #ПОХОЖЕ Я ЭТУ ШТУКУ ЗАПУСКАЮ 2
 	NextCardLeft = CardInfo[14]
 	CardIvent = CardInfo[16]
 	WhatFor = CardInfo[17]
+	CharacterTechicalName = CardInfo[1]
 	
 	if CardType == "Characters" or CardType == "Tutorial":
 		dossierName = DossierInfo[0] #DossierInfo[0] потом доделать
