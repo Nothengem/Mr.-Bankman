@@ -3,7 +3,11 @@ extends NinePatchRect
 func cardupdate():
 	$CardTextCont/CardText.text = Scriptwriter.CardText
 	$CharNameCont/CharacterName.text = Scriptwriter.CardName
+<<<<<<< HEAD
 	$CardTextCont/CardRichText.text = Scriptwriter.CardText
+=======
+	$CardTextCont/RichTextLabel.text = Scriptwriter.CardText
+>>>>>>> Main
 
 func cardupdate_dice():
 	$CardTextCont/CardText.text = "Для прохождения проверки, нужно выкинуть " + str(Scriptwriter.dice_to_win) + " или выше"
