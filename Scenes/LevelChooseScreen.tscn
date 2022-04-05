@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Resources/GFX/MainSceneCharacterBackGround2.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/VLevelButtonsContainer.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Resources/GFX/LevelChoose/PreviousPageButton.png" type="Texture" id=5]
 [ext_resource path="res://Resources/GFX/LevelChoose/NextPageButton.png" type="Texture" id=6]
 [ext_resource path="res://Resources/GFX/LevelChoose/Logo.png" type="Texture" id=7]
+[ext_resource path="res://Resources/Music/410574__yummie__game-background-music-loop-short.mp3" type="AudioStream" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Hide"
@@ -24,17 +25,12 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="LevelChooseScreen" type="Control" groups=[
-"LevelChooseScreen",
-]]
+[node name="LevelChooseScreen" type="Control" groups=["LevelChooseScreen"]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 540, 960 )
 mouse_filter = 2
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -116,6 +112,10 @@ normal = ExtResource( 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Hide = SubResource( 1 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/NextPage" to="VBoxContainer/HBoxContainer/VLevelButtonsContainer" method="_on_NextPage_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Previouspage" to="VBoxContainer/HBoxContainer/VLevelButtonsContainer" method="_on_Previouspage_pressed"]

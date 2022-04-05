@@ -1484,7 +1484,7 @@ const DATA = {
 		"Всегда приходится чем-то жертвовать",
 		+18, -6, 0, +6,
 		0, -12, 0, 0,
-		"Random", "CreditCleymoIpotek1",
+		"Random", "Random",
 		"None",
 		8],
 		

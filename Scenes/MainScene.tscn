@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Scenes/IventCard.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Dossier.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Resources/GFX/MainScreen/IventCardBackground.png" type="Texture" id=10]
 [ext_resource path="res://Resources/GFX/MainCards/CardShirt.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/DayRules.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Resources/Music/459706__slaking-97__free-music-background-loop-002.wav" type="AudioStream" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -782,15 +783,16 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="Control"]
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.240431
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.451369
 margin_left = -360.0
 margin_top = -201.0
 margin_right = 360.0
 margin_bottom = 201.0
 custom_fonts/font = SubResource( 1 )
-text = "Банковский день прошел успешно"
+text = "Банковский день прошел успешно. Можете бахнуть
+пивасик"
 align = 1
 valign = 1
 autowrap = true
@@ -988,9 +990,11 @@ text = "Не совпадает пол"
 align = 1
 valign = 1
 autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource( 13 )
+volume_db = -15.0
+autoplay = true
 
 [connection signal="animation_finished" from="Control/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_started" from="Control/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_started"]

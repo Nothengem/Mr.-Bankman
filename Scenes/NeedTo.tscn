@@ -67,9 +67,7 @@ tracks/1/keys = {
 "values": [ Vector2( -780, -895.42 ), Vector2( -780, -838.823 ), Vector2( -780, -420 ) ]
 }
 
-[node name="NeedTo" type="TextureRect" groups=[
-"NeedTo",
-]]
+[node name="NeedTo" type="TextureRect" groups=["NeedTo"]]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = -1180.0
 margin_top = -820.0
@@ -95,7 +93,7 @@ margin_right = 965.795
 margin_bottom = 152.854
 rect_pivot_offset = Vector2( 950, 280 )
 custom_fonts/font = SubResource( 1 )
-text = "Ghjdthrf"
+text = "..."
 align = 1
 valign = 1
 __meta__ = {
