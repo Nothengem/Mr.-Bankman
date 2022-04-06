@@ -1,14 +1,26 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Resources/GFX/CharacterCotaint/Ivent/NextCardIvent.png" type="Texture" id=1]
 [ext_resource path="res://Resources/GFX/LeftTextBack.png" type="Texture" id=2]
 [ext_resource path="res://Resources/GFX/MainCards/BackGround.png" type="Texture" id=3]
-[ext_resource path="res://Resources/GFX/Interface/Font/TextGame.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Scenes/CharacterPortraitStandAlone.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Resources/GFX/MainCards/CardShadow.png" type="Texture" id=6]
+[ext_resource path="res://Resources/GFX/Interface/Font/JetBrainsMono-VariableFont_wght.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Resources/GFX/Interface/Font/Ivent_Itog.tres" type="DynamicFont" id=10]
 [ext_resource path="res://Resources/GFX/CharacterCotaint/Eyes/EyesClosed.png" type="Texture" id=18]
 [ext_resource path="res://Scenes/Character(nextcharacter).gd" type="Script" id=19]
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 50
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 7 )
 
 [sub_resource type="Animation" id=1]
 resource_name = "IdleOne"
@@ -178,7 +190,7 @@ anchor_right = 0.85
 anchor_bottom = 0.76
 rect_min_size = Vector2( 640, 340 )
 custom_constants/line_spacing = -6
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = SubResource( 4 )
 text = "HelpText
 привет"
 autowrap = true
@@ -214,7 +226,7 @@ rect_min_size = Vector2( 640, 340 )
 rect_rotation = -90.0
 rect_pivot_offset = Vector2( 640, 0 )
 custom_constants/line_spacing = -6
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "HelpText
 привет"
 align = 2

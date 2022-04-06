@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Resources/GFX/MainSceneCharacterBackGround2.png" type="Texture" id=1]
 [ext_resource path="res://Resources/GFX/StatusBars/NoItem.png" type="Texture" id=2]
@@ -9,39 +9,10 @@
 [ext_resource path="res://Resources/GFX/CharacterCardBG.png" type="Texture" id=7]
 [ext_resource path="res://Resources/GFX/Pendulum/PendulumBad.png" type="Texture" id=8]
 [ext_resource path="res://Resources/GFX/Pendulum/PendulumNeutral.png" type="Texture" id=9]
-[ext_resource path="res://Resources/GFX/glowing_circle.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/particles/CastingParticleCollision.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Resources/GFX/Pendulum/PendulumGood2.png" type="Texture" id=11]
 [ext_resource path="res://Resources/GFX/Pendulum/PendulumNeutral2.png" type="Texture" id=12]
-
-[sub_resource type="Environment" id=1]
-background_mode = 4
-glow_enabled = true
-glow_strength = 0.84
-glow_blend_mode = 0
-glow_hdr_threshold = 4.0
-glow_hdr_luminance_cap = 1.0
-
-[sub_resource type="Gradient" id=2]
-offsets = PoolRealArray( 0.640777, 1 )
-colors = PoolColorArray( 1, 1, 1, 0.927184, 0.952941, 0.952941, 0.952941, 0 )
-
-[sub_resource type="GradientTexture" id=3]
-gradient = SubResource( 2 )
-
-[sub_resource type="Curve" id=4]
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=5]
-curve = SubResource( 4 )
-
-[sub_resource type="ParticlesMaterial" id=6]
-flag_disable_z = true
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 250.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale_curve = SubResource( 5 )
-color_ramp = SubResource( 3 )
+[ext_resource path="res://Scenes/particles/WorldEnvironment.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Animation" id=7]
 resource_name = "Appearance"
@@ -71,18 +42,13 @@ tracks/1/keys = {
 "values": [ Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
 }
 
-[node name="Pendulum" type="Control" groups=[
-"Ivent",
-]]
+[node name="Pendulum" type="Control" groups=["Ivent"]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = 0.00012207
 rect_pivot_offset = Vector2( 540, 960 )
 mouse_filter = 2
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="CardBack" type="Sprite" parent="."]
 position = Vector2( 540, 960 )
@@ -117,14 +83,9 @@ enabled = true
 cast_to = Vector2( 0, 700 )
 collide_with_areas = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Sprite/Line2D/RayCast2D"]
-environment = SubResource( 1 )
+[node name="WorldEnvironment" parent="Sprite/Line2D/RayCast2D" instance=ExtResource( 13 )]
 
-[node name="CastingParticleCollision" type="Particles2D" parent="Sprite/Line2D"]
-rotation = -1.67028
-lifetime = 0.3
-process_material = SubResource( 6 )
-texture = ExtResource( 10 )
+[node name="CastingParticleCollision" parent="Sprite/Line2D" instance=ExtResource( 10 )]
 
 [node name="Timer_amplitude" type="Timer" parent="Sprite"]
 wait_time = 2.0
