@@ -2,6 +2,7 @@ extends Node
 
 var previous_mouse_position = Vector2()
 var is_dragging = false
+onready var tutorialScenario = get_node("TutorialSсenario")
 
 
 func _ready():
@@ -39,6 +40,8 @@ func spawn():
 	var scene = load("res://Scenes/CharacterControl.tscn")
 	var card = scene.instance()
 	add_child_below_node($Control, card, true)
+	if Scriptwriter.CurrentLevel == "LVL1":
+		tutorialScenario.levelOneScenario()
 
 func spawn_dice():
 	var scene = load("res://Scenes/Dice.tscn")

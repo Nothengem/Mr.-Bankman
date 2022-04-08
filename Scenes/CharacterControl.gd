@@ -86,6 +86,7 @@ func _ready():
 	elif !Scriptwriter.FirstCard and Scriptwriter.Heath_var <= 0 or Scriptwriter.Law_var <= 0 or Scriptwriter.Banditism_var <= 0 or Scriptwriter.Luck_var <= 0 or Scriptwriter.Heath_var >= 100 or Scriptwriter.Law_var >= 100 or Scriptwriter.Banditism_var >= 100 or Scriptwriter.Luck_var >= 100:
 			Scriptwriter.CardChoose = "LooseScreen"
 			Scriptwriter.losecard()
+			
 
 
 func funcional_blocking():

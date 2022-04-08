@@ -238,20 +238,20 @@ const DATA = {
 	"TutorLev1Card3" : 
 		["Tutorial",
 		"Mr. Bankman", 
-		"Всё очень просто! Выдавайте [wave amp=15 freq=5][color=red]клиентам[/color][/wave]  различные продукты Банка, налаживайте работу с [wave amp=15 freq=5][color=blue]коллегами[/color][/wave], управляйте [wave amp=15 freq=5][color=green]финансами[/color][/wave] и не портите отношений с [wave amp=15 freq=5][color=purple]Центральным Банком[/color][/wave].", #что говорит 2
+		"Всё очень просто! Выдавайте [wave amp=15 freq=5][color=red]клиентам[/color][/wave]  различные продукты Банка, налаживайте работу с [wave amp=15 freq=5][color=blue]коллегами[/color][/wave], управляйте [wave amp=15 freq=5][color=green]финансами[/color][/wave] и не портите отношений с [wave amp=15 freq=5][color=#d7b914]Центральным Банком[/color][/wave].", #что говорит 2
 		"Mr. Bankman",
 		"А сколько мне будут платить?",
 		"Начнём рабочий день!",
 		0, 0, 0, 0,
 		0, 0, 0, 0, 
-		"TutorLev1Card31", "Random",
+		"TutorLev1Card31", "TutorLev1Card31",
 		"None",
 		0],
 		
 	"TutorLev1Card31" : 
 		["Tutorial",
 		"Mr. Bankman", 
-		"Заработная плата в сделку не входила. А теперь за работу!", #что говорит 2
+		"АХ ДА! Заработная плата в сделку не входила. А теперь за работу!", #что говорит 2
 		"Mr. Bankman",
 		"Какого...?",
 		"Ты серьёзно?",

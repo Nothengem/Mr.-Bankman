@@ -4,11 +4,19 @@ onready var HealthProgress = get_node("Control2/NinePatchRect/IndicatorBox/HBoxC
 onready var LawProgress = get_node("Control2/NinePatchRect/IndicatorBox/HBoxContainer/LawProgress")
 onready var BanditismProgress = get_node("Control2/NinePatchRect/IndicatorBox/HBoxContainer/BanditismProgress")
 onready var LuckProgress = get_node("Control2/NinePatchRect/IndicatorBox/HBoxContainer/LuckProgress")
+onready var ShineEffectHealth = get_node("Control2/NinePatchRect/IndicatorBox/HBoxContainer/ShineEffectHealth")
+onready var ShineEffectLaw = get_node("Control2/NinePatchRect/IndicatorBox/HBoxContainer/ShineEffectLaw")
+onready var ShineEffectBanditism = get_node("Control2/NinePatchRect/IndicatorBox/HBoxContainer/ShineEffectBanditism")
+onready var ShineEffectLuck = get_node("Control2/NinePatchRect/IndicatorBox/HBoxContainer/ShineEffectLuck")
+
+
 
 #переменные для измененяи размеров индикаторов
 var scale_max = Vector2(1.2, 1.2)
 var scale_norm = Vector2(1, 1)
 var scale_speed = 0.3
+var shineScaleNorm = Vector2(0.1, 0.1)
+var shineScaleMax = Vector2(1.2, 3)
 
 #переменные для коррекции после победы в ивентах
 var Modi
@@ -54,8 +62,6 @@ func change_proportions_right():
 
 
 func change_proportions_left():
-	
-
 	if Scriptwriter.CardType == "Characters" and \
 	Scriptwriter.dossierBankRlationPurpose[Scriptwriter.WhatFor] in \
 	Scriptwriter.ruleWhatFor: #проверяем, что запрос клиента совпадает с запретом
@@ -234,23 +240,26 @@ func yellow_indicatos_color_right():
 	if !Scriptwriter.HealthRightChoose == 0:
 		$Tween.interpolate_property(HealthProgress, "rect_scale", HealthProgress.rect_scale, scale_max, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 		$Tween.start()
-#		$Tween.interpolate_property(HealthProgress, "tint_progress", HealthProgress.tint_progress, Color("ffd700"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
-#		$Tween.start()
+		$Tween.interpolate_property(ShineEffectHealth, "scale", ShineEffectHealth.scale, shineScaleMax, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+		$Tween.start()
+		print("должно гореть красным")
+
 	if !Scriptwriter.LawRightChoose == 0:
 		$Tween.interpolate_property(LawProgress, "rect_scale", LawProgress.rect_scale, scale_max, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 		$Tween.start()
-#		$Tween.interpolate_property(LawProgress, "tint_progress", LawProgress.tint_progress, Color("ffd700"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
-#		$Tween.start()
+		$Tween.interpolate_property(ShineEffectLaw, "scale", ShineEffectLaw.scale, shineScaleMax, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+		$Tween.start()
+		
 	if !Scriptwriter.BanditismRightChoose == 0:
 		$Tween.interpolate_property(BanditismProgress, "rect_scale", BanditismProgress.rect_scale, scale_max, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 		$Tween.start()
-#		$Tween.interpolate_property(BanditismProgress, "tint_progress", BanditismProgress.tint_progress, Color("ffd700"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
-#		$Tween.start()
+		$Tween.interpolate_property(ShineEffectBanditism, "scale", ShineEffectBanditism.scale, shineScaleMax, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+		$Tween.start()
 	if !Scriptwriter.LuckRightChoose == 0:
 		$Tween.interpolate_property(LuckProgress, "rect_scale", LuckProgress.rect_scale, scale_max, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 		$Tween.start()
-#		$Tween.interpolate_property(LuckProgress, "tint_progress", LuckProgress.tint_progress, Color("ffd700"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
-#		$Tween.start()
+		$Tween.interpolate_property(ShineEffectLuck, "scale", ShineEffectLuck.scale, shineScaleMax, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+		$Tween.start()
 
 
 
@@ -263,23 +272,23 @@ func yellow_indicatos_color_left():
 	if !Scriptwriter.HealthLeftChoose == 0:
 		$Tween.interpolate_property(HealthProgress, "rect_scale", HealthProgress.rect_scale, scale_max, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 		$Tween.start()
-#		$Tween.interpolate_property(HealthProgress, "tint_progress", HealthProgress.tint_progress, Color("ffd700"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
-#		$Tween.start()
+		$Tween.interpolate_property(ShineEffectHealth, "scale", ShineEffectHealth.scale, shineScaleMax, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+		$Tween.start()
 	if !Scriptwriter.LawLeftChoose == 0:
 		$Tween.interpolate_property(LawProgress, "rect_scale", LawProgress.rect_scale, scale_max, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 		$Tween.start()
-#		$Tween.interpolate_property(LawProgress, "tint_progress", LawProgress.tint_progress, Color("ffd700"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
-#		$Tween.start()
+		$Tween.interpolate_property(ShineEffectLaw, "scale", ShineEffectLaw.scale, shineScaleMax, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+		$Tween.start()
 	if !Scriptwriter.BanditismLeftChoose == 0:
 		$Tween.interpolate_property(BanditismProgress, "rect_scale", BanditismProgress.rect_scale, scale_max, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 		$Tween.start()
-#		$Tween.interpolate_property(BanditismProgress, "tint_progress", BanditismProgress.tint_progress, Color("ffd700"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
-#		$Tween.start()
+		$Tween.interpolate_property(ShineEffectBanditism, "scale", ShineEffectBanditism.scale, shineScaleMax, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+		$Tween.start()
 	if !Scriptwriter.LuckLeftChoose == 0:
 		$Tween.interpolate_property(LuckProgress, "rect_scale", LuckProgress.rect_scale, scale_max, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 		$Tween.start()
-#		$Tween.interpolate_property(LuckProgress, "tint_progress", LuckProgress.tint_progress, Color("ffd700"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
-#		$Tween.start()
+		$Tween.interpolate_property(ShineEffectLuck, "scale", ShineEffectLuck.scale, shineScaleMax, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+		$Tween.start()
 
 
 
@@ -293,20 +302,28 @@ func yellow_indicatos_color_middle():
 		$Tween.start()
 		$Tween.interpolate_property(HealthProgress, "self_modulate", HealthProgress.self_modulate, Color("ffffff"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 		$Tween.start()
+		$Tween.interpolate_property(ShineEffectHealth, "scale", ShineEffectHealth.scale, shineScaleNorm, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+		$Tween.start()
 	if !LawProgress.rect_scale == scale_norm:
 		$Tween.interpolate_property(LawProgress, "rect_scale", LawProgress.rect_scale, scale_norm, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 		$Tween.start()
 		$Tween.interpolate_property(LawProgress, "self_modulate", LawProgress.self_modulate, Color("ffffff"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+		$Tween.start()
+		$Tween.interpolate_property(ShineEffectLaw, "scale", ShineEffectLaw.scale, shineScaleNorm, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 		$Tween.start()
 	if !BanditismProgress.rect_scale == scale_norm:
 		$Tween.interpolate_property(BanditismProgress, "rect_scale", BanditismProgress.rect_scale, scale_norm, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 		$Tween.start()
 		$Tween.interpolate_property(BanditismProgress, "self_modulate", BanditismProgress.self_modulate, Color("ffffff"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 		$Tween.start()
+		$Tween.interpolate_property(ShineEffectBanditism, "scale", ShineEffectBanditism.scale, shineScaleNorm, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+		$Tween.start()
 	if !LuckProgress.rect_scale == scale_norm:
 		$Tween.interpolate_property(LuckProgress, "rect_scale", LuckProgress.rect_scale, scale_norm, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 		$Tween.start()
 		$Tween.interpolate_property(LuckProgress, "self_modulate", LuckProgress.self_modulate, Color("ffffff"), scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+		$Tween.start()
+		$Tween.interpolate_property(ShineEffectLuck, "scale", ShineEffectLuck.scale, shineScaleNorm, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 		$Tween.start()
 
 #ШМАТОК КОДА ДЛЯ ИЗМЕНЕНИЯ БАЛАНСА ПО СТАТУСУ
