@@ -73,7 +73,7 @@ var count_to_victory
 var FirstCard = true
 
 # Сохранённая игра
-var levels_complete = 5
+var levels_complete = 1
 #переменная обозначающая текущий уровень
 var  CurrentLevel = 0
 

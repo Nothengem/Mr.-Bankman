@@ -24,14 +24,14 @@ angle = 360.0
 angle_random = 1.0
 scale_random = 0.3
 scale_curve = SubResource( 22 )
-color = Color( 1, 0, 0, 1 )
+color = Color( 1, 0.968627, 0, 1 )
 anim_offset = 1.0
 anim_offset_random = 1.0
 
 [node name="ShineEffect" type="Particles2D"]
 material = SubResource( 17 )
 position = Vector2( 278.574, 278.459 )
-scale = Vector2( 2, 4 )
+scale = Vector2( 1e-05, 1e-05 )
 amount = 5
 process_material = SubResource( 20 )
 texture = ExtResource( 1 )

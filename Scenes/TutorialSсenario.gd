@@ -6,10 +6,19 @@ func _ready():
 
 
 func levelOneScenario():
-	if str(Scriptwriter.CardChoose) == "TutorLev1Card3":
+	
+	if str(Scriptwriter.CardChoose) == "TutorLev1Card1":
+		.play("CardMechanicExplane")
+	elif str(Scriptwriter.CardChoose) == "TutorLev1Card2":
+		stopAnimations()
+	elif str(Scriptwriter.CardChoose) == "TutorLev1Card3":
 		.play("BalanceExplane")
 	elif str(Scriptwriter.CardChoose) == "TutorLev1Card31":
-		.seek(0.00, true)
-		.stop()
-
+		stopAnimations()
+		.play("WorkingDaY")
 		
+func stopAnimations():
+	.seek(0.00, true)
+	.stop()
+
+

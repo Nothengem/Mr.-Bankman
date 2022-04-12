@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Resources/GFX/MainSceneCharacterBackGround2.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/VLevelButtonsContainer.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Resources/GFX/LevelChoose/PreviousPageButton.png" type="Texture" id=5]
 [ext_resource path="res://Resources/GFX/LevelChoose/NextPageButton.png" type="Texture" id=6]
 [ext_resource path="res://Resources/GFX/LevelChoose/Logo.png" type="Texture" id=7]
+[ext_resource path="res://Resources/GFX/Interface/CoursorHand.png" type="Texture" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Hide"
@@ -24,17 +25,92 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="LevelChooseScreen" type="Control" groups=[
-"LevelChooseScreen",
-]]
+[sub_resource type="Animation" id=2]
+resource_name = "LevelChooseTutorial"
+length = 2.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 550, 1100 ), Vector2( 316.915, 881.186 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationPlayer/Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.25, 2.25, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimationPlayer/Sprite:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.4, 1.55, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -15.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 550, 1100 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationPlayer/Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimationPlayer/Sprite:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[node name="LevelChooseScreen" type="Control" groups=["LevelChooseScreen"]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 540, 960 )
 mouse_filter = 2
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -116,6 +192,14 @@ normal = ExtResource( 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Hide = SubResource( 1 )
+anims/LevelChooseTutorial = SubResource( 2 )
+anims/RESET = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="AnimationPlayer"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 550, 1100 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 8 )
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/NextPage" to="VBoxContainer/HBoxContainer/VLevelButtonsContainer" method="_on_NextPage_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Previouspage" to="VBoxContainer/HBoxContainer/VLevelButtonsContainer" method="_on_Previouspage_pressed"]

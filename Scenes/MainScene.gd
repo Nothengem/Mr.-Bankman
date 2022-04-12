@@ -40,8 +40,11 @@ func spawn():
 	var scene = load("res://Scenes/CharacterControl.tscn")
 	var card = scene.instance()
 	add_child_below_node($Control, card, true)
-	if Scriptwriter.CurrentLevel == "LVL1":
+	if Scriptwriter.CurrentLevel == "LVL1" and Scriptwriter.CardType == "Tutorial":
 		tutorialScenario.levelOneScenario()
+	elif Scriptwriter.CardType != "Tutorial":
+		tutorialScenario.stopAnimations()
+	
 
 func spawn_dice():
 	var scene = load("res://Scenes/Dice.tscn")
@@ -132,3 +135,13 @@ func _on_DayRulesButton_pressed():
 
 func _on_DayRulesButton_released():
 	$Control/DayRulesButton/AnimationPlayer.play("MakeDayRullesSmall")
+	
+
+
+func _on_CheckBox_pressed():
+	if $CheckBox.pressed == true:
+		$AudioStreamPlayer.stop()
+	elif $CheckBox.pressed == false:
+		$AudioStreamPlayer.play()
+
+

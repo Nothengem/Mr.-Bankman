@@ -16,7 +16,7 @@ var scale_max = Vector2(1.2, 1.2)
 var scale_norm = Vector2(1, 1)
 var scale_speed = 0.3
 var shineScaleNorm = Vector2(0.1, 0.1)
-var shineScaleMax = Vector2(1.2, 3)
+var shineScaleMax = Vector2(1.8, 3.6)
 
 #переменные для коррекции после победы в ивентах
 var Modi
@@ -242,7 +242,6 @@ func yellow_indicatos_color_right():
 		$Tween.start()
 		$Tween.interpolate_property(ShineEffectHealth, "scale", ShineEffectHealth.scale, shineScaleMax, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 		$Tween.start()
-		print("должно гореть красным")
 
 	if !Scriptwriter.LawRightChoose == 0:
 		$Tween.interpolate_property(LawProgress, "rect_scale", LawProgress.rect_scale, scale_max, scale_speed, Tween.TRANS_LINEAR, Tween.EASE_OUT)

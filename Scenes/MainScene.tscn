@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Scenes/IventCard.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Dossier.tscn" type="PackedScene" id=2]
@@ -17,6 +17,10 @@
 [ext_resource path="res://Resources/GFX/LevelProgressBar/BackGroundProgressBar.png" type="Texture" id=15]
 [ext_resource path="res://Resources/GFX/LevelProgressBar/sunny.png" type="Texture" id=16]
 [ext_resource path="res://Resources/GFX/LevelProgressBar/moon.png" type="Texture" id=17]
+[ext_resource path="res://Resources/GFX/Interface/CoursorHand.png" type="Texture" id=18]
+[ext_resource path="res://Scenes/particles/ShineEffect.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/ProgressBar.gd" type="Script" id=20]
+[ext_resource path="res://Resources/Misuc/BackgroundMusic.wav" type="AudioStream" id=21]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -765,6 +769,25 @@ outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 7 )
 
+[sub_resource type="Curve" id=21]
+_data = [ Vector2( 0, 0 ), 0.0, 7.21178, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=22]
+curve = SubResource( 21 )
+
+[sub_resource type="ParticlesMaterial" id=23]
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 360.0
+angle_random = 1.0
+scale_random = 0.3
+scale_curve = SubResource( 22 )
+color = Color( 1, 0.968627, 0, 1 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+
 [sub_resource type="Animation" id=18]
 resource_name = "BalanceExplane"
 length = 0.3
@@ -817,6 +840,36 @@ tracks/3/keys = {
 "values": [ Vector2( 0.1, 0.1 ), Vector2( 2, 3 ) ]
 }
 
+[sub_resource type="Animation" id=20]
+resource_name = "CardMechanicExplane"
+length = 3.0
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("TutorialSсenario/Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 2.75, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TutorialSсenario/Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5, 1.5, 2.75 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 152.219, 1500 ), Vector2( 908.554, 1500 ), Vector2( 152.219, 1500 ) ]
+}
+
 [sub_resource type="Animation" id=19]
 length = 0.001
 tracks/0/type = "value"
@@ -867,6 +920,83 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Vector2( 0.1, 0.1 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("TutorialSсenario/Sprite:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("TutorialSсenario/Sprite:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 152.219, 1251.05 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Control/ShineEffect:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 6, 0.4 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Control/ShineEffect:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "WorkingDaY"
+length = 0.3
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/ShineEffect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 6, 0.4 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control/ShineEffect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.01 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
 [node name="MainScene" type="Node" groups=["MainScene"]]
 script = ExtResource( 6 )
@@ -890,15 +1020,15 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="Control"]
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.232927
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.443865
 margin_left = -360.0
 margin_top = -201.0
 margin_right = 360.0
 margin_bottom = 201.0
 custom_fonts/font = SubResource( 1 )
-text = "Банковский день прошел успешно"
+text = "Банковский день прошел успешно. Можете бахнуть пивасик"
 align = 1
 valign = 1
 autowrap = true
@@ -1100,7 +1230,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ProgressBar" type="TextureProgress" parent="Control"]
+[node name="ShineEffect" parent="Control" instance=ExtResource( 19 )]
+visible = false
+position = Vector2( 540, 1655.31 )
+scale = Vector2( 6, 0.4 )
+process_material = SubResource( 23 )
+
+[node name="ProgressBar" type="TextureProgress" parent="Control" groups=["BalanceGUI"]]
 margin_left = 40.0
 margin_top = 1638.53
 margin_right = 1040.0
@@ -1108,9 +1244,11 @@ margin_bottom = 1668.53
 rect_min_size = Vector2( 1000, 30 )
 rect_pivot_offset = Vector2( 500, 15 )
 min_value = 1.0
-value = 10.0
+step = 0.01
+value = 1.0
 texture_under = ExtResource( 15 )
 texture_progress = ExtResource( 14 )
+script = ExtResource( 20 )
 
 [node name="Sun" type="Sprite" parent="Control/ProgressBar"]
 position = Vector2( 65, -65 )
@@ -1121,10 +1259,33 @@ position = Vector2( 940, -65 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 17 )
 
+[node name="Tween" type="Tween" parent="Control/ProgressBar"]
+
 [node name="TutorialSсenario" type="AnimationPlayer" parent="."]
 anims/BalanceExplane = SubResource( 18 )
+anims/CardMechanicExplane = SubResource( 20 )
 anims/RESET = SubResource( 19 )
+anims/WorkingDaY = SubResource( 24 )
 script = ExtResource( 13 )
+
+[node name="Sprite" type="Sprite" parent="TutorialSсenario"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 152.219, 1251.05 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 18 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 21 )
+volume_db = -30.0
+autoplay = true
+
+[node name="CheckBox" type="CheckBox" parent="."]
+margin_left = -0.653625
+margin_top = 1832.16
+margin_right = 121.346
+margin_bottom = 1856.16
+rect_scale = Vector2( 4, 4 )
+text = "Off/On music"
 
 [connection signal="animation_finished" from="Control/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_started" from="Control/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_started"]
@@ -1134,6 +1295,7 @@ script = ExtResource( 13 )
 [connection signal="released" from="Control/DossierButton" to="." method="_on_TouchScreenButton_released"]
 [connection signal="pressed" from="Control/DayRulesButton" to="." method="_on_DayRulesButton_pressed"]
 [connection signal="released" from="Control/DayRulesButton" to="." method="_on_DayRulesButton_released"]
+[connection signal="pressed" from="CheckBox" to="." method="_on_CheckBox_pressed"]
 
 [editable path="Control/BalanceGUI"]
 [editable path="Control/BalanceGUI/Control2/NinePatchRect/IventStatusBox"]
