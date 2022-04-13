@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Character(nextcharacter).tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/CharacterControl.gd" type="Script" id=2]
@@ -22,7 +22,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.4, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 540, 1122 ), Vector2( 540, 1000 ), Vector2( 540, 1122 ) ]
+"values": [ Vector2( 540, 1104 ), Vector2( 540, 1000 ), Vector2( 540, 1104 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:rotation_degrees")
@@ -31,10 +31,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.5, 0.6, 0.9 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, -25.0, 0.0 ]
+"values": [ 0.0, 0.0, -25.0, 0.0 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath(".:scale")
@@ -43,10 +43,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.6, 0.7, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1e-05, 1 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1e-05, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("MainCardsBack:visible")
@@ -100,6 +100,21 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "HideAnimation"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -174,9 +189,57 @@ tracks/0/keys = {
 "update": 0,
 "values": [ true ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 540, 1104 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="CharacterControl" type="Area2D" groups=["CharacterControl"]]
-position = Vector2( 540, 1122 )
+position = Vector2( 540, 1104 )
 script = ExtResource( 2 )
 
 [node name="NeedTo" parent="." instance=ExtResource( 4 )]
@@ -184,17 +247,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -1200.0
-margin_top = -840.0
-margin_right = 1200.0
-margin_bottom = 840.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 5.52094, 4.53052 )
 shape = SubResource( 1 )
 
 [node name="CharacterCard" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, 0 )
 scale = Vector2( 1, 1 )
 
 [node name="Character" parent="CharacterCard" index="2"]
@@ -214,6 +272,7 @@ position = Vector2( 450, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Apperiance = SubResource( 2 )
+anims/HideAnimation = SubResource( 6 )
 anims/LChooseText = SubResource( 3 )
 anims/RChooseText = SubResource( 4 )
 anims/RESET = SubResource( 5 )
@@ -221,7 +280,7 @@ anims/RESET = SubResource( 5 )
 [node name="Tween" type="Tween" parent="."]
 
 [node name="Timer_choosedone" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.5
 one_shot = true
 
 [node name="MainCardsBack" parent="." instance=ExtResource( 3 )]
@@ -235,6 +294,7 @@ margin_right = 335.0
 margin_bottom = 465.0
 rect_min_size = Vector2( 670, 930 )
 rect_pivot_offset = Vector2( 335, 465 )
+mouse_filter = 2
 texture = ExtResource( 5 )
 
 [connection signal="input_event" from="." to="." method="_on_CharacterControl_input_event"]

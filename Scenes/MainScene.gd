@@ -11,9 +11,6 @@ func _ready():
 		Scriptwriter.NameRule = true
 		Scriptwriter.PhotoRule = true
 	
-
-	
-	
 	Scriptwriter.MainCardsBack = Vector2($Control.rect_pivot_offset.x, $Control.rect_pivot_offset.y*1.15)
 	
 	Scriptwriter.FirstCard = true
@@ -36,7 +33,7 @@ func _ready():
 
 
 
-func spawn():
+func Oldspawn():
 	var scene = load("res://Scenes/CharacterControl.tscn")
 	var card = scene.instance()
 	add_child_below_node($Control, card, true)
@@ -44,7 +41,22 @@ func spawn():
 		tutorialScenario.levelOneScenario()
 	elif Scriptwriter.CardType != "Tutorial":
 		tutorialScenario.stopAnimations()
+		
+
+#func _process(delta):
+#	print($CharacterControl.position)
+
+
+func spawn():
+	$CharacterControl.visible = false
+	$CharacterControl.cardGeneration()
 	
+	$CharacterControl.visible = true
+	$CharacterControl/AnimationPlayer.play("Apperiance")
+	if Scriptwriter.CurrentLevel == "LVL1" and Scriptwriter.CardType == "Tutorial":
+		tutorialScenario.levelOneScenario()
+	elif Scriptwriter.CardType != "Tutorial":
+		tutorialScenario.stopAnimations()
 
 func spawn_dice():
 	var scene = load("res://Scenes/Dice.tscn")

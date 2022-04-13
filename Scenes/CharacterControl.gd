@@ -45,20 +45,31 @@ onready var Mouth = get_node("CharacterCard/Character/FullHead/Mouth")
 onready var Hair = get_node("CharacterCard/Character/FullHead/Hair")
 onready var Nose = get_node("CharacterCard/Character/FullHead/Nose")
 
+onready var thisNode = get_node(".")
+onready var mainScene = get_node("..")
+
 #переменные обозначающие что карточка сейчас в правой или левой позиции, нужна для анимаций изменения цвета индикаторов и 
 var right_position = false
 var left_position = false
 var middle_position = false
 
 
-
 func _ready():
+	start_position = thisNode.position
+	cardGeneration()
+
+
+func cardGeneration():
+	
+#	start_position = thisNode.position
+#	start_position = centerPoint.position
+	leftxposition = Vector2(-start_position.x - 540, 0)
+	rightxposition = Vector2(start_position.x + 540, 0)
+	
+	print(leftxposition)
+	print(rightxposition)
+	
 	get_tree().call_group("Dossier", "dossier_update")
-	Animator.play("Apperiance")
-	start_position = Scriptwriter.MainCardsBack
-#	(screensize/2)*2.5
-	leftxposition = Vector2(-start_position.x, 0)
-	rightxposition = Vector2(start_position.x, 0)
 	
 	if !Scriptwriter.Heath_var <= 0 and !Scriptwriter.Law_var <= 0 and !Scriptwriter.Banditism_var <= 0 and !Scriptwriter.Luck_var <= 0 and !Scriptwriter.Heath_var >= 100 and !Scriptwriter.Law_var >= 100 and !Scriptwriter.Banditism_var >= 100 and !Scriptwriter.Luck_var >= 100:
 		if Scriptwriter.FirstCard == true:
@@ -86,11 +97,7 @@ func _ready():
 	elif !Scriptwriter.FirstCard and Scriptwriter.Heath_var <= 0 or Scriptwriter.Law_var <= 0 or Scriptwriter.Banditism_var <= 0 or Scriptwriter.Luck_var <= 0 or Scriptwriter.Heath_var >= 100 or Scriptwriter.Law_var >= 100 or Scriptwriter.Banditism_var >= 100 or Scriptwriter.Luck_var >= 100:
 			Scriptwriter.CardChoose = "LooseScreen"
 			Scriptwriter.losecard()
-			
-
-
-func funcional_blocking():
-	pass
+	
 
 
 func ready_NextCardLose_helper():
@@ -152,10 +159,9 @@ func card_generation():
 		CardLAnswer.text = "Я не виноват!"
 
 
-
 func choosedone():
 	get_tree().call_group("BalanceGUI", "white_indicatos_color")
-	if $CharacterCard.position == leftxposition:
+	if thisNode.position.x < 300:
 		if Scriptwriter.CardType =="Tutorial":
 			Scriptwriter.CardChoose = Scriptwriter.NextCardLeft
 			choosedone_next_card_left()
@@ -173,7 +179,7 @@ func choosedone():
 		elif Scriptwriter.CardType == "LooseScreen":
 			choosedone_loose()
 
-	if $CharacterCard.position == rightxposition:
+	if thisNode.position.x > 800:
 		if Scriptwriter.CardType =="Tutorial":
 			Scriptwriter.CardChoose = Scriptwriter.NextCardRight
 			choosedone_next_card_right()
@@ -257,17 +263,16 @@ func choosedone():
 
 
 func choosedone_next_card_left():
-	
 	if Scriptwriter.NextCardLeft == "Random" and Scriptwriter.CardType != "Tutorial":
 		Scriptwriter.victory_count = int(Scriptwriter.victory_count) + 1
 	
 	if Scriptwriter.victory_count < Scriptwriter.count_to_victory:
 		if Scriptwriter.NextCardLeft != "Ivent":
-				get_tree().call_group("MainScene", "spawn")
+				mainScene.spawn()
 	elif Scriptwriter.victory_count == Scriptwriter.count_to_victory:
 		get_tree().call_group("MainScene", "win_the_level")
 	get_tree().call_group("BalanceGUI", "yellow_indicatos_color_middle")
-	queue_free()
+	
 
 
 
@@ -292,12 +297,11 @@ func choosedone_next_card_right():
 				get_tree().call_group("MainScene", "spawn_card_delivery")
 				
 		elif Scriptwriter.NextCardRight != "Ivent":
-			get_tree().call_group("MainScene", "spawn")
+			mainScene.spawn()
 		
 	elif Scriptwriter.victory_count == Scriptwriter.count_to_victory:
 		get_tree().call_group("MainScene", "win_the_level")
 	get_tree().call_group("BalanceGUI", "yellow_indicatos_color_middle")
-	queue_free()
 
 
 
@@ -335,8 +339,8 @@ func _input(event):
 		
 		
 	if is_dragging and event is InputEventMouseMotion:
-		$Tween.stop(thisnode, "position")
-		$Tween.stop(thisnode, "rotation_degrees")
+#		$Tween.stop(thisnode, "position")
+#		$Tween.stop(thisnode, "rotation_degrees")
 		
 		position += event.position - previous_mouse_position
 		previous_mouse_position = event.position
@@ -351,11 +355,10 @@ func _input(event):
 			chooseanimationLeft()
 			chooseanimationDown()
 			
-#	if not event is InputEventScreenTouch:
 	if not event is InputEventMouseMotion and not event is InputEventScreenDrag:
 		if not event.pressed:
 			character_card_released()
-			choosedone()
+#			choosedone()
 			Animator.stop(true)
 			chooseanimationReturnToZero()
 			get_tree().call_group("BalanceGUI", "white_indicatos_color")
@@ -431,19 +434,25 @@ func balance_color_prechoose():
 
 
 func character_card_released():
+	
 	if position.x < start_position.x -200:
-		$Tween.interpolate_property(Card, "position", Card.position, 
-		leftxposition, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-		$Tween.start()
+		print("лево")
+#		$Tween.interpolate_property(Card, "position", Card.position, 
+#		leftxposition, 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+#		$Tween.start()
+		$AnimationPlayer.play("HideAnimation")
 		$Timer_choosedone.start()
 		
 	if position.x > start_position.x +200:
-		$Tween.interpolate_property(Card, "position", Card.position, 
-		rightxposition, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-		$Tween.start()
+		print("право")
+#		$Tween.interpolate_property(Card, "position", Card.position, 
+#		rightxposition, 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+#		$Tween.start()
+		$AnimationPlayer.play("HideAnimation")
 		$Timer_choosedone.start()
 		
 	if position.x < start_position.x +200 and position.x > start_position.x -200:
+		print("центр")
 		$Tween.interpolate_property(thisnode, "position", thisnode.position, 
 		Scriptwriter.MainCardsBack, 1.2, Tween.TRANS_ELASTIC, Tween.EASE_OUT)
 		$Tween.start()
@@ -453,7 +462,7 @@ func character_card_released():
 	get_tree().call_group("BalanceGUI", "progress_pre_choose_animation_return")
 
 
-#Vector2(540, 1100) если что удалить. это переменная куда возвращаться карточке при отпускании
+#Vector2(540, 1100)  если что удалить. это переменная куда возвращаться карточке при отпускании
 
 func to_see_losecard():
 	$CharacterCard/CharacterPortrait.visible = true
@@ -466,6 +475,8 @@ func _on_Timer_choosedone_timeout():
 	if Scriptwriter.CardType == "StatusScreen" and Scriptwriter.StatusInfo[0] == "Status":
 		get_tree().call_group("IventStatus", "start_new_status")
 	choosedone()
+	
+
 
 
 #срабатывают по касанию пальца
@@ -475,3 +486,9 @@ func _on_CharacterControl_input_event(_viewport, event, _shape_idx):
 		previous_mouse_position = event.position
 		is_dragging = true
 
+func tweenBack():
+		$Tween.interpolate_property(thisnode, "position", thisnode.position, 
+		Scriptwriter.MainCardsBack, 0.1, Tween.TRANS_ELASTIC, Tween.EASE_OUT)
+		$Tween.start()
+		$Tween.interpolate_property(thisnode, "rotation_degrees", thisnode.rotation_degrees, 
+		0, 0.1, Tween.TRANS_ELASTIC, Tween.EASE_OUT)

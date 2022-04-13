@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Scenes/IventCard.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Dossier.tscn" type="PackedScene" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Scenes/particles/ShineEffect.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/ProgressBar.gd" type="Script" id=20]
 [ext_resource path="res://Resources/Misuc/BackgroundMusic.wav" type="AudioStream" id=21]
+[ext_resource path="res://Scenes/CharacterControl.tscn" type="PackedScene" id=22]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -1064,9 +1065,6 @@ anchor_right = 1.00816
 anchor_bottom = 0.777457
 texture = ExtResource( 10 )
 
-[node name="Position2D" type="Position2D" parent="Control"]
-position = Vector2( 540, 960 )
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
 anims/Appearance = SubResource( 3 )
 anims/LevelComplete = SubResource( 4 )
@@ -1261,6 +1259,18 @@ texture = ExtResource( 17 )
 
 [node name="Tween" type="Tween" parent="Control/ProgressBar"]
 
+[node name="CharacterControl" parent="." instance=ExtResource( 22 )]
+visible = false
+
+[node name="CardShadow" parent="CharacterControl/CharacterCard" index="0"]
+rect_scale = Vector2( 1, 1 )
+
+[node name="MainCardsBack" parent="CharacterControl" index="8"]
+visible = false
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 540, 1104 )
+
 [node name="TutorialSсenario" type="AnimationPlayer" parent="."]
 anims/BalanceExplane = SubResource( 18 )
 anims/CardMechanicExplane = SubResource( 20 )
@@ -1302,3 +1312,6 @@ text = "Off/On music"
 [editable path="Control/BalanceGUI/Control2/NinePatchRect/IventStatusBox/HBoxContainer/IventStatus1"]
 [editable path="Control/BalanceGUI/Control2/NinePatchRect/IventStatusBox/HBoxContainer/IventStatus2"]
 [editable path="Control/DayRules"]
+[editable path="CharacterControl"]
+[editable path="CharacterControl/NeedTo"]
+[editable path="CharacterControl/CharacterCard"]

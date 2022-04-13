@@ -15,9 +15,7 @@
 [ext_resource path="res://Resources/GFX/CharacterCotaint/Hair/Hair5.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/CharacterPortraitStandAlone.gd" type="Script" id=14]
 
-[node name="Character" type="Sprite" groups=[
-"CharacterControl",
-]]
+[node name="Character" type="Sprite" groups=["CharacterControl"]]
 scale = Vector2( 0.35, 0.35 )
 script = ExtResource( 14 )
 
