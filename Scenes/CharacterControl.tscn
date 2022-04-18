@@ -265,10 +265,10 @@ modulate = Color( 1, 1, 1, 0 )
 modulate = Color( 1, 1, 1, 0 )
 
 [node name="LeftChoose" type="Position2D" parent="."]
-position = Vector2( -450, 0 )
+position = Vector2( -1500, 0 )
 
 [node name="RightChoose" type="Position2D" parent="."]
-position = Vector2( 450, 0 )
+position = Vector2( 1500, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Apperiance = SubResource( 2 )

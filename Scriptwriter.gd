@@ -163,6 +163,22 @@ var feedBackMessage
 
 var permissionToDenide = false
 
+#Словарь хранящий все картинки персонажей
+var characterPortraitArtBase = { 
+	"Head": [],
+	"Neck": [],
+	"Shirt": [],
+	"Eyebrows": [],
+	"Eyes": [],
+	"Forehead": [],
+	"Ears": [],
+	"Jowls": [],
+	"Glasses": [],
+	"Mouth": [],
+	"Hair": [],
+	"Nose": []
+}
+
 
 func _ready():
 	NameRule = false

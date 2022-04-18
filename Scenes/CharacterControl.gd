@@ -63,8 +63,8 @@ func cardGeneration():
 	
 #	start_position = thisNode.position
 #	start_position = centerPoint.position
-	leftxposition = Vector2(-start_position.x - 540, 0)
-	rightxposition = Vector2(start_position.x + 540, 0)
+	leftxposition = Vector2(-1500, 1104)
+	rightxposition = Vector2(1500, 1104)
 	
 	print(leftxposition)
 	print(rightxposition)
@@ -437,18 +437,18 @@ func character_card_released():
 	
 	if position.x < start_position.x -200:
 		print("лево")
-#		$Tween.interpolate_property(Card, "position", Card.position, 
-#		leftxposition, 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-#		$Tween.start()
-		$AnimationPlayer.play("HideAnimation")
+		$Tween.interpolate_property(thisnode, "position", thisnode.position, 
+		leftxposition, 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		$Tween.start()
+#		$AnimationPlayer.play("HideAnimation")
 		$Timer_choosedone.start()
 		
 	if position.x > start_position.x +200:
 		print("право")
-#		$Tween.interpolate_property(Card, "position", Card.position, 
-#		rightxposition, 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-#		$Tween.start()
-		$AnimationPlayer.play("HideAnimation")
+		$Tween.interpolate_property(thisnode, "position", thisnode.position, 
+		rightxposition, 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		$Tween.start()
+#		$AnimationPlayer.play("HideAnimation")
 		$Timer_choosedone.start()
 		
 	if position.x < start_position.x +200 and position.x > start_position.x -200:
