@@ -165,7 +165,7 @@ var permissionToDenide = false
 
 #Словарь хранящий все картинки персонажей
 var characterPortraitArtBase = { 
-	"Head": [],
+	"Head": [1, 2, 3],
 	"Neck": [],
 	"Shirt": [],
 	"Eyebrows": [],
@@ -196,11 +196,21 @@ func _ready():
 	victory_count = 0
 	position_on_level = 0
 	
+	characterPortraitArtBase.Head[0] = load( str ("res://Resources/GFX/CharacterCotaint/Head/Head1.png"))
+	print(characterPortraitArtBase.Head[0])
+	
 #	if CurrentLevel >= 3:
 #		NameRule = true
 #		PhotoRule = true
 
-
+func artsLoader(folder):
+	var wayToPicture = "res://Resources/GFX/CharacterCotaint/"
+	var variableLoader = ""
+	wayToPicture = wayToPicture + folder
+	while variableLoader != null:
+		pass
+	
+	
 
 func level_massive_generator():
 	position_on_level = 0
