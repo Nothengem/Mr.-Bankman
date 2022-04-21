@@ -165,7 +165,7 @@ var permissionToDenide = false
 
 #Словарь хранящий все картинки персонажей
 var characterPortraitArtBase = { 
-	"Head": [1, 2, 3],
+	"Head": [],
 	"Neck": [],
 	"Shirt": [],
 	"Eyebrows": [],
@@ -179,6 +179,7 @@ var characterPortraitArtBase = {
 	"Nose": []
 }
 
+var characterContryFlag = []
 
 func _ready():
 	NameRule = false
@@ -196,25 +197,20 @@ func _ready():
 	victory_count = 0
 	position_on_level = 0
 	
-	var files = list_files_in_directory("res://Resources/GFX/CharacterCotaint/Head/")
-	list_files_in_directory(files)
-	print(files)
-	
-#	characterPortraitArtBase.Head[0] = load( str ("res://Resources/GFX/CharacterCotaint/Head/Head1.png"))
-#	print(characterPortraitArtBase.Head[0])
-	
-#	if CurrentLevel >= 3:
-#		NameRule = true
-#		PhotoRule = true
-
-#func artsLoader(folder):
-#	var wayToPicture = "res://Resources/GFX/CharacterCotaint/"
-#	var variableLoader = ""
-#	wayToPicture = wayToPicture + folder
-#	while variableLoader != null:
-#		pass
-	
-	
+	#загружаем все картинки для карточек в объект
+	characterPortraitArtBase.Head = list_files_in_directory("res://Resources/GFX/CharacterCotaint/Head/")
+	characterPortraitArtBase.Neck = list_files_in_directory("res://Resources/GFX/CharacterCotaint/Neck/")
+	characterPortraitArtBase.Shirt = list_files_in_directory("res://Resources/GFX/CharacterCotaint/Shirt/")
+	characterPortraitArtBase.Eyebrows = list_files_in_directory("res://Resources/GFX/CharacterCotaint/Eyebrows/")
+	characterPortraitArtBase.Eyes = list_files_in_directory("res://Resources/GFX/CharacterCotaint/Eyes/")
+	characterPortraitArtBase.Forehead = list_files_in_directory("res://Resources/GFX/CharacterCotaint/Forehead/")
+	characterPortraitArtBase.Ears = list_files_in_directory("res://Resources/GFX/CharacterCotaint/Ears/")
+	characterPortraitArtBase.Jowls = list_files_in_directory("res://Resources/GFX/CharacterCotaint/Jowls/")
+	characterPortraitArtBase.Glasses = list_files_in_directory("res://Resources/GFX/CharacterCotaint/Glasses/")
+	characterPortraitArtBase.Mouth = list_files_in_directory("res://Resources/GFX/CharacterCotaint/Mouth/")
+	characterPortraitArtBase.Hair = list_files_in_directory("res://Resources/GFX/CharacterCotaint/Hair/")
+	characterPortraitArtBase.Nose = list_files_in_directory("res://Resources/GFX/CharacterCotaint/Nose/")
+	characterContryFlag = list_files_in_directory("res://Resources/GFX/Dossier/Flag/")
 	
 func list_files_in_directory(path):
 	var files = []
@@ -226,11 +222,17 @@ func list_files_in_directory(path):
 		var file = dir.get_next()
 		if file == "":
 			break
-		elif not file.begins_with("."):
+		elif not file.begins_with(".") and not file.ends_with(".import"):
 			files.append(file)
-
 	dir.list_dir_end()
-
+	
+	
+	var i = 0
+	var y = files.size()
+	while i < y:
+		files[i] = load (path + files[i])
+		i = i+1
+	
 	return files
 	
 
@@ -336,8 +338,10 @@ func card_var_generator(): #ПОХОЖЕ Я ЭТУ ШТУКУ ЗАПУСКАЮ 2
 	elif CardChoose == "StatusScreen": #если следующая карточка статус
 		CardInfo = CardDataBase.DATA.get("Ivent")
 		CharacterPortrait = CharacterPortraitDataBase.DATA.get(CardInfo[1])
-	elif !CardChoose == "Ivent" or "LooseScreen" or "Random" or "Tutorial" or "StatusScreen":
+	elif CardChoose.type != "Ivent" or CardChoose != "LooseScreen" or CardChoose != "Random" or CardChoose != "Tutorial" or CardChoose != "StatusScreen":
 		CardInfo = CardDataBase.DATA.get(CardChoose)
+		print(CardChoose)
+		print("не должно отработать")
 		CharacterPortrait = CharacterPortraitDataBase.DATA.get(CardInfo[1])
 	DossierInfo = DossierCharacterDataBase.DATA.get(CardInfo[1])
 
@@ -374,7 +378,8 @@ func card_var_generator(): #ПОХОЖЕ Я ЭТУ ШТУКУ ЗАПУСКАЮ 2
 		dossierName = DossierInfo[0] #DossierInfo[0] потом доделать
 		dossierSex = dossierSexDiction[DossierInfo[1]]
 		dossierAge = DossierInfo[2]
-		dossierNational = dossierNationalDiction[DossierInfo[3]]
+		#проверить
+		dossierNational = DossierInfo[3]
 		dossierCreditHistory = dossierCreditHistoryDiction[DossierInfo[4]]
 		dossierBlackList = dossierBlackListDiction[DossierInfo[5]]
 		dossierCreditRaiting = dossierCreditRatingDiction[DossierInfo[6]]
@@ -393,18 +398,18 @@ func card_var_generator(): #ПОХОЖЕ Я ЭТУ ШТУКУ ЗАПУСКАЮ 2
 
 
 func portrait_variables_update():
-	CharacterHead = str ("res://Resources/GFX/CharacterCotaint/Head", "/", CharacterPortrait[0], ".png")
-	CharacterNeck = str ("res://Resources/GFX/CharacterCotaint/Neck", "/", CharacterPortrait[1], ".png")
-	CharacterShirt =  str ("res://Resources/GFX/CharacterCotaint/Shirt", "/", CharacterPortrait[2], ".png")
-	CharacterEyebrows = str ("res://Resources/GFX/CharacterCotaint/Eyebrows", "/", CharacterPortrait[3], ".png")
-	CharacterEyes = str ("res://Resources/GFX/CharacterCotaint/Eyes", "/", CharacterPortrait[4], ".png")
-	CharacterForehead = str ("res://Resources/GFX/CharacterCotaint/Forehead", "/", CharacterPortrait[5], ".png")
-	CharacterEars = str ("res://Resources/GFX/CharacterCotaint/Ears", "/", CharacterPortrait[6], ".png")
-	CharacterJowls = str ("res://Resources/GFX/CharacterCotaint/Jowls", "/", CharacterPortrait[7], ".png")
-	CharacterGlasses = str ("res://Resources/GFX/CharacterCotaint/Glasses", "/", CharacterPortrait[8], ".png")
-	CharacterMouth = str ("res://Resources/GFX/CharacterCotaint/Mouth", "/", CharacterPortrait[9], ".png")
-	CharacterHair = str ("res://Resources/GFX/CharacterCotaint/Hair", "/", CharacterPortrait[10], ".png")
-	CharacterNose = str ("res://Resources/GFX/CharacterCotaint/Nose", "/", CharacterPortrait[11], ".png")
+	CharacterHead = Scriptwriter.characterPortraitArtBase.Head[CharacterPortrait[0]]
+	CharacterNeck = Scriptwriter.characterPortraitArtBase.Neck[CharacterPortrait[1]]
+	CharacterShirt =  Scriptwriter.characterPortraitArtBase.Shirt[CharacterPortrait[2]]
+	CharacterEyebrows = Scriptwriter.characterPortraitArtBase.Eyebrows[CharacterPortrait[3]]
+	CharacterEyes = Scriptwriter.characterPortraitArtBase.Eyes[CharacterPortrait[4]]
+	CharacterForehead = Scriptwriter.characterPortraitArtBase.Forehead[CharacterPortrait[5]]
+	CharacterEars = Scriptwriter.characterPortraitArtBase.Ears[CharacterPortrait[6]]
+	CharacterJowls = Scriptwriter.characterPortraitArtBase.Jowls[CharacterPortrait[7]]
+	CharacterGlasses = Scriptwriter.characterPortraitArtBase.Glasses[CharacterPortrait[8]]
+	CharacterMouth = Scriptwriter.characterPortraitArtBase.Mouth[CharacterPortrait[9]]
+	CharacterHair = Scriptwriter.characterPortraitArtBase.Hair[CharacterPortrait[10]]
+	CharacterNose = Scriptwriter.characterPortraitArtBase.Nose[CharacterPortrait[11]]
 
 func ivent_generatior():
 	IventInfo = IventDataBase.DATA[IventDataBase.get(CardIvent)]

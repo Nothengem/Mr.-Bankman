@@ -5,7 +5,7 @@
 [ext_resource path="res://Resources/GFX/Interface/Font/JetBrainsMono-VariableFont_wght.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Scenes/Dossier.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Photo.gd" type="Script" id=5]
-[ext_resource path="res://Resources/GFX/CharacterCotaint/Bage/Bage1.png" type="Texture" id=6]
+[ext_resource path="res://Resources/GFX/CharacterCotaint/Bage/111.png" type="Texture" id=6]
 [ext_resource path="res://Resources/GFX/MainScreen/Background.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]

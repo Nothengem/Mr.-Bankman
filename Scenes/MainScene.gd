@@ -7,6 +7,7 @@ onready var tutorialScenario = get_node("TutorialSсenario")
 
 func _ready():
 	
+	
 	if int(Scriptwriter.CurrentLevel[-1]) >= 3:
 		Scriptwriter.NameRule = true
 		Scriptwriter.PhotoRule = true
@@ -50,6 +51,7 @@ func Oldspawn():
 func spawn():
 	$CharacterControl.visible = false
 	$CharacterControl.cardGeneration()
+	print("вначале отработала генерация новой карточки")
 	
 	$CharacterControl.visible = true
 	$CharacterControl/AnimationPlayer.play("Apperiance")
@@ -57,6 +59,7 @@ func spawn():
 		tutorialScenario.levelOneScenario()
 	elif Scriptwriter.CardType != "Tutorial":
 		tutorialScenario.stopAnimations()
+		
 
 func spawn_dice():
 	var scene = load("res://Scenes/Dice.tscn")

@@ -8,7 +8,7 @@ func ready():
 
 
 func return_eyes():
-	$Character/FullHead/Eyes.texture = load(Scriptwriter.CharacterEyes)
+	$Character/FullHead/Eyes.texture = Scriptwriter.CharacterEyes
 
 
 

@@ -20,18 +20,18 @@ func _ready():
 
 func card_generation():
 	if Scriptwriter.CardType == "Characters" or Scriptwriter.CardType == "Tutorial":
-		Head.texture = load(Scriptwriter.CharacterHead)
-		Neck.texture = load(Scriptwriter.CharacterNeck)
-		Shirt.texture = load(Scriptwriter.CharacterShirt)
-		Eyebrows.texture = load(Scriptwriter.CharacterEyebrows)
-		Eyes.texture = load(Scriptwriter.CharacterEyes)
-		Forehead.texture = load(Scriptwriter.CharacterForehead)
-		Ears.texture = load(Scriptwriter.CharacterEars)
-		Jowls.texture = load(Scriptwriter.CharacterJowls)
-		Glasses.texture = load(Scriptwriter.CharacterGlasses)
-		Mouth.texture = load(Scriptwriter.CharacterMouth)
-		Hair.texture = load(Scriptwriter.CharacterHair)
-		Nose.texture = load(Scriptwriter.CharacterNose)
+		Head.texture = Scriptwriter.CharacterHead
+		Neck.texture = Scriptwriter.CharacterNeck
+		Shirt.texture = Scriptwriter.CharacterShirt
+		Eyebrows.texture = Scriptwriter.CharacterEyebrows
+		Eyes.texture = Scriptwriter.CharacterEyes
+		Forehead.texture = Scriptwriter.CharacterForehead
+		Ears.texture = Scriptwriter.CharacterEars
+		Jowls.texture = Scriptwriter.CharacterJowls
+		Glasses.texture = Scriptwriter.CharacterGlasses
+		Mouth.texture = Scriptwriter.CharacterMouth
+		Hair.texture = Scriptwriter.CharacterHair
+		Nose.texture = Scriptwriter.CharacterNose
 	elif Scriptwriter.CardType != "Characters" or Scriptwriter.CardType != "Tutorial":
 		pass
 	

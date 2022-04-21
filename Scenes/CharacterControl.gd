@@ -13,6 +13,7 @@ var leftxposition
 var rightxposition
 onready var thisnode = get_node(".")
 
+
 var start_position #запоминает стартовую позицию по X, чтобы от неё вести рассчеты наклона и события лево-право
 onready var LChoosePos = get_node("LeftChoose") #точка, куда уходит карта при выборе на лево
 onready var RChoosePos = get_node("RightChoose") #точка, куда уходит карта при выборе на право
@@ -66,8 +67,6 @@ func cardGeneration():
 	leftxposition = Vector2(-1500, 1104)
 	rightxposition = Vector2(1500, 1104)
 	
-	print(leftxposition)
-	print(rightxposition)
 	
 	get_tree().call_group("Dossier", "dossier_update")
 	
@@ -122,18 +121,18 @@ func ready_NextCardLose_helper():
 
 func card_generation():
 	if Scriptwriter.CardType == "Characters" or Scriptwriter.CardType == "Tutorial":
-		Head.texture = load(Scriptwriter.CharacterHead)
-		Neck.texture = load(Scriptwriter.CharacterNeck)
-		Shirt.texture = load(Scriptwriter.CharacterShirt)
-		Eyebrows.texture = load(Scriptwriter.CharacterEyebrows)
-		Eyes.texture = load(Scriptwriter.CharacterEyes)
-		Forehead.texture = load(Scriptwriter.CharacterForehead)
-		Ears.texture = load(Scriptwriter.CharacterEars)
-		Jowls.texture = load(Scriptwriter.CharacterJowls)
-		Glasses.texture = load(Scriptwriter.CharacterGlasses)
-		Mouth.texture = load(Scriptwriter.CharacterMouth)
-		Hair.texture = load(Scriptwriter.CharacterHair)
-		Nose.texture = load(Scriptwriter.CharacterNose)
+		Head.texture = Scriptwriter.CharacterHead
+		Neck.texture = Scriptwriter.CharacterNeck
+		Shirt.texture = Scriptwriter.CharacterShirt
+		Eyebrows.texture = Scriptwriter.CharacterEyebrows
+		Eyes.texture = Scriptwriter.CharacterEyes
+		Forehead.texture = Scriptwriter.CharacterForehead
+		Ears.texture = Scriptwriter.CharacterEars
+		Jowls.texture = Scriptwriter.CharacterJowls
+		Glasses.texture = Scriptwriter.CharacterGlasses
+		Mouth.texture = Scriptwriter.CharacterMouth
+		Hair.texture = Scriptwriter.CharacterHair
+		Nose.texture = Scriptwriter.CharacterNose
 		
 	elif Scriptwriter.CardType == "LooseScreen" or Scriptwriter.CardType == "StatusScreen":
 		$CharacterCard/Character.visible = false
@@ -167,9 +166,9 @@ func choosedone():
 			choosedone_next_card_left()
 			
 		elif Scriptwriter.CardType == "Characters" or Scriptwriter.CardType == "Tutorial" or Scriptwriter.CardType == "StatusScreen":
+			$"../Control/BalanceGUI".victory_count_update()
+			$"../Control/BalanceGUI".change_proportions_left()
 			Scriptwriter.CardChoose = Scriptwriter.NextCardLeft
-			get_tree().call_group("BalanceGUI", "victory_count_update")
-			get_tree().call_group("BalanceGUI", "change_proportions_left")
 			choosedone_next_card_left()
 		
 		elif Scriptwriter.CardType == "EventResult":
@@ -246,10 +245,10 @@ func choosedone():
 						Scriptwriter.HealthRightChoose = -50
 						
 			if Scriptwriter.permissionToDenide == false:
-				get_tree().call_group("BalanceGUI", "change_proportions_right")
+				$"../Control/BalanceGUI".change_proportions_right()
 			elif Scriptwriter.permissionToDenide == true:
-				get_tree().call_group("BalanceGUI", "denide_photo_and_name_correction")
-				get_tree().call_group("BalanceGUI", "change_proportions_right")
+				$"../Control/BalanceGUI".change_proportions_right()
+				$"../Control/BalanceGUI".denide_photo_and_name_correction()
 				Scriptwriter.permissionToDenide = false
 			choosedone_next_card_right() #здесь остановка
 			
@@ -339,9 +338,7 @@ func _input(event):
 		
 		
 	if is_dragging and event is InputEventMouseMotion:
-#		$Tween.stop(thisnode, "position")
-#		$Tween.stop(thisnode, "rotation_degrees")
-		
+#		$Tween.stop_all()
 		position += event.position - previous_mouse_position
 		previous_mouse_position = event.position
 		chooseanimationReturnToZero()
@@ -358,7 +355,6 @@ func _input(event):
 	if not event is InputEventMouseMotion and not event is InputEventScreenDrag:
 		if not event.pressed:
 			character_card_released()
-#			choosedone()
 			Animator.stop(true)
 			chooseanimationReturnToZero()
 			get_tree().call_group("BalanceGUI", "white_indicatos_color")
@@ -391,6 +387,13 @@ func chooseanimationReturnToZero():
 	$NeedTo/AnimationPlayer.play("Appearance")
 	$NeedTo/AnimationPlayer.seek(0, true)
 	$NeedTo/AnimationPlayer.stop()
+	
+#	if InputEventScreenTouch:
+#		pass
+#	if is_dragging and InputEventMouseMotion and (position.x < start_position.x +100 and position.x > start_position.x -100):
+#		$Tween.stop_all()
+
+		
 
 
 
@@ -436,7 +439,6 @@ func balance_color_prechoose():
 func character_card_released():
 	
 	if position.x < start_position.x -200:
-		print("лево")
 		$Tween.interpolate_property(thisnode, "position", thisnode.position, 
 		leftxposition, 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		$Tween.start()
@@ -444,7 +446,6 @@ func character_card_released():
 		$Timer_choosedone.start()
 		
 	if position.x > start_position.x +200:
-		print("право")
 		$Tween.interpolate_property(thisnode, "position", thisnode.position, 
 		rightxposition, 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		$Tween.start()
@@ -452,7 +453,6 @@ func character_card_released():
 		$Timer_choosedone.start()
 		
 	if position.x < start_position.x +200 and position.x > start_position.x -200:
-		print("центр")
 		$Tween.interpolate_property(thisnode, "position", thisnode.position, 
 		Scriptwriter.MainCardsBack, 1.2, Tween.TRANS_ELASTIC, Tween.EASE_OUT)
 		$Tween.start()

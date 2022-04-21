@@ -62,6 +62,8 @@ func change_proportions_right():
 
 
 func change_proportions_left():
+	print("вначале успели отработать пропорции")
+	print(Scriptwriter.CardInfo)
 	if Scriptwriter.CardType == "Characters" and \
 	Scriptwriter.dossierBankRlationPurpose[Scriptwriter.WhatFor] in \
 	Scriptwriter.ruleWhatFor: #проверяем, что запрос клиента совпадает с запретом
@@ -227,9 +229,11 @@ func _on_LuckTimer_timeout():
 
 
 func victory_count_update():
-	$Control2/NinePatchRect/Victory_count.text = "Количество клиентов:" + str(Scriptwriter.victory_count) + "/" + str(Scriptwriter.count_to_victory)
+	pass
+#	$Control2/NinePatchRect/Victory_count.text = "Количество клиентов:" + str(Scriptwriter.victory_count) + "/" + str(Scriptwriter.count_to_victory)
 
 
+	
 
 func yellow_indicatos_color_right():
 	yellow_indicatos_color_middle()

@@ -1,71 +1,72 @@
 extends Node
 
-enum { 
+enum {
 	MrBankman, Dictor, AlexeyKochanov, AnastasiyaMalkova, AnastasiyaCherevatkina, AlexeySilkin, Bman, CBomjMan,
-	DmitriyOvsyannikov, Chechen, BArtem, KristinaStepanova, Babylia, IlonMask, Mafiosi, GrishaGrachev, 
-	BitKogan, InvestorJunior, OstapBender, OlegTinkoff, BillGates, Putin, MegaBomj, RomanShabanov, 
+	DmitriyOvsyannikov, Chechen, BArtem, KristinaStepanova, Babylia, IlonMask, Mafiosi, GrishaGrachev,
+	BitKogan, InvestorJunior, OstapBender, OlegTinkoff, BillGates, Putin, MegaBomj, RomanShabanov,
 	CBreviewer, Ivent, Status,
-	
-	TeamUp, CustomersUp, CentralBankUp, MoneyUp, 
+
+	TeamUp, CustomersUp, CentralBankUp, MoneyUp,
 	TeamDown, CustomersDown, CentralBankDown, MoneyDown
-	
+
 	}
 
-const DATA = {
-	"Mr. Bankman": [ "Head10", "Neck1", "Shirt11", "Eyebrows12", "Eyes7", "Forehead1", "Ears7", "Jowls0", "Glasses1", "Mouth4", "Hair10", "Nose16"],
-	"Sill Fpencer": [ "Head7", "Neck1", "Shirt1", "Eyebrows1", "Eyes2", "Forehead0", "Ears6", "Jowls0", "Glasses0", "Mouth7", "Hair13", "Nose13"],
-	"Getty Green" : [ "Head4", "Neck1", "Shirt5", "Eyebrows2", "Eyes10", "Forehead1", "Ears4", "Jowls3", "Glasses1", "Mouth11", "Hair14", "Nose5"],
-	"Cark Mukerberg" : [ "Head8", "Neck1", "Shirt9", "Eyebrows15", "Eyes4", "Forehead0", "Ears10", "Jowls0", "Glasses0", "Mouth2", "Hair4", "Nose9"],
-	"Borren Uaffet" : [ "Head4", "Neck1", "Shirt4", "Eyebrows4", "Eyes4", "Forehead2", "Ears4", "Jowls0", "Glasses1", "Mouth3", "Hair0", "Nose8"],
-	"Liktor Vustig" : [ "Head3", "Neck1", "Shirt8", "Eyebrows6", "Eyes6", "Forehead2", "Ears9", "Jowls0", "Glasses0", "Mouth4", "Hair6", "Nose6"],
-	"Kikolas Nage" : [ "Head6", "Neck1", "Shirt13", "Eyebrows11", "Eyes5", "Forehead0", "Ears2", "Jowls0", "Glasses0", "Mouth7", "Hair6", "Nose5"],
-	"Bichard Ranson" : [ "Head10", "Neck1", "Shirt4", "Eyebrows15", "Eyes14", "Forehead1", "Ears3", "Jowls0", "Glasses1", "Mouth4", "Hair4", "Nose9"],
-	"Mjack Da" : [ "Head1", "Neck1", "Shirt15", "Eyebrows5", "EyesClosed", "Forehead0", "Ears5", "Jowls0", "Glasses0", "Mouth1", "Hair1", "Nose3"],
-	"El'Fa" : [ "Head6", "Neck1", "Shirt2", "Eyebrows1", "Eyes11", "Forehead0", "Ears4", "Jowls2", "Glasses0", "Mouth9", "Hair11", "Nose9"],
-	"Dabygale Eonson" : [ "Head13", "Neck1", "Shirt14", "Eyebrows12", "Eyes16", "Forehead1", "Ears3", "Jowls1", "Glasses1", "Mouth6", "Hair14", "Nose10"],
-	"Crowley Shepard" : [ "Head8", "Neck1", "Shirt11", "Eyebrows12", "Eyes2", "Forehead2", "Ears1", "Jowls0", "Glasses0", "Mouth2", "Hair6", "Nose10"],
-	"Sanna Acol Nitt" : [ "Head8", "Neck1", "Shirt13", "Eyebrows8", "Eyes15", "Forehead0", "Ears1", "Jowls2", "Glasses0", "Mouth8", "Hair8", "Nose4"],
-	"Darls Coy" : [ "Head5", "Neck1", "Shirt7", "Eyebrows6", "Eyes1", "Forehead0", "Ears8", "Jowls0", "Glasses0", "Mouth6", "Hair1", "Nose8"],
-	"Bantonio Anderas" : [ "Head9", "Neck1", "Shirt7", "Eyebrows1", "Eyes4", "Forehead1", "Ears5", "Jowls0", "Glasses0", "Mouth1", "Hair6", "Nose15"],
-	"Barlo Cenetton" : [ "Head7", "Neck1", "Shirt14", "Eyebrows11", "Eyes12", "Forehead1", "Ears3", "Jowls3", "Glasses1", "Mouth14", "Hair5", "Nose4"],
-	
-	"BitKogan" : [ "Head1", "Neck1", "Shirt2", "Eyebrows2", "Eyes1", "Forehead0", "Ears3", "Jowls1", "Glasses0", "Mouth1", "Hair0", "Nose1"],
-	
-	"InvestorJunior" : [ "Head2", "Neck1", "Shirt1", "Eyebrows1", "Eyes2", "Forehead0", "Ears2", "Jowls0", "Glasses0", "Mouth2", "Hair1", "Nose1"],
-	
-	"OstapBender" : [ "Head3", "Neck1", "Shirt2", "Eyebrows2", "Eyes3", "Forehead0", "Ears1", "Jowls1", "Glasses0", "Mouth3", "Hair2", "Nose1"],
-	
-	"OlegTinkoff" : [ "Head4", "Neck1", "Shirt3", "Eyebrows3", "Eyes4", "Forehead0", "Ears1", "Jowls0", "Glasses0", "Mouth4", "Hair3", "Nose3"],
-	
-	"BillGates" : [ "Head5", "Neck1", "Shirt4", "Eyebrows4", "Eyes5", "Forehead0", "Ears2", "Jowls1", "Glasses1", "Mouth5", "Hair4", "Nose3"],
-	
-	"Putin" : [ "Head1", "Neck1", "Shirt5", "Eyebrows5", "Eyes1", "Forehead1", "Ears3", "Jowls0", "Glasses0", "Mouth5", "Hair0", "Nose3"],
-	
-	"MegaBomj" : [ "Head2", "Neck1", "Shirt4", "Eyebrows4", "Eyes2", "Forehead0", "Ears3", "Jowls1", "Glasses0", "Mouth4", "Hair1", "Nose2"],
-	
-	"RomanShabanov" : [ "Head3", "Neck1", "Shirt3", "Eyebrows3", "Eyes3", "Forehead0", "Ears2", "Jowls0", "Glasses0", "Mouth3", "Hair2", "Nose2"],
-	
-	"CBreviewer" : [ "Head4", "Neck1", "Shirt2", "Eyebrows2", "Eyes4", "Forehead1", "Ears1", "Jowls1", "Glasses1", "Mouth2", "Hair3", "Nose2"],
-	
-	"Ivent" : [ "Head0", "Neck0", "Shirt0", "Eyebrows0", "Eyes0", "Forehead0", "Ears0", "Jowls0", "Glasses0", "Mouth0", "Hair0", "Nose0"],
-	
-	"Status" : [ "Head0", "Neck0", "Shirt0", "Eyebrows0", "Eyes0", "Forehead0", "Ears0", "Jowls0", "Glasses0", "Mouth0", "Hair0", "Nose0"],
-	
-	"TeamUp" : [ "Head0", "Neck0", "Shirt0", "Eyebrows0", "Eyes0", "Forehead0", "Ears0", "Jowls0", "Glasses0", "Mouth0", "Hair0", "Nose0"],
-	
-	"CustomersUp" : [ "Head0", "Neck0", "Shirt0", "Eyebrows0", "Eyes0", "Forehead0", "Ears0", "Jowls0", "Glasses0", "Mouth0", "Hair0", "Nose0"],
-	
-	"CentralBankUp" : [ "Head0", "Neck0", "Shirt0", "Eyebrows0", "Eyes0", "Forehead0", "Ears0", "Jowls0", "Glasses0", "Mouth0", "Hair0", "Nose0"],
-	
-	"MoneyUp" : [ "Head0", "Neck0", "Shirt0", "Eyebrows0", "Eyes0", "Forehead0", "Ears0", "Jowls0", "Glasses0", "Mouth0", "Hair0", "Nose0"],
-	
-	"TeamDown" : [ "Head0", "Neck0", "Shirt0", "Eyebrows0", "Eyes0", "Forehead0", "Ears0", "Jowls0", "Glasses0", "Mouth0", "Hair0", "Nose0"],
-	
-	"CustomersDown" : [ "Head0", "Neck0", "Shirt0", "Eyebrows0", "Eyes0", "Forehead0", "Ears0", "Jowls0", "Glasses0", "Mouth0", "Hair0", "Nose0"],
-	
-	"CentralBankDown" : [ "Head0", "Neck0", "Shirt0", "Eyebrows0", "Eyes0", "Forehead0", "Ears0", "Jowls0", "Glasses0", "Mouth0", "Hair0", "Nose0"],
-	
-	"MoneyDown" : [ "Head0", "Neck0", "Shirt0", "Eyebrows0", "Eyes0", "Forehead0", "Ears0", "Jowls0", "Glasses0", "Mouth0", "Hair0", "Nose0"],
+
+
+const DATA = { 
+	"Mr. Bankman": [ 10, 1, 11, 12, 7, 1, 7, 0, 1, 4, 10, 16],
+	"Sill Fpencer": [ 7, 1, 1, 1, 2, 0, 6, 0, 0, 7, 13, 13],
+	"Getty Green" : [ 4, 1, 5, 2, 10, 1, 4, 3, 1, 11, 14, 5],
+	"Cark Mukerberg" : [ 8, 1, 9, 15, 4, 0, 10, 0, 0, 2, 4, 9],
+	"Borren Uaffet" : [ 4, 1, 4, 4, 4, 2, 4, 0, 1, 3, 0, 8],
+	"Liktor Vustig" : [ 3, 1, 8, 6, 6, 2, 9, 0, 0, 4, 6, 6],
+	"Kikolas Nage" : [ 6, 1, 13, 11, 5, 0, 2, 0, 0, 7, 6, 5],
+	"Bichard Ranson" : [ 10, 1, 4, 15, 14, 1, 3, 0, 1, 4, 4, 9],
+	"Mjack Da" : [ 1, 1, 15, 5, 17, 0, 5, 0, 0, 1, 1, 3],
+	"El'Fa" : [ 6, 1, 2, 1, 11, 0, 4, 2, 0, 9, 11, 9],
+	"Dabygale Eonson" : [ 13, 1, 14, 12, 16, 1, 3, 1, 1, 6, 14, 10],
+	"Crowley Shepard" : [ 8, 1, 11, 12, 2, 2, 1, 0, 0, 2, 6, 10],
+	"Sanna Acol Nitt" : [ 8, 1, 13, 8, 15, 0, 1, 2, 0, 8, 8, 4],
+	"Darls Coy" : [ 5, 1, 7, 6, 1, 0, 8, 0, 0, 6, 1, 8],
+	"Bantonio Anderas" : [ 9, 1, 7, 1, 4, 1, 5, 0, 0, 1, 6, 15],
+	"Barlo Cenetton" : [ 7, 1, 14, 11, 12, 1, 3, 3, 1, 14, 5, 4],
+
+	"BitKogan" : [ 1, 1, 2, 2, 1, 0, 3, 1, 0, 1, 0, 1],
+
+	"InvestorJunior" : [ 2, 1, 1, 1, 2, 0, 2, 0, 0, 2, 1, 1],
+
+	"OstapBender" : [ 3, 1, 2, 2, 3, 0, 1, 1, 0, 3, 2, 1],
+
+	"OlegTinkoff" : [ 4, 1, 3, 3, 4, 0, 1, 0, 0, 4, 3, 3],
+
+	"BillGates" : [ 5, 1, 4, 4, 5, 0, 2, 1, 1, 5, 4, 3],
+
+	"Putin" : [ 1, 1, 5, 5, 1, 1, 3, 0, 0, 5, 0, 3],
+
+	"MegaBomj" : [ 2, 1, 4, 4, 2, 0, 3, 1, 0, 4, 1, 2],
+
+	"RomanShabanov" : [ 3, 1, 3, 3, 3, 0, 2, 0, 0, 3, 2, 2],
+
+	"CBreviewer" : [ 4, 1, 2, 2, 4, 1, 1, 1, 1, 2, 3, 2],
+
+	"Ivent" : [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+
+	"Status" : [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+
+	"TeamUp" : [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+
+	"CustomersUp" : [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+
+	"CentralBankUp" : [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+
+	"MoneyUp" : [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+
+	"TeamDown" : [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+
+	"CustomersDown" : [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+
+	"CentralBankDown" : [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+
+	"MoneyDown" : [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 
 }
- 
