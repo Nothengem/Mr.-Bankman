@@ -51,7 +51,7 @@ func Oldspawn():
 func spawn():
 	$CharacterControl.visible = false
 	$CharacterControl.cardGeneration()
-	print("вначале отработала генерация новой карточки")
+	
 	
 	$CharacterControl.visible = true
 	$CharacterControl/AnimationPlayer.play("Apperiance")

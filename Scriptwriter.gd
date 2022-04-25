@@ -338,10 +338,8 @@ func card_var_generator(): #ПОХОЖЕ Я ЭТУ ШТУКУ ЗАПУСКАЮ 2
 	elif CardChoose == "StatusScreen": #если следующая карточка статус
 		CardInfo = CardDataBase.DATA.get("Ivent")
 		CharacterPortrait = CharacterPortraitDataBase.DATA.get(CardInfo[1])
-	elif CardChoose.type != "Ivent" or CardChoose != "LooseScreen" or CardChoose != "Random" or CardChoose != "Tutorial" or CardChoose != "StatusScreen":
+	elif CardChoose != "Ivent" or CardChoose != "LooseScreen" or CardChoose != "Random" or CardChoose != "Tutorial" or CardChoose != "StatusScreen":
 		CardInfo = CardDataBase.DATA.get(CardChoose)
-		print(CardChoose)
-		print("не должно отработать")
 		CharacterPortrait = CharacterPortraitDataBase.DATA.get(CardInfo[1])
 	DossierInfo = DossierCharacterDataBase.DATA.get(CardInfo[1])
 

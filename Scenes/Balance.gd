@@ -37,6 +37,9 @@ var IventSlot4
 var IventSlot4Speed
 var IventUpSlot4
 
+#переменная костыль, для нормальной отработки баланса
+var firstTime = false
+
 func _ready():
 	Scriptwriter.Heath_var = 50
 	Scriptwriter.Law_var = 50
@@ -47,6 +50,24 @@ func _ready():
 
 
 func change_proportions_right():
+	
+	#это костыль, т.к. не смог разобраться с багой почему баланс применяется от следующей карты, а не текущей
+	var s = str(Scriptwriter.level_cards[Scriptwriter.victory_count - 1])
+#	var v = Scriptwriter.CardDataBase.DATA.get(Scriptwriter.CardChoose)
+	var v = Scriptwriter.CardInfo
+	print(Scriptwriter.CardInfo)
+	if firstTime:
+		print(Scriptwriter.CardChoose)
+		print(v[s])
+		print(v[s][10])
+		Scriptwriter.HealthRightChoose = v[s][10]
+		Scriptwriter.LawRightChoose = v[s][11]
+		Scriptwriter.BanditismRightChoose = v[s][12]
+		Scriptwriter.LuckRightChoose = v[s][13]
+	elif !firstTime:
+		firstTime = true
+	
+	
 	Scriptwriter.Heath_var = Scriptwriter.Heath_var + Scriptwriter.HealthRightChoose
 	animate_value_health(HealthProgress.value, Scriptwriter.Heath_var)
 	
@@ -62,8 +83,20 @@ func change_proportions_right():
 
 
 func change_proportions_left():
-	print("вначале успели отработать пропорции")
-	print(Scriptwriter.CardInfo)
+	
+	#это костыль, т.к. не смог разобраться с багой почему баланс применяется от следующей карты, а не текущей
+	var s = str(Scriptwriter.level_cards[Scriptwriter.victory_count - 1])
+	var v = Scriptwriter.CardDataBase.DATA.get(Scriptwriter.CardChoose)
+	
+	#костыль, возвращает показатели баланса на предыдущю карту
+	if firstTime:
+		Scriptwriter.HealthLeftChoose = v[s][6]
+		Scriptwriter.LawLeftChoose = v[s][7]
+		Scriptwriter.BanditismLeftChoose = v[s][8]
+		Scriptwriter.LuckLeftChoose = v[s][9]
+	elif !firstTime:
+		firstTime = true
+	
 	if Scriptwriter.CardType == "Characters" and \
 	Scriptwriter.dossierBankRlationPurpose[Scriptwriter.WhatFor] in \
 	Scriptwriter.ruleWhatFor: #проверяем, что запрос клиента совпадает с запретом
