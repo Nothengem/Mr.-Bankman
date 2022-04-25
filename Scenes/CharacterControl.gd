@@ -158,6 +158,9 @@ func card_generation():
 		CardLAnswer.text = "Я не виноват!"
 
 
+func _process(delta):
+	print(Scriptwriter.CardChoose)
+
 func choosedone():
 	get_tree().call_group("BalanceGUI", "white_indicatos_color")
 	if thisNode.position.x < 300:
@@ -168,8 +171,9 @@ func choosedone():
 		elif Scriptwriter.CardType == "Characters" or Scriptwriter.CardType == "Tutorial" or Scriptwriter.CardType == "StatusScreen":
 			$"../Control/BalanceGUI".victory_count_update()
 			$"../Control/BalanceGUI".change_proportions_left()
-			Scriptwriter.CardChoose = Scriptwriter.NextCardLeft
-			choosedone_next_card_left()
+			if Scriptwriter.CardType != "TEST":
+				Scriptwriter.CardChoose = Scriptwriter.NextCardLeft
+				choosedone_next_card_left()
 		
 		elif Scriptwriter.CardType == "EventResult":
 			Scriptwriter.CardChoose = Scriptwriter.NextCardLeft
