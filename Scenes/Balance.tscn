@@ -460,6 +460,7 @@ __meta__ = {
 }
 
 [node name="Collegs" type="Label" parent="Control2/NinePatchRect"]
+visible = false
 margin_left = 6.94444
 margin_top = 29.0625
 margin_right = 46.9444
@@ -469,6 +470,7 @@ text = "+40"
 align = 1
 
 [node name="Customers" type="Label" parent="Control2/NinePatchRect"]
+visible = false
 margin_left = 72.5
 margin_top = 29.6875
 margin_right = 112.5
@@ -478,6 +480,7 @@ text = "+40"
 align = 1
 
 [node name="CBank" type="Label" parent="Control2/NinePatchRect"]
+visible = false
 margin_left = 144.444
 margin_top = 29.6875
 margin_right = 184.444
@@ -487,6 +490,7 @@ text = "+40"
 align = 1
 
 [node name="Budget" type="Label" parent="Control2/NinePatchRect"]
+visible = false
 margin_left = 210.556
 margin_top = 29.6875
 margin_right = 250.556
