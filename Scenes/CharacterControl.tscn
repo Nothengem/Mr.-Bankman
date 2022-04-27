@@ -280,7 +280,7 @@ anims/RESET = SubResource( 5 )
 [node name="Tween" type="Tween" parent="."]
 
 [node name="Timer_choosedone" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.2
 one_shot = true
 
 [node name="MainCardsBack" parent="." instance=ExtResource( 3 )]

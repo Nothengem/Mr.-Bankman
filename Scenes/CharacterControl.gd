@@ -158,8 +158,6 @@ func card_generation():
 		CardLAnswer.text = "Я не виноват!"
 
 
-func _process(delta):
-	print(Scriptwriter.CardChoose)
 
 func choosedone():
 	get_tree().call_group("BalanceGUI", "white_indicatos_color")
@@ -342,7 +340,7 @@ func _input(event):
 		
 		
 	if is_dragging and event is InputEventMouseMotion:
-#		$Tween.stop_all()
+		$Tween.stop(thisnode, "position")
 		position += event.position - previous_mouse_position
 		previous_mouse_position = event.position
 		chooseanimationReturnToZero()
@@ -444,14 +442,14 @@ func character_card_released():
 	
 	if position.x < start_position.x -200:
 		$Tween.interpolate_property(thisnode, "position", thisnode.position, 
-		leftxposition, 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		leftxposition, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		$Tween.start()
 #		$AnimationPlayer.play("HideAnimation")
 		$Timer_choosedone.start()
 		
 	if position.x > start_position.x +200:
 		$Tween.interpolate_property(thisnode, "position", thisnode.position, 
-		rightxposition, 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		rightxposition, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		$Tween.start()
 #		$AnimationPlayer.play("HideAnimation")
 		$Timer_choosedone.start()

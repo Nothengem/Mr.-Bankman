@@ -67,12 +67,19 @@ func change_proportions_right():
 #	elif !firstTime:
 #		firstTime = true
 	
+	$Control2/NinePatchRect/Collegs.text = str(Scriptwriter.HealthRightChoose)
+	$Control2/NinePatchRect/Customers.text = str(Scriptwriter.LawRightChoose)
+	$Control2/NinePatchRect/CBank.text = str(Scriptwriter.BanditismRightChoose)
+	$Control2/NinePatchRect/Budget.text = str(Scriptwriter.LuckRightChoose)
+	
 	
 	Scriptwriter.Heath_var = Scriptwriter.Heath_var + Scriptwriter.HealthRightChoose
 	animate_value_health(HealthProgress.value, Scriptwriter.Heath_var)
 	
+	
 	Scriptwriter.Law_var = Scriptwriter.Law_var + Scriptwriter.LawRightChoose
 	animate_value_law(LawProgress.value, Scriptwriter.Law_var)
+	
 	
 	Scriptwriter.Banditism_var = Scriptwriter.Banditism_var + Scriptwriter.BanditismRightChoose
 	animate_value_banditism(BanditismProgress.value, Scriptwriter.Banditism_var)
@@ -97,10 +104,18 @@ func change_proportions_left():
 #	elif !firstTime:
 #		firstTime = true
 	
+	$Control2/NinePatchRect/Collegs.text = str(Scriptwriter.HealthLeftChoose)
+	$Control2/NinePatchRect/Customers.text = str(Scriptwriter.LawLeftChoose)
+	$Control2/NinePatchRect/CBank.text = str(Scriptwriter.BanditismLeftChoose)
+	$Control2/NinePatchRect/Budget.text = str(Scriptwriter.LuckLeftChoose)
+	
+	
 	if Scriptwriter.CardType == "Characters" and \
 	Scriptwriter.dossierBankRlationPurpose[Scriptwriter.WhatFor] in \
-	Scriptwriter.ruleWhatFor: #проверяем, что запрос клиента совпадает с запретом
+	Scriptwriter.ruleWhatFor and Scriptwriter.WhatForRule == true: #проверяем, что запрос клиента совпадает с запретом
+		print(Scriptwriter.WhatForRule)
 		denide_photo_and_name_correction()
+		
 	
 	Scriptwriter.Heath_var = Scriptwriter.Heath_var + Scriptwriter.HealthLeftChoose
 	animate_value_health(HealthProgress.value, Scriptwriter.Heath_var)
@@ -113,9 +128,7 @@ func change_proportions_left():
 	
 	Scriptwriter.Luck_var = Scriptwriter.Luck_var + Scriptwriter.LuckLeftChoose
 	animate_value_luck(LuckProgress.value, Scriptwriter.Luck_var)
-	
-	print("сработало")
-	
+
 
 
 
@@ -180,10 +193,13 @@ func correction_calculating():
 		pass
 		
 func denide_photo_and_name_correction():
+	print(Scriptwriter.WhatForRule)
+	print("срабатывает коррекция")
 	Scriptwriter.Heath_var = denide_photo_and_name_correction_helper(Scriptwriter.Heath_var)
 	Scriptwriter.Law_var = denide_photo_and_name_correction_helper(Scriptwriter.Law_var)
 	Scriptwriter.Banditism_var = denide_photo_and_name_correction_helper(Scriptwriter.Banditism_var)
 	Scriptwriter.Luck_var = denide_photo_and_name_correction_helper(Scriptwriter.Luck_var)
+	Scriptwriter.permissionToDenide = false
 		
 func denide_photo_and_name_correction_helper(alpha):
 	if alpha < 50:
@@ -270,6 +286,14 @@ func victory_count_update():
 	
 
 func yellow_indicatos_color_right():
+	
+	
+	$Control2/NinePatchRect/Collegs.text = str(Scriptwriter.HealthRightChoose)
+	$Control2/NinePatchRect/Customers.text = str(Scriptwriter.LawRightChoose)
+	$Control2/NinePatchRect/CBank.text = str(Scriptwriter.BanditismRightChoose)
+	$Control2/NinePatchRect/Budget.text = str(Scriptwriter.LuckRightChoose)
+	
+	
 	yellow_indicatos_color_middle()
 	$Tween.stop(HealthProgress, "rect_scale")
 	$Tween.stop(LawProgress, "rect_scale")
@@ -301,6 +325,13 @@ func yellow_indicatos_color_right():
 
 
 func yellow_indicatos_color_left():
+	
+	$Control2/NinePatchRect/Collegs.text = str(Scriptwriter.HealthLeftChoose)
+	$Control2/NinePatchRect/Customers.text = str(Scriptwriter.LawLeftChoose)
+	$Control2/NinePatchRect/CBank.text = str(Scriptwriter.BanditismLeftChoose)
+	$Control2/NinePatchRect/Budget.text = str(Scriptwriter.LuckLeftChoose)
+	
+	
 	yellow_indicatos_color_middle()
 	$Tween.stop(HealthProgress, "rect_scale")
 	$Tween.stop(LawProgress, "rect_scale")

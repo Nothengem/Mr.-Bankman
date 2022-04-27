@@ -55,8 +55,9 @@ func dossier_update():
 	
 	
 	if !(Scriptwriter.CardChoose[-1] in ["1", "2", "3", "4", "5", "6", "7"]): #правило для фото и имени
-		Scriptwriter.permissionToDenide = true
-		get_tree().call_group("BalanceGUI", "denide_photo_and_name_correction")
+		if int(Scriptwriter.CurrentLevel[-1]) >= 3:
+			Scriptwriter.permissionToDenide = true
+			get_tree().call_group("BalanceGUI", "denide_photo_and_name_correction")
 		
 		
 		if Scriptwriter.PhotoRule == true and Scriptwriter.CardType != "Tutorial":
