@@ -4,13 +4,14 @@ enum {
 	MrBankman, Dictor, AlexeyKochanov, AnastasiyaMalkova, AnastasiyaCherevatkina, AlexeySilkin, Bman, CBomjMan,
 	DmitriyOvsyannikov, Chechen, BArtem, KristinaStepanova, Babylia, IlonMask, Mafiosi, GrishaGrachev,
 	BitKogan, InvestorJunior, OstapBender, OlegTinkoff, BillGates, Putin, MegaBomj, RomanShabanov,
-	CBreviewer, Ivent, Status,
+	CBreviewer, Ivent, Status, ShihaelMumaher,
 
 	TeamUp, CustomersUp, CentralBankUp, MoneyUp,
 	TeamDown, CustomersDown, CentralBankDown, MoneyDown
 
 	}
 
+# 	Голова0, Шея1, Куртка2, Брови3, Глаза4, Лоб5, Уши6, Щеки7, Очки8, Рот9, Волосы10, Нос11
 
 
 const DATA = { 
@@ -29,8 +30,9 @@ const DATA = {
 	"Sanna Acol Nitt" : [ 8, 1, 13, 8, 15, 0, 1, 2, 0, 8, 8, 4],
 	"Darls Coy" : [ 5, 1, 7, 6, 1, 0, 8, 0, 0, 6, 1, 8],
 	"Bantonio Anderas" : [ 9, 1, 7, 1, 4, 1, 5, 0, 0, 1, 6, 15],
-	"Barlo Cenetton" : [ 7, 1, 14, 11, 12, 1, 3, 3, 1, 14, 5, 4],
-
+	"Barlo Cenetton" : [7, 1, 14, 11, 12, 1, 3, 3, 1, 14, 5, 4],
+	"Shihael Mumaher" : [3, ],
+	
 	"BitKogan" : [ 1, 1, 2, 2, 1, 0, 3, 1, 0, 1, 0, 1],
 
 	"InvestorJunior" : [ 2, 1, 1, 1, 2, 0, 2, 0, 0, 2, 1, 1],
