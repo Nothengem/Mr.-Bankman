@@ -20,7 +20,7 @@ const DATA = {
 	"LVL3": ["false", 0, 0, false, false, false, false, ["false"]], #весь уровень коллеги вниз
 	"LVL4": ["false", 0, 0, false, false, false, false, ["false"]], #сверять фото и имя
 	"LVL5": ["Мужской", 0, 0, false, false, false, false, ["false"]], #проверять пол
-	"LVL6": [null, 0, 0, null, null, null, null, null,], #доставка
+	"LVL6": ["false", 0, 0, false, false, false, false, ["false"]], #доставка
 	"LVL7": [null, 0, 0, null, null, null, null, null,], #клиенты вниз
 	"LVL8": [null, 0, 0, null, null, null, null, null,], #пол
 	"LVL9": [null, 0, 0, null, null, null, null, null,], #ЦБ вниз

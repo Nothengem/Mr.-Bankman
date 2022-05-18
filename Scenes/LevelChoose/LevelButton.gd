@@ -20,7 +20,7 @@ func disable():
 
 func _on_1_pressed():
 	if $".".disabled == false:
-		if int($".".name) != 6:
+		if int($".".name) != 7:
 			Scriptwriter.CurrentLevel = "LVL" + str($".".name)
 			Scriptwriter.level_was_choosen = str($".".name)
 			Scriptwriter.level_massive_generator()

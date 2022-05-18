@@ -73,9 +73,9 @@ var count_to_victory
 var FirstCard = true
 
 # Сохранённая игра
-var levels_complete = 1
+var levels_complete = 6
 #переменная обозначающая текущий уровень
-var  CurrentLevel = 0
+var  CurrentLevel = 6
 
 #массив содержащий в себе карты для уровня
 var level_cards = []
