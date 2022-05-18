@@ -28,9 +28,9 @@ func _ready():
 	Scriptwriter.victory_count = int(Scriptwriter.victory_count) +1
 	$AnimationPlayer.play("Appear")
 	$RoadChangerTimer.stop()
+	difficuilt = Scriptwriter.IventInfo[1]
 	spawn_road()
 	text_generation()
-	difficuilt = Scriptwriter.IventInfo[1]
 
 func spawn_road():
 	var scene = load("res://Scenes/CardDelivery/Decorations.tscn")
@@ -57,15 +57,14 @@ func next_road():
 			Scriptwriter.Banditism_var = Scriptwriter.Banditism_var + car_damage_checker
 			Scriptwriter.Luck_var = Scriptwriter.Luck_var - hole_damage_checker
 			#ремонт машины, извенение перед пешеходами, урегулирование проблем с законом
-			crush_result_message()
+			crush_result_message_generate()
 			Scriptwriter.IventInfo[7] = crush_result_message
 		elif customer_damage_checker == 0 and car_damage_checker == 0 and hole_damage_checker == 0:
 			Scriptwriter.Law_var = Scriptwriter.Law_var + 20
-			print("здесь")
 		get_tree().call_group("BalanceGUI", "change_proportions_ivent_cardmix")
 		queue_free()
 
-func crush_result_message():
+func crush_result_message_generate():
 	var car_crush = "ЦБ начнут интересоваться всеми авариями. "
 	var customer_crush = "Нужно будет извиняться перед пешеходами. "
 	var hole_crush = "Ремонт машины влетит в копееечку. "
@@ -78,6 +77,7 @@ func crush_result_message():
 		crush_result_message = str(crush_result_message) + str(hole_crush)
 
 func text_generation():
+	print("генерация сработала сразу")
 	text_generation_helper()
 	if difficuilt == 1:
 		$RoadDiscription/Label.text = str("По левой полосе " + str(Scriptwriter.danger_left) + "  по середине " + str(Scriptwriter.danger_middle) + " по правой полосе " + str(Scriptwriter.danger_right))
@@ -118,7 +118,7 @@ func text_generation_helper():
 
 
 
-func _on_Area2D_area_entered(area):
+func _on_Area2D_area_entered(_area):
 	if $Machine.position.x == 260:
 		what_danger_hit = Scriptwriter.CardDeliveryinRunning[0]
 	elif $Machine.position.x == 540:

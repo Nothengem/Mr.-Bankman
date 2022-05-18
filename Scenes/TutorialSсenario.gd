@@ -18,7 +18,14 @@ func levelOneScenario():
 		.play("WorkingDaY")
 		
 func stopAnimations():
+	.play("CardMechanicExplane")
 	.seek(0.00, true)
 	.stop()
-
-
+	
+	.play("BalanceExplane")
+	.seek(0.00, true)
+	.stop()
+	
+	.play("WorkingDaY")
+	.seek(0.00, true)
+	.stop()

@@ -58,6 +58,7 @@ func spawn():
 	if Scriptwriter.CurrentLevel == "LVL1" and Scriptwriter.CardType == "Tutorial":
 		tutorialScenario.levelOneScenario()
 	elif Scriptwriter.CardType != "Tutorial":
+		print("это случилось")
 		tutorialScenario.stopAnimations()
 		
 
@@ -84,8 +85,10 @@ func spawn_pendulum():
 func spawn_card_delivery():
 	var scene = load("res://Scenes/CardDelivery.tscn")
 	var card = scene.instance()
-	add_child_below_node($Control/BalanceGUI, card, true)
-
+	add_child_below_node($Control/BalanceGUI, card)
+	
+	
+	
 func background_fade():
 	$AnimationPlayer.play("FadeBackGround")
 

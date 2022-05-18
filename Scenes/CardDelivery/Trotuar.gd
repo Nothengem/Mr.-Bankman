@@ -18,43 +18,43 @@ var one
 var my_random_number = 1
 
 func _ready():
-	tree_or_building()
+	tree_or_building_decor()
 	objtexture = one
 	ObjOne.texture = load(objtexture)
 	
-	tree_or_building()
+	tree_or_building_decor()
 	objtexture = one
 	ObjTwo.texture = load(objtexture) 
 	
-	tree_or_building()
+	tree_or_building_decor()
 	objtexture = one
 	ObjThree.texture = load(objtexture)
 	
-	tree_or_building()
+	tree_or_building_decor()
 	objtexture = one
 	ObjFour.texture = load(objtexture) 
 	
-	tree_or_building()
+	tree_or_building_decor()
 	objtexture = one
 	ObjFive.texture = load(objtexture) 
 	
-	tree_or_building()
+	tree_or_building_decor()
 	objtexture = one
 	ObjSix.texture = load(objtexture) 
 	
-	tree_or_building()
+	tree_or_building_decor()
 	objtexture = one
 	ObjSeven.texture = load(objtexture)
 	
-	tree_or_building()
+	tree_or_building_decor()
 	objtexture = one
 	ObjEight.texture = load(objtexture)
 	
-	tree_or_building()
+	tree_or_building_decor()
 	objtexture = one
 	ObjNine.texture = load(objtexture) 
 
-func tree_or_building():
+func tree_or_building_decor():
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
 	tree_or_building = int(rng.randf_range(1, 3))
