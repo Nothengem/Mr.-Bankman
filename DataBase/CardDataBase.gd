@@ -531,9 +531,10 @@ const DATA = {
 		"И видимо папаша должен думать, что у нас получается ему помочь...",
 		0, 0, 0, 0,
 		0, 0, 0, 0, 
-		"Random", "Random",
-		"None",
+		"Random", "Ivent",
+		"CardDelivery1",
 		0],
+		
 		
 	"CreditHomeForCar" : 
 		["Characters",

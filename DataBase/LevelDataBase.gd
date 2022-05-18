@@ -29,6 +29,10 @@ const DATA = {
 	"LVL5" : ["CreditDeathScheme", "MoneyPrinting", "MrBankManScarySecret", "CustomerLastWish", 
 	"CreditProphetReturn", "ErogenZone", "CantMeetMoney", "CollectorsGuardians", 
 	"DepositArgument", "MrBankManPocket"],
+	
+	"LVL6" : ["CreditDeathScheme", "MoneyPrinting", "MrBankManScarySecret", "CustomerLastWish", 
+	"CreditProphetReturn", "ErogenZone", "CantMeetMoney", "CollectorsGuardians", 
+	"DepositArgument", "MrBankManPocket"]
 	}
 	
 	
