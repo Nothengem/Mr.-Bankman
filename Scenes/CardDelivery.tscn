@@ -385,10 +385,8 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="CardDelivery" type="Control" groups=[
-"CardDelivery",
-"Ivent",
-]]
+[node name="CardDelivery" type="Control" groups=["CardDelivery", "Ivent"]]
+modulate = Color( 1, 1, 1, 0 )
 anchor_top = 0.173046
 anchor_right = 1.0
 anchor_bottom = 1.17305
@@ -405,8 +403,9 @@ __meta__ = {
 position = Vector2( 0, -1920 )
 
 [node name="Decorations" parent="." instance=ExtResource( 2 )]
+margin_top = 11.9998
+margin_bottom = 11.9998
 is_active = true
-road_life_stage = 2
 
 [node name="LeftRoadPostion" type="Position2D" parent="."]
 position = Vector2( 260, 1700 )
@@ -463,9 +462,9 @@ margin_left = -691.397
 margin_top = -508.062
 margin_right = 748.603
 margin_bottom = 283.938
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Text"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -509,6 +508,7 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="RoadDiscription"]
+self_modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -555,3 +555,5 @@ one_shot = true
 [connection signal="released" from="ChooseRoadMiddle" to="." method="_on_ChooseRoadMiddle_released"]
 [connection signal="released" from="ChooseRoadRight" to="." method="_on_ChooseRoadRight_released"]
 [connection signal="timeout" from="CarCrashController" to="." method="_on_CarCrashController_timeout"]
+
+[editable path="Decorations"]

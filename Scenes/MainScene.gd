@@ -85,8 +85,8 @@ func spawn_pendulum():
 func spawn_card_delivery():
 	var scene = load("res://Scenes/CardDelivery.tscn")
 	var card = scene.instance()
-	add_child_below_node($Control/BalanceGUI, card)
-	
+#	add_child_below_node($Control/BalanceGUI, card)
+	$Control.add_child(card)
 	
 	
 func background_fade():

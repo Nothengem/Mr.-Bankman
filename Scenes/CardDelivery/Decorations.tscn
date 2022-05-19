@@ -70,17 +70,13 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 1900 ) ]
 }
 
-[node name="Decorations" type="Control" groups=[
-"Decorations",
-]]
+[node name="Decorations" type="Control" groups=["Decorations"]]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = -0.00109863
 rect_pivot_offset = Vector2( 540, 960 )
 mouse_filter = 2
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Road" type="Sprite" parent="."]
 position = Vector2( 540.023, 956.009 )
@@ -122,5 +118,6 @@ position = Vector2( 553.05, 376.75 )
 
 [node name="DangerRightRoad" parent="." instance=ExtResource( 5 )]
 position = Vector2( 821.122, 376.75 )
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer2" to="." method="_on_AnimationPlayer2_animation_finished"]
