@@ -386,7 +386,6 @@ tracks/0/keys = {
 }
 
 [node name="CardDelivery" type="Control" groups=["CardDelivery", "Ivent"]]
-modulate = Color( 1, 1, 1, 0 )
 anchor_top = 0.173046
 anchor_right = 1.0
 anchor_bottom = 1.17305
@@ -405,6 +404,7 @@ position = Vector2( 0, -1920 )
 [node name="Decorations" parent="." instance=ExtResource( 2 )]
 margin_top = 11.9998
 margin_bottom = 11.9998
+rect_scale = Vector2( 1, 1 )
 is_active = true
 
 [node name="LeftRoadPostion" type="Position2D" parent="."]
@@ -471,6 +471,7 @@ __meta__ = {
 }
 
 [node name="HidenObjects" type="TextureRect" parent="."]
+visible = false
 self_modulate = Color( 1, 1, 1, 0.662745 )
 margin_right = 1080.0
 margin_bottom = 300.0
@@ -478,9 +479,6 @@ rect_min_size = Vector2( 1080, 300 )
 rect_pivot_offset = Vector2( 540, 310.8 )
 texture = ExtResource( 3 )
 stretch_mode = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="RoadChangerTimer" type="Timer" parent="."]
 wait_time = 1.5
@@ -496,6 +494,7 @@ position = Vector2( 449.267, 69.2229 )
 position = Vector2( 724.956, 69.2229 )
 
 [node name="RoadDiscription" type="TextureRect" parent="."]
+visible = false
 anchor_top = 0.227906
 anchor_right = 1.0
 anchor_bottom = 0.693019

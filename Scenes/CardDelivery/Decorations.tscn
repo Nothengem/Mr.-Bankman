@@ -73,7 +73,8 @@ tracks/0/keys = {
 [node name="Decorations" type="Control" groups=["Decorations"]]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = -0.00109863
+margin_top = -1915.0
+margin_bottom = -1915.0
 rect_pivot_offset = Vector2( 540, 960 )
 mouse_filter = 2
 script = ExtResource( 2 )

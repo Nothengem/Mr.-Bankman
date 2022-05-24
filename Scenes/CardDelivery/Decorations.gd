@@ -73,13 +73,17 @@ func road_life_stage():
 
 
 func _on_AnimationPlayer_animation_finished(_RoadBehind):
+	print("анимация1")
 	get_tree().call_group("ChooseRoadButton", "show_buttons")
+	is_active =  true
 	
 	if road_life_stage_var == 3:
 		queue_free()
 
 
 
+
 func _on_AnimationPlayer2_animation_finished(_RoadAppera):
+	print("анимация2")
 	is_active =  true
 	
