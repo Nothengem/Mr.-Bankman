@@ -20,12 +20,12 @@ const DATA = {
 	"LVL3": ["false", 0, 0, false, false, false, false, ["false"]], #весь уровень коллеги вниз
 	"LVL4": ["false", 0, 0, false, false, false, false, ["false"]], #сверять фото и имя
 	"LVL5": ["Мужской", 0, 0, false, false, false, false, ["false"]], #проверять пол
-	"LVL6": ["false", 0, 0, false, false, false, false, ["false"]], #доставка
+	"LVL6": ["false", 0, 0, false, false, false, false, ["false"]], #кости начинаются отсюда и присутствуют каждый уровень
 	"LVL7": [null, 0, 0, null, null, null, null, null,], #клиенты вниз
 	"LVL8": [null, 0, 0, null, null, null, null, null,], #пол
 	"LVL9": [null, 0, 0, null, null, null, null, null,], #ЦБ вниз
 	"LVL10": [null, 0, 0, null, null, null, null, null,], #страна
-	"LVL11": [null, 0, 0, null, null, null, null, null,], #кости
+	"LVL11": [null, 0, 0, null, null, null, null, null,], #доставка
 	"LVL12": [null, 0, 0, null, null, null, null, null,], #деньги вниз
 	"LVL13": [null, 0, 0, null, null, null, null, null,], #история
 	"LVL14": [null, 0, 0, null, null, null, null, null,], #черный лист
