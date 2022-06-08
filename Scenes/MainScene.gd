@@ -63,9 +63,11 @@ func spawn():
 		
 
 func spawn_dice():
-	var scene = load("res://Scenes/Dice.tscn")
-	var card = scene.instance()
-	add_child_below_node($Control, card, true)
+	$DiceScene.visible = true
+	$DiceScene._ready()
+#	var scene = load("res://Scenes/Dice.tscn")
+#	var card = scene.instance()
+#	add_child_below_node($Control, card, true)
 
 func spawn_cardmix():
 	var scene = load("res://Scenes/thimbles.tscn")

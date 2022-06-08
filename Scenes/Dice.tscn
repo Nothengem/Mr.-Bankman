@@ -181,10 +181,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 7 ), ExtResource( 6 ) ]
 }
 
-[node name="DiceScene" type="Control" groups=[
-"Dice",
-"Ivent",
-]]
+[node name="DiceScene" type="Control" groups=["Dice", "Ivent"]]
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
