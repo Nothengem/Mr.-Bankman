@@ -1318,6 +1318,7 @@ visible = false
 [editable path="Control/BalanceGUI/Control2/NinePatchRect/IventStatusBox"]
 [editable path="Control/BalanceGUI/Control2/NinePatchRect/IventStatusBox/HBoxContainer/IventStatus1"]
 [editable path="Control/BalanceGUI/Control2/NinePatchRect/IventStatusBox/HBoxContainer/IventStatus2"]
+[editable path="Control/CardTemplate"]
 [editable path="Control/DayRules"]
 [editable path="CharacterControl"]
 [editable path="CharacterControl/NeedTo"]

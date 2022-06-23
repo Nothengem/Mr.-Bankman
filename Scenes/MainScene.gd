@@ -58,13 +58,13 @@ func spawn():
 	if Scriptwriter.CurrentLevel == "LVL1" and Scriptwriter.CardType == "Tutorial":
 		tutorialScenario.levelOneScenario()
 	elif Scriptwriter.CardType != "Tutorial":
-		print("это случилось")
 		tutorialScenario.stopAnimations()
 		
 
 func spawn_dice():
+	$CharacterControl.visible = false
 	$DiceScene.visible = true
-	$DiceScene._ready()
+	$DiceScene.start()
 #	var scene = load("res://Scenes/Dice.tscn")
 #	var card = scene.instance()
 #	add_child_below_node($Control, card, true)

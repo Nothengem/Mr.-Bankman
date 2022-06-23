@@ -22,6 +22,9 @@ var a
 var b
 
 func _ready():
+	pass
+	
+func start():
 	Scriptwriter.victory_count = int(Scriptwriter.victory_count) +1
 	difficult = Scriptwriter.IventInfo[1]
 	$Apperiance.play("Appearance")
@@ -148,7 +151,7 @@ func win_lose_animation():
 	if victory_number > difficult or victory_number == difficult:
 		$Win.stop()
 		$Win.play("Win")
-#		get_tree().call_group("IventCard", "cardupdate_ivent_win")
+		get_tree().call_group("IventCard", "cardupdate_ivent_win")
 	elif victory_number < difficult:
 		if first_dice:
 			$Lose.stop()
@@ -156,7 +159,7 @@ func win_lose_animation():
 		elif !first_dice:
 			$Lose.stop()
 			$Lose.play("Lose")
-#			get_tree().call_group("IventCard", "cardupdate_ivent_lose")
+			get_tree().call_group("IventCard", "cardupdate_ivent_lose")
 
 		
 func _on_Lose_animation_finished(Lose):
@@ -179,7 +182,8 @@ func _on_Lose_animation_finished(Lose):
 			Scriptwriter.CardChoose = "EventResult"
 			get_tree().call_group("MainScene", "spawn")
 			get_tree().call_group("BalanceGUI", "change_proportions_ivent_win")
-		queue_free()
+		this_node.visible = false
+		$"../CharacterControl".visible = true
 
 
 func _on_Win_animation_finished(Win):
@@ -190,7 +194,9 @@ func _on_Win_animation_finished(Win):
 	get_tree().call_group("MainScene", "spawn")
 	get_tree().call_group("BalanceGUI", "change_proportions_ivent_win")
 	Scriptwriter.victory_count = int(Scriptwriter.victory_count) +1
-	queue_free()
+	this_node.visible = false
+	$"../CharacterControl".visible = true
+
 
 
 

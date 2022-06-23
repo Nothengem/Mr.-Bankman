@@ -96,6 +96,10 @@ func cardGeneration():
 	elif !Scriptwriter.FirstCard and Scriptwriter.Heath_var <= 0 or Scriptwriter.Law_var <= 0 or Scriptwriter.Banditism_var <= 0 or Scriptwriter.Luck_var <= 0 or Scriptwriter.Heath_var >= 100 or Scriptwriter.Law_var >= 100 or Scriptwriter.Banditism_var >= 100 or Scriptwriter.Luck_var >= 100:
 			Scriptwriter.CardChoose = "LooseScreen"
 			Scriptwriter.losecard()
+			
+	if Scriptwriter.CardChoose == "EventResult":
+		var a = get_parent().get_node("Control/CardTemplate/CardTextCont/RichTextLabel")
+		a.bbcode_text = "[center]" + str(Scriptwriter.IventInfo[7]) + "[/center]" 
 	
 
 
@@ -143,11 +147,17 @@ func card_generation():
 #		if Scriptwriter.CardType == "LooseScreen":
 #			get_tree().call_group("NextCharacterCard", "hide")
 	elif Scriptwriter.CardType == "EventResult":
-		$CharacterCard/Character.visible = false
-		$CharacterCard/IventPortrait.visible = false
-		$CharacterCard/Control.visible = false
-		$CharacterCard/TextItog.visible = true
-		$CharacterCard/TextItog/Label.text = Scriptwriter.IventInfo[7]
+		print(Scriptwriter.IventInfo[7])
+		var a = get_parent().get_node("Control/CardTemplate/CardTextCont/RichTextLabel")
+#		get_parent().get_node("Control/CardTemplate/CardTextCont/RichTextLabel").bbcode_text = Scriptwriter.IventInfo[7]
+		a.bbcode_text = Scriptwriter.IventInfo[7]
+		print(a.bbcode_text)
+		pass
+#		$CharacterCard/Character.visible = true
+#		$CharacterCard/IventPortrait.visible = true
+#		$CharacterCard/Control.visible = true
+#		$CharacterCard/TextItog.visible = true
+#		$CharacterCard/TextItog/Label.text = Scriptwriter.IventInfo[7]
 		
 		
 	if !Scriptwriter.Heath_var <= 0 and !Scriptwriter.Law_var <= 0 and !Scriptwriter.Banditism_var <= 0 and !Scriptwriter.Luck_var <= 0 and !Scriptwriter.Heath_var >= 100 and !Scriptwriter.Law_var >= 100 and !Scriptwriter.Banditism_var >= 100 and !Scriptwriter.Luck_var >= 100:

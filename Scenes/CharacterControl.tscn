@@ -264,6 +264,13 @@ modulate = Color( 1, 1, 1, 0 )
 [node name="RightChooseRect" parent="CharacterCard/Control" index="1"]
 modulate = Color( 1, 1, 1, 0 )
 
+[node name="TextItog" parent="CharacterCard" index="9"]
+visible = true
+margin_left = -628.0
+margin_top = -664.0
+margin_right = -628.0
+margin_bottom = -664.0
+
 [node name="LeftChoose" type="Position2D" parent="."]
 position = Vector2( -1500, 0 )
 

@@ -254,7 +254,7 @@ anchor_top = -3.63305e-08
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -420.0
-margin_top = -420.0
+margin_top = -413.0
 margin_right = -420.0
 margin_bottom = -420.0
 rect_pivot_offset = Vector2( 402, 402 )
@@ -264,6 +264,7 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="TextItog"]
+visible = false
 anchor_left = 0.0833333
 anchor_top = 0.202381
 anchor_right = 0.916667
